@@ -9,6 +9,7 @@ require "open-uri"
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "destroying all this crap"
+InspoKeyword.destroy_all
 Preference.destroy_all
 Event.destroy_all
 Keyword.destroy_all
