@@ -1,0 +1,2 @@
+class InsposController < ApplicationController
+end

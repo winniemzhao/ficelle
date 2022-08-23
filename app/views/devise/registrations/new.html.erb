@@ -15,6 +15,15 @@
     <%= f.input :password_confirmation,
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
+    <%= f.input :name,
+                required: true,
+                input_html: { autocomplete: "new-name" } %>
+    <%= f.input :phone_number,
+                required: true,
+                input_html: { autocomplete: "new-phone-number" } %>
+    <%= f.input :location,
+                required: true,
+                input_html: { autocomplete: "new-location" } %>
   </div>
 
   <div class="form-actions">
