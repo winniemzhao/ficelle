@@ -1,3 +1,5 @@
+require "open-uri"
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -15,12 +17,15 @@ Partner.destroy_all
 User.destroy_all
 
 puts "making two users"
-user1 = User.create!(email: "a@gmail.com", password: "123456", name: "John", phone_number: "1234567890", location: "Montreal")
+user1 = User.new(email: "a@gmail.com", password: "123456", name: "John", phone_number: "1234567890", location: "Montreal")
+user1.photo.attach(io: URI.open("https://www.computerhope.com/jargon/g/guest-user.jpg"), filename: "user.jpg", content_type: "image/jpg")
+user1.save!
 
 user2 = User.create!(email: "b@gmail.com", password: "123456", name: "Michael", phone_number: "(514) 458-9946", location: "Toronto")
 
 puts "making 2 partners for user1"
 partner1 = Partner.new(name: "Gillian", birthday: Date.new(1980,01,01), phone_number: "1234567", email: "c@gmail.com", location: "Montreal")
+partner1.photo.attach(io: URI.open("https://corporate.zalando.com/sites/default/files/styles/fullimage_extra_big/public/media/Zalando%20SE_brand%20partner_teaser%20image.jpg"), filename: "partner1.jpg", content_type: "image/jpg")
 partner1.user = user1
 partner1.save!
 
@@ -57,5 +62,16 @@ preference2 = Preference.new()
 preference2.partner = partner2
 preference2.keyword = keyword2
 preference2.save!
+
+puts "making 2 inspo_keywords as well, just in case"
+inspo_keyword1 = InspoKeyword.new()
+inspo_keyword1.inspo = inspo1
+inspo_keyword1.keyword = keyword1
+inspo_keyword1.save!
+
+inspo_keyword2 = InspoKeyword.new()
+inspo_keyword2.inspo = inspo2
+inspo_keyword2.keyword = keyword2
+inspo_keyword2.save!
 
 puts "all done"
