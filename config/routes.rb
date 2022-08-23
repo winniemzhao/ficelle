@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   resources :partners, only: [:new, :create, :edit, :update, :destroy]
   # Defines the root path route ("/")
   # root "articles#index"
+  resources :events, except: :index
+  get '/dashboard', to: 'events#uncompleted_events', as: :dashboard
+
 end
