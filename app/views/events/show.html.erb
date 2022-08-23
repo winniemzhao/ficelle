@@ -1,1 +1,7 @@
 Show
+<h2><%= @event.inspo.name %></h2>
+<p>Location: <%= @event.location %></p>
+<p>Confirmed: <%= @event.confirmed%></p>
+<p>Completed: <%= @event.completed%></p>
+
+<%= link_to "Go Back to Dashboard", dashboard_path  %>
