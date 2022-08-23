@@ -24,6 +24,9 @@ class PartnersController < ApplicationController
   end
 
   def destroy
+    @partner = Partner.find(params[:id])
+    @partner.destroy
+    redirect_to dashboard_path
   end
 
   private
