@@ -7,6 +7,11 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "destroying all this crap"
+Preference.destroy_all
+Event.destroy_all
+Keyword.destroy_all
+Inspo.destroy_all
+Partner.destroy_all
 User.destroy_all
 
 puts "making two users"
@@ -25,3 +30,32 @@ partner2.save!
 
 puts "making 2 ingenious inspos"
 inspo1 = Inspo.create!(name: "Elephant riding in Nepal", genre: "date")
+inspo2 = Inspo.create!(name: "Snorkeling trip to Peru", genre: "gift")
+
+puts "eventing some keywords"
+keyword1 = Keyword.create!(name: "elephant")
+keyword2 = Keyword.create!(name: "flowers")
+
+puts "making 2 events"
+event1 = Event.new(date: Time.new(2021), completed: true)
+event1.partner = partner1
+event1.inspo = inspo1
+event1.save!
+
+event2 = Event.new(date: Time.new(2023), location: "Montreal")
+event2.partner = partner2
+event2.inspo = inspo2
+event2.save!
+
+puts "making 2 preferences just in case"
+preference1 = Preference.new()
+preference1.partner = partner1
+preference1.keyword = keyword1
+preference1.save!
+
+preference2 = Preference.new()
+preference2.partner = partner2
+preference2.keyword = keyword2
+preference2.save!
+
+puts "all done"
