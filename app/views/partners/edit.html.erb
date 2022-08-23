@@ -1,2 +1,11 @@
-<%# this will create a conflict for sure: please  just add the below line to the simple_form_for %>
+<%= simple_form_for [@partner] do |f| %>
+<%= f.input :name %>
+<%= f.input :email %>
+<%= f.input :location %>
+<%= f.input :birthday %>
+<%= f.input :phone_number %>
 <%= f.input :photo, as: :file, hint: "Upload new photo" %>
+<%= f.submit "Save Changes", class: "btn btn-primary" %>
+<% end %>
+
+<%= link_to "Go Back to Dashboard", #need to add new US/relationship route %>
