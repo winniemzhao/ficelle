@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   def uncompleted_events
+    @events = Event.all
   end
 
   def show

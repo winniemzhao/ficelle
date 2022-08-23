@@ -1,1 +1,7 @@
-Uncompleted events
+<h1>Uncompleted events / Dashboard</h1>
+
+<ul>
+  <% @events.each do |event| %>
+    <li><%= event.inspo.name %></li>
+  <% end %>
+</ul>
