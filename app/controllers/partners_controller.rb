@@ -14,9 +14,13 @@ class PartnersController < ApplicationController
   end
 
   def edit
+    @partner = Partner.find(params[:id])
   end
 
   def update
+    @partner = Partner.find(params[:id])
+    @partner.update(partner_params)
+    redirect_to us_path
   end
 
   def destroy
@@ -25,12 +29,6 @@ class PartnersController < ApplicationController
   private
 
   def partner_params
-    params.require(:partner).permit(:name, :birthday, :phone_number, :email, :location)
+    params.require(:partner).permit(:name, :birthday, :phone_number, :email, :location, :photo)
   end
-end
-
-----
-# This will create a conflict. Please add :photo to the permitted params.
-def article_params
-  params.require(:article).permit(:title, :body, :photo)
 end
