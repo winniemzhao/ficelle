@@ -5,3 +5,57 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+puts "destroying all this crap"
+Preference.destroy_all
+Event.destroy_all
+Keyword.destroy_all
+Inspo.destroy_all
+Partner.destroy_all
+User.destroy_all
+
+puts "making two users"
+user1 = User.create!(email: "a@gmail.com", password: "123456", name: "John", phone_number: "1234567890", location: "Montreal")
+
+user2 = User.create!(email: "b@gmail.com", password: "123456", name: "Michael", phone_number: "(514) 458-9946", location: "Toronto")
+
+puts "making 2 partners for user1"
+partner1 = Partner.new(name: "Gillian", birthday: Date.new(1980,01,01), phone_number: "1234567", email: "c@gmail.com", location: "Montreal")
+partner1.user = user1
+partner1.save!
+
+partner2 = Partner.new(name: "April", birthday: Date.new(1990,01,01), phone_number: "#######", email: "d@gmail.com", location: "Montréal")
+partner2.user = user2
+partner2.save!
+
+puts "making 2 ingenious inspos"
+inspo1 = Inspo.create!(name: "Elephant riding in Nepal", genre: "date")
+inspo2 = Inspo.create!(name: "Snorkeling trip to Peru", genre: "gift")
+
+puts "eventing some keywords"
+keyword1 = Keyword.create!(name: "elephant")
+keyword2 = Keyword.create!(name: "flowers")
+
+puts "making 2 events"
+event1 = Event.new(date: Time.new(2021), completed: true)
+event1.partner = partner1
+event1.inspo = inspo1
+event1.save!
+
+event2 = Event.new(date: Time.new(2023), location: "Montreal")
+event2.partner = partner2
+event2.inspo = inspo2
+event2.save!
+
+puts "making 2 preferences just in case"
+preference1 = Preference.new()
+preference1.partner = partner1
+preference1.keyword = keyword1
+preference1.save!
+
+preference2 = Preference.new()
+preference2.partner = partner2
+preference2.keyword = keyword2
+preference2.save!
+
+puts "all done"
