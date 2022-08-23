@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_22_220000) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_23_152604) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "events", force: :cascade do |t|
     t.datetime "date"
-    t.string "location"
-    t.boolean "confirmed"
-    t.boolean "completed"
+    t.string "location", default: "Montreal"
+    t.boolean "confirmed", default: false
+    t.boolean "completed", default: false
     t.boolean "success"
     t.bigint "partner_id", null: false
     t.bigint "inspo_id", null: false
