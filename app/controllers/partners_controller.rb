@@ -7,7 +7,7 @@ class PartnersController < ApplicationController
     @partner = Partner.new(partner_params)
     @partner.user = current_user
     if @partner.save
-      redirect to dashboard_path
+      redirect_to dashboard_path
     else
       render :new, status: unprocessable_entity
     end
