@@ -3,4 +3,6 @@ class Inspo < ApplicationRecord
 
   validates :name, presence: true
   validates :genre, presence: true
+
+  acts_as_favoritable
 end
