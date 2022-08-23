@@ -20,7 +20,7 @@ class PartnersController < ApplicationController
   def update
     @partner = Partner.find(params[:id])
     @partner.update(partner_params)
-    redirect_to #need to add new US/relationship route
+    redirect_to us_path
   end
 
   def destroy
