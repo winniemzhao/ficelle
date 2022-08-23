@@ -22,7 +22,6 @@ user1.photo.attach(io: URI.open("https://www.computerhope.com/jargon/g/guest-use
 user1.save!
 
 user2 = User.create!(email: "b@gmail.com", password: "123456", name: "Michael", phone_number: "(514) 458-9946", location: "Toronto")
-user2.save!
 
 puts "making 2 partners for user1"
 partner1 = Partner.new(name: "Gillian", birthday: Date.new(1980,01,01), phone_number: "1234567", email: "c@gmail.com", location: "Montreal")
