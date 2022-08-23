@@ -1,4 +1,8 @@
 class EventsController < ApplicationController
+  def new
+    @event = Event.new
+  end
+
   def uncompleted_events
     @events = Event.all
   end
@@ -7,13 +11,16 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
   end
 
-  def edit
-  end
-
-  def new
-  end
-
   def create
+    @event = Event.new(event_params)
+    if @event.save
+      redirect_to dashboard_path
+    else
+      render :new, status: unprocessable_entity
+    end
+  end
+
+  def edit
   end
 
   def update
@@ -32,5 +39,11 @@ class EventsController < ApplicationController
   end
 
   def completed_events
+  end
+
+  private
+
+  def event_params
+    params.require(:event).permit(:name, :date)
   end
 end
