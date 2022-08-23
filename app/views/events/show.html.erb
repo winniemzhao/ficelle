@@ -3,5 +3,9 @@ Show
 <p>Location: <%= @event.location %></p>
 <p>Confirmed: <%= @event.confirmed%></p>
 <p>Completed: <%= @event.completed%></p>
-
+<%= link_to "Delete Event",
+  dashboard_path,
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+%>
+<br>
 <%= link_to "Go Back to Dashboard", dashboard_path  %>
