@@ -78,4 +78,4 @@ group :test do
 end
 
 gem "acts_as_favoritor"
-gem "dotenv-rails", groups: [:development, :test] # yes, I realize that it is already here
+gem "cloudinary"

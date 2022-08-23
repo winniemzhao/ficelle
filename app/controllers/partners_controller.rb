@@ -14,3 +14,9 @@ class PartnersController < ApplicationController
   def destroy
   end
 end
+
+----
+# This will create a conflict. Please add :photo to the permitted params.
+def article_params
+  params.require(:article).permit(:title, :body, :photo)
+end
