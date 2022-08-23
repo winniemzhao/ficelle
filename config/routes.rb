@@ -13,4 +13,5 @@ Rails.application.routes.draw do
   get '/events/:id/success', to: 'events#edit_success', as: :success
   get '/events/:id', to: 'events#update_success'
   get '/completed_events', to: 'events#completed_events', as: :history
+  get '/us/', to: 'users#us', as: :us
 end
