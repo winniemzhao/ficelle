@@ -1,1 +1,9 @@
-Create new partner
+<h1>New Partner Profile</h1>
+<%= simple_form_for [@partner] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <%= f.input :location %>
+  <%= f.input :birthday %>
+  <%= f.input :phone_number %>
+  <%= f.submit "Create Partner", class: "btn btn-primary" %>
+<% end %>
