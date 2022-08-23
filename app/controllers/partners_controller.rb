@@ -4,7 +4,7 @@ class PartnersController < ApplicationController
   end
 
   def create
-    @partner = Partner.new(params_partner)
+    @partner = Partner.new(partner_params)
     @partner.user = current_user
     if @partner.save
       redirect to dashboard_path
@@ -24,7 +24,7 @@ class PartnersController < ApplicationController
 
   private
 
-  def params_partner
+  def partner_params
     params.require(:partner).permit(:name, :birthday, :phone_number, :email, :location)
   end
 end
