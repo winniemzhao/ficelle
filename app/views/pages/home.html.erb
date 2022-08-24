@@ -1,2 +1,4 @@
 <h1>ficelle</h1>
-<p>🧡</p>
+<p>🧡 Deceiving your partner since <%= current_user && current_user.partner ? current_user.partner.created_at.strftime('%a %B %e, %Y') : 2022 %> 🧡</p>
+
+<%= render "shared/avatar" %>

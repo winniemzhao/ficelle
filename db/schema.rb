@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_23_182550) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_24_161350) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -44,14 +44,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_23_182550) do
 
   create_table "events", force: :cascade do |t|
     t.datetime "date"
-    t.string "location", default: "Montreal"
-    t.boolean "confirmed", default: false
-    t.boolean "completed", default: false
     t.boolean "success"
     t.bigint "partner_id", null: false
     t.bigint "inspo_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "status", default: 0
     t.index ["inspo_id"], name: "index_events_on_inspo_id"
     t.index ["partner_id"], name: "index_events_on_partner_id"
   end
@@ -88,6 +86,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_23_182550) do
     t.string "genre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "location"
+    t.text "content"
+    t.float "cost"
   end
 
   create_table "keywords", force: :cascade do |t|
@@ -128,6 +129,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_23_182550) do
     t.string "phone_number"
     t.string "name"
     t.string "location"
+    t.float "budget", default: 50.0
+    t.integer "event_frequency", default: 5
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

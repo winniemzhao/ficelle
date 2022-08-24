@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :partners, only: [:new, :create, :edit, :update, :destroy] do
-    get '/partners/:id/keywords', to: 'keywords#index'
+    get '/keywords', to: 'keywords#index'
     resources :preferences, only: [:new, :create, :update]
   end
   # Defines the root path route ("/")
