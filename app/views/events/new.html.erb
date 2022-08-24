@@ -1,1 +1,6 @@
-New
+<h1>New Event</h1>
+<%= simple_form_for [@event] do |f| %>
+  <%= f.association :inspo %>
+  <%= f.input :date %>
+  <%= f.submit "Create Event", class: "btn btn-primary" %>
+<% end %>
