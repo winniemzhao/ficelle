@@ -50,3 +50,15 @@ a {
 .wrapper {
   margin: 32px;
 }
+
+.color-red {
+  color: $alert;
+}
+
+.color-orange {
+  color: $warning;
+}
+
+.color-blue {
+  color: $blue;
+}

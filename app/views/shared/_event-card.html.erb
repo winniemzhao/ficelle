@@ -1,17 +1,30 @@
 <%= link_to (event_path(event)) do %>
   <div class="event-card">
     <div class="event-card-content">
-      <p>
-        <% if event.pending? %>
+      <% if event.pending? %>
+        <p class="event-icon color-red">
           <i class="fa-solid fa-circle-exclamation"></i>
-        <% elsif event.confirmed? %>
+        </p>
+      <% elsif event.confirmed? %>
+        <p class="event-icon color-orange">
           <i class="fa-solid fa-calendar-check"></i>
-        <% elsif event.completed? %>
+        </p>
+      <% elsif event.completed? %>
+        <p class="event-icon color-blue">
           <i class="fa-regular fa-thumbs-up"></i>
-        <% end %>
-      </p>
-      <div>
-        <h6><%= event.inspo.name %></h6>
+        </p>
+      <% end %>
+      <div class="event-card-info">
+        <h6>
+          <%= event.inspo.name %>
+          <% if event.inspo.genre == "date" %>
+            <i class="fa-solid fa-people-pulling"></i>
+          <% elsif event.inspo.genre == "gift" %>
+            <i class="fa-solid fa-hand-holding-heart"></i>
+          <% elsif event.inspo.genre == "text" %>
+            <i class="fa-solid fa-people-pulling"></i>
+          <% end %>
+        </h6>
         <p>
           <% if event.pending? %>
             Awaiting Confirmation
