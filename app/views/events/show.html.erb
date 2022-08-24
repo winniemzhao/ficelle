@@ -1,8 +1,7 @@
-Show
+<h1>Show event</h1>
 <h2><%= @event.inspo.name %></h2>
-<p>Location: <%= @event.location %></p>
-<p>Confirmed: <%= @event.confirmed%></p>
-<p>Completed: <%= @event.completed%></p>
+<p>Date: <%= @event.date %></p>
+<p>Status: <%= @event.status%></p>
 <%= link_to "Edit Event", edit_event_path  %>
 <br>
 <%= link_to "Delete Event",

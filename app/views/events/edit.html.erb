@@ -1,4 +1,13 @@
-<h1>EDIT EVENT</h1>
+<h1><%= @inspo.name %></h1>
+<%= simple_form_for [@event, @inspo] do |f| %>
+<%= f.input :date %>
+<%= f.input :content %>
+<% if @event.inspo.genre == "text" %>
+  <%= f.input :content %>
+<% end %>
+<%= f.submit "Confirm Event", class: "btn btn-primary" %>
+<% end %>
+
 <%= link_to "Go Back", event_path  %>
 <br>
 <%= link_to "Go Back to Dashboard", dashboard_path  %>
