@@ -79,3 +79,4 @@ end
 
 gem "acts_as_favoritor"
 gem "cloudinary"
+gem "dotenv-rails", groups: [:development, :test]
