@@ -39,7 +39,7 @@ inspo1 = Inspo.new(name: "Elephant riding in Nepal", genre: "date", location: "N
 inspo1.photo.attach(io: URI.open("https://images.unsplash.com/photo-1498712067384-01239c6b377c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80"), filename: "inspo1.jpg", content_type: "image/jpg")
 inspo1.save!
 
-inspo2 = Inspo.new(name: "Snorkeling trip to Peru", genre: "gift", location: "Peru", content: "Snorkeling trip to Peru", cost: 500.0)
+inspo2 = Inspo.new(name: "Snorkeling in Peru", genre: "gift", location: "Peru", content: "Snorkeling trip to Peru", cost: 500.0)
 inspo2.photo.attach(io: URI.open("https://images.unsplash.com/photo-1473455811944-fdd1b0f282f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"), filename: "inspo2.avif", content_type: "image/avif")
 inspo2.save!
 
@@ -53,12 +53,12 @@ keyword2.photo.attach(io: URI.open("https://m.media-amazon.com/images/I/71xK85Lm
 keyword2.save!
 
 puts "making 2 events"
-event1 = Event.new(date: Time.new(2021))
+event1 = Event.new(date: Time.new(2021), content: "text")
 event1.partner = partner1
 event1.inspo = inspo1
 event1.save!
 
-event2 = Event.new(date: Time.new(2023))
+event2 = Event.new(date: Time.new(2023), content: "text")
 event2.partner = partner2
 event2.inspo = inspo2
 event2.save!
