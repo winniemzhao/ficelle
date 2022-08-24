@@ -1,0 +1,11 @@
+.event-card {
+  background-color: $white;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  padding: 16px 32px;
+}
+
+.event-card-content {
+  display: flex;
+  align-items: center;
+}

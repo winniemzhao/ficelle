@@ -14,4 +14,5 @@ Rails.application.routes.draw do
   get '/events/:id', to: 'events#update_success'
   get '/completed_events', to: 'events#completed_events', as: :history
   get '/us/', to: 'users#us', as: :us
+  resources :inspos, only: %i[index edit update]
 end

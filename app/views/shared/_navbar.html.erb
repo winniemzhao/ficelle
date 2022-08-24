@@ -1,37 +1,38 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div class="container-fluid">
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "https://images.unsplash.com/photo-1552427476-3ba0f37035e8" %>
+<div class="navbar-ficelle">
+  <ul>
+    <% if user_signed_in? %>
+      <li class="nav-item">
+        <p class="navbar-active"><i class="fa-solid fa-house"></i></p>
+        <%= link_to "dashboard", dashboard_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <p><i class="fa-solid fa-list-ul"></i></p>
+        <%= link_to "past events", history_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <p><i class="fa-solid fa-user-group"></i></p>
+        <%= link_to "relationship", us_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <p><i class="fa-solid fa-hand-holding-heart"></i></p>
+        <%= link_to "inspiration", dashboard_path, class: "nav-link" %>
+        <%#= replace dashboard_path for path to inspo swipe %>
+      </li>
+      <li class="nav-item">
+        <p><i class="fa-solid fa-gear"></i></p>
+        <%= link_to "settings", dashboard_path, class: "nav-link" %>
+        <%#= replace dashboard_path for path to settings %>
+      </li>
+      <%# <li class="nav-item"> %>
+        <%# <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+      <%# </li> %>
+      <%# put above logout into settings %>
+
+    <% else %>
+      <li>
+        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      </li>
     <% end %>
+  </ul>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-            <% avatar = current_user.photo.attached? ? current_user.photo.key : "sxt2qwnt1q7slrgp9f97" %>
-            <%= cl_image_tag avatar, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Action", "#", class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-  </div>
 </div>
