@@ -35,20 +35,30 @@ partner2.user = user2
 partner2.save!
 
 puts "making 2 ingenious inspos"
-inspo1 = Inspo.create!(name: "Elephant riding in Nepal", genre: "date")
-inspo2 = Inspo.create!(name: "Snorkeling trip to Peru", genre: "gift")
+inspo1 = Inspo.new(name: "Elephant riding in Nepal", genre: "date", location: "Nepal", content: "Elephant riding in Nepal", cost: 50.0)
+inspo1.photo.attach(io: URI.open("https://images.unsplash.com/photo-1498712067384-01239c6b377c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80"), filename: "inspo1.jpg", content_type: "image/jpg")
+inspo1.save!
+
+inspo2 = Inspo.new(name: "Snorkeling trip to Peru", genre: "gift", location: "Peru", content: "Snorkeling trip to Peru", cost: 500.0)
+inspo2.photo.attach(io: URI.open("https://images.unsplash.com/photo-1473455811944-fdd1b0f282f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"), filename: "inspo2.avif", content_type: "image/avif")
+inspo2.save!
 
 puts "eventing some keywords"
-keyword1 = Keyword.create!(name: "elephant")
-keyword2 = Keyword.create!(name: "flowers")
+keyword1 = Keyword.new(name: "elephant")
+keyword1.photo.attach(io: URI.open("https://m.media-amazon.com/images/I/51w7hUbUogL._AC_.jpg"), filename: "elephant.jpg", content_type: "image/jpg")
+keyword1.save!
+
+keyword2 = Keyword.new(name: "flowers")
+keyword2.photo.attach(io: URI.open("https://m.media-amazon.com/images/I/71xK85Lm0rL._AC_SL1500_.jpg"), filename: "flowers.jpg", content_type: "image/jpg")
+keyword2.save!
 
 puts "making 2 events"
-event1 = Event.new(date: Time.new(2021), completed: true)
+event1 = Event.new(date: Time.new(2021))
 event1.partner = partner1
 event1.inspo = inspo1
 event1.save!
 
-event2 = Event.new(date: Time.new(2023), location: "Montreal")
+event2 = Event.new(date: Time.new(2023))
 event2.partner = partner2
 event2.inspo = inspo2
 event2.save!
