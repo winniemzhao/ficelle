@@ -1,14 +1,14 @@
 class EventsController < ApplicationController
+  before_action :set_event, only: %i[show edit update destroy]
   def new
     @event = Event.new
   end
 
   def uncompleted_events
-    @events = Event.all
+    @events = Event.where.not(status: :completed)
   end
 
   def show
-    @event = Event.find(params[:id])
   end
 
   def create
@@ -21,17 +21,14 @@ class EventsController < ApplicationController
   end
 
   def edit
-    @event = Event.find(params[:id])
   end
 
   def update
-    @event = Event.find(params[:id])
     @event.update(event_params)
     redirect_to dashboard_path
   end
 
   def destroy
-    @event = Event.find(params[:id])
     @event.destroy
     redirect_to dashboard_path
   end
@@ -43,9 +40,14 @@ class EventsController < ApplicationController
   end
 
   def completed_events
+    @events = Event.where(status: :completed)
   end
 
   private
+
+  def set_event
+    @event = Event.find(params[:id])
+  end
 
   def event_params
     params.require(:event).permit(:name, :date)
