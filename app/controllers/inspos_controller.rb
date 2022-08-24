@@ -6,8 +6,4 @@ class InsposController < ApplicationController
   def edit
     @inspo = Inspo.find(params[:id])
   end
-
-  def update
-
-  end
 end
