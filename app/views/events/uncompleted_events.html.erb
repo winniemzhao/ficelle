@@ -1,6 +1,7 @@
+<div class="banner">
+  <h1>Good Evening, <% current_user.name %></h1>
+</div>
 <div class="wrapper">
-  <h1>Uncompleted events / Dashboard</h1>
-
   <ul>
     <% @events.each do |event| %>
       <%= render "shared/event-card", event: event %>
