@@ -6,4 +6,6 @@ class Inspo < ApplicationRecord
   validates :genre, inclusion: { in: %w(date gift text), message: "%{value} must be one and only one of 'date', 'gift', and 'text'" }
 
   acts_as_favoritable
+
+  has_one_attached :photo
 end
