@@ -17,12 +17,16 @@ Inspo.destroy_all
 Partner.destroy_all
 User.destroy_all
 
-puts "making two users"
+puts "making 3 users"
 user1 = User.new(email: "a@gmail.com", password: "123456", name: "John", phone_number: "1234567890", location: "Montreal")
 user1.photo.attach(io: URI.open("https://www.computerhope.com/jargon/g/guest-user.jpg"), filename: "user1.jpg", content_type: "image/jpg")
 user1.save!
 
 user2 = User.create!(email: "b@gmail.com", password: "123456", name: "Michael", phone_number: "(514) 458-9946", location: "Toronto")
+
+user3 = User.new(email: "c@gmail.com", password: "123456", name: "Marc", phone_number: "(514) 438-2355", location: "Montreal")
+user3.photo.attach(io: URI.open("https://www.computerhope.com/jargon/g/guest-user.jpg"), filename: "user3.jpg", content_type: "image/jpg")
+user3.save!
 
 puts "making 2 partners"
 partner1 = Partner.new(name: "Gillian", birthday: Date.new(1980,01,01), phone_number: "1234567", email: "c@gmail.com", location: "Montreal")
