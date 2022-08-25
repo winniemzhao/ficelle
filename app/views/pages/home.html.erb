@@ -1,5 +1,23 @@
-<h1>ficelle</h1>
-<p>🧡 Deceiving your partner since <%= current_user && current_user.partner ? current_user.partner.created_at.strftime('%a %B %e, %Y') : 2022 %> 🧡</p>
 
-<%= render "shared/avatar" %>
-<%= render "shared/button" %>
+
+<div class="landing">
+
+  <div class="title">
+    <h1>ficelle</h1>
+    <h6>show your love, without lifting a finger</h6>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <%# add logo %>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <%= link_to "Get started", new_user_registration_path, class: "btn-flat" %>
+  <p class="login">Already have an account? <%= link_to "Log in", user_session_path %></p>
+
+</div>
