@@ -6,13 +6,18 @@
 }
 
 .keyword-card {
-  background-color: $tangerine;
+  background-color: $violet;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 93px;
   border-radius: 16px;
   position: relative;
+}
+
+.keyword-card h6 {
+  color: $white;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
 .keyword-card p {
@@ -22,4 +27,8 @@
   font-size: 16px;
   color: $white;
   text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.keyword-outline {
+  outline: 5px solid $tangerine;
 }
