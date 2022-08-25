@@ -6,11 +6,17 @@
    border-radius: 16px;
  }
 
-.btn-flat:hover {
-  border: 1px solid $green;
+.btn-flat:hover, .btn-flat:focus {
+  outline: 2px solid $green;
   color: $green;
   background-color: $white;
  }
+
+.btn-flat:active {
+  color: $white;
+  background-color: $green;
+  outline: 0;
+}
 
 // .btn-flat {
 //   color: white;

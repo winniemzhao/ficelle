@@ -1,6 +1,12 @@
-<% @inspos.each do |inspo| %>
-  <%= inspo.photo.attached? ? cl_image_tag(inspo.photo.key, width: 400, height: 300, crop: :fill) : cl_image_tag("wtu1z51wksknvgrbgbie", width: 400, height: 300, crop: :fill) %>
-  <%= inspo.name %>
-  <%= inspo.genre %>
+<div class="wrapper">
+  <%# add button to go back to previous page %>
+  <h6>Select potential events</h6>
+
+  <% @inspos.each do |inspo| %>
+    <%= render "shared/inspo-card", inspo: inspo %>
+  <% end %>
   <%= link_to "like", toggle_favorite_inspo_path(inspo),  data: {turbo_method: :post}, class:'btn-flat' %>
-<% end %>
+  <%# add counter for how many cards %>
+  <%# add skip button %>
+</div>
+

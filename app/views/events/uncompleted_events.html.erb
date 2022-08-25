@@ -4,8 +4,13 @@
 <div class="wrapper">
   <ul>
     <% @events.each do |event| %>
+      <%# if statement for status, create partial for each card --> if event.pending? %>
       <%= render "shared/event-card", event: event %>
     <% end %>
   </ul>
+
+<div style="position: absolute; right: 0px; bottom: 60px;">
+  <%= button_to("Log Out", destroy_user_session_path, method: :delete, class: "btn btn-outline-light") %>
+</div>
 
 </div>
