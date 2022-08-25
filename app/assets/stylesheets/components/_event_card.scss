@@ -6,13 +6,17 @@
   margin-bottom: 16px;
 }
 
+.pending-event {
+  background-color: rgba($tangerine, 0.2);
+}
+
 .event-card-content {
   display: flex;
   align-items: center;
 }
 
 .event-card-content > p:last-of-type {
-  font-size: 24px;
+  font-size: 16px;
 }
 
 .event-card-info {
