@@ -1,16 +1,17 @@
 <h1><%= @inspo.name %></h1>
+
 <%= simple_form_for [@event] do |f| %>
-<%= f.input :date %>
-<%= f.input :status, collection: Event.statuses.keys %>
-<% if @event.inspo.genre == "text" %>
+  <%= f.input :date %>
+  <%= f.hidden_field :status, :value => Event.statuses.key(1) %>
+  <% if @event.inspo.genre == "text" %>
     <%= f.input :content%>
   <% end %>
-<%= f.submit "Confirm Event", class: "btn btn-primary" %>
-<br>
-<%= link_to "delete event",
-dashboard_path,
-data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-%>
+  <%= f.submit "Confirm Event", class: "btn btn-primary" %>
+  <br>
+  <%= link_to "delete event",
+  dashboard_path,
+  data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
 <% end %>
 <br>
 <%= link_to "Go Back to Dashboard", dashboard_path  %>
