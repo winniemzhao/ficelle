@@ -28,15 +28,11 @@ user3 = User.new(email: "c@gmail.com", password: "123456", name: "Marc", phone_n
 user3.photo.attach(io: URI.open("https://www.computerhope.com/jargon/g/guest-user.jpg"), filename: "user3.jpg", content_type: "image/jpg")
 user3.save!
 
-puts "making 2 partners"
+puts "making 1 partner"
 partner1 = Partner.new(name: "Gillian", birthday: Date.new(1980,01,01), phone_number: "1234567", email: "c@gmail.com", location: "Montreal")
 partner1.photo.attach(io: URI.open("https://corporate.zalando.com/sites/default/files/styles/fullimage_extra_big/public/media/Zalando%20SE_brand%20partner_teaser%20image.jpg"), filename: "partner1.jpg", content_type: "image/jpg")
 partner1.user = user1
 partner1.save!
-
-partner2 = Partner.new(name: "April", birthday: Date.new(1990,01,01), phone_number: "#######", email: "d@gmail.com", location: "Montréal")
-partner2.user = user2
-partner2.save!
 
 puts "making ingenious inspos"
 inspo1 = Inspo.new(name: "Yayoi Kusama art exhibit", genre: "date", location: "Centre PHI, 315 Saint-Paul St W", content: "Yayoi Kusama Exhibit at Centre PHI", cost: 40.0)

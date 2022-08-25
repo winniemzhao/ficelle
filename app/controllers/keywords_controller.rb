@@ -1,6 +1,6 @@
 class KeywordsController < ApplicationController
   def index
     @partner = current_user.partner
-    @keywords = @partner.keywords.all
+    @keywords = Keyword.all
   end
 end
