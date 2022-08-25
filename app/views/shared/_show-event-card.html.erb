@@ -1,4 +1,4 @@
-<div class="event-card">
+<div class="event-card d-none" data-edit-event-target="show">
   <div class="event-card-content">
     <% if event.pending? %>
       <p class="event-icon color-red">
@@ -14,7 +14,16 @@
       </p>
     <% end %>
     <div class="event-card-info">
-      <h6><%= event.inspo.name %></h6>
+      <h6>
+        <%= event.inspo.name %>
+        <% if event.inspo.genre == "date" %>
+          <i class="fa-solid fa-people-pulling"></i>
+        <% elsif event.inspo.genre == "gift" %>
+          <i class="fa-solid fa-gift"></i>
+        <% elsif event.inspo.genre == "text" %>
+          <i class="fa-solid fa-people-pulling"></i>
+        <% end %>
+      </h6>
       <p>
         <% if event.pending? %>
           Pending confirmation
@@ -25,7 +34,7 @@
         <% end %>
       </p>
     </div>
-    <p><%= link_to ('<i class="fa-solid fa-xmark"></i>').html_safe, dashboard_path, class: "dark-link" %></p>
+    <p data-action="click->edit-event#hideShowConfirmed" data-action="click->edit-event#hideShowCompleted"><i class="fa-solid fa-xmark"></i></p>
   </div>
   <div class="event-description">
     <p>Content: <%= event.inspo.content %></p>

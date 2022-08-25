@@ -10,14 +10,18 @@
       <%= link_to "Create a partner profile", new_partner_path, class: "btn-flat mt-3" %>
     <% end %>
 </div>
-  <ul>
+<div class="wrapper">
+  <ul data-controller="edit-event">
     <% @events.each do |event| %>
       <% if event.pending? %>
         <%= render "shared/event-card-pending", event: event %>
+        <%= render "shared/edit-event-card", event: event %>
       <% elsif event.confirmed? %>
         <%= render "shared/event-card-completed", event: event %>
+        <%= render "shared/show-event-card", event: event %>
       <% elsif event.completed? %>
         <%= render "shared/event-card-confirmed", event: event %>
+        <%= render "shared/show-event-card", event: event %>
       <% end %>
     <% end %>
   </ul>
