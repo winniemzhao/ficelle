@@ -14,5 +14,9 @@ Rails.application.routes.draw do
   get '/events/:id', to: 'events#update_success'
   get '/completed_events', to: 'events#completed_events', as: :history
   get '/us/', to: 'users#us', as: :us
-  resources :inspos, only: %i[index edit update]
+  resources :inspos, only: %i[index edit update] do
+    member do
+      post 'toggle_favorite', to: "inspos#toggle_favorite"
+    end
+  end
 end

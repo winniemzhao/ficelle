@@ -6,7 +6,5 @@ class Partner < ApplicationRecord
   validates :name, presence: true
   validates :name, uniqueness: true
 
-  acts_as_favoritor
-
   has_one_attached :photo
 end
