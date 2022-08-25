@@ -1,5 +1,14 @@
 <div class="banner">
-  <h1>Good Evening, <% current_user.name %></h1>
+  <h1>Good Evening, <%= current_user.name %></h1>
+</div>
+<div class="landing">
+
+  <div class="title">
+    <% if current_user.partner == nil %>
+      <h2>You don't have <br> a partner yet.</h2>
+  </div>
+      <%= link_to "Create a partner profile", new_partner_path, class: "btn-flat mt-3" %>
+    <% end %>
 </div>
 <div class="wrapper">
   <ul data-controller="edit-event">
