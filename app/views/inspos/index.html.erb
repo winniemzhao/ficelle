@@ -1,5 +1,5 @@
 <% @inspos.each do |inspo| %>
-  <%= inspo.photo.attached? ? cl_image_tag(inspo.photo.key, width: 400, height: 300, crop: :fill) : cl_image_tag("wtu1z51wksknvgrbgbie", width: 400, height: 300, crop: :fill) %>
+  <%= inspo.photo.attached? ? cl_image_tag(inspo.photo.key, width: 400, height: 300, crop: :fill) : cl_image_tag("../cld-sample", width: 400, height: 300, crop: :fill) %>
   <%= inspo.name %>
   <%= inspo.genre %>
 <% end %>
