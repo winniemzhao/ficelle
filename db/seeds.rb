@@ -77,7 +77,7 @@ keyword4.photo.attach(io: URI.open("https://images.unsplash.com/photo-1551632811
 keyword4.save!
 
 keyword5 = Keyword.new(name: "wine")
-keyword5.photo.attach(io: URI.open("https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"), filename: "wine.jpg", content_type: "image/jpg")
+keyword5.photo.attach(io: URI.open("https://images.unsplash.com/photo-1561461056-77634126673a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80"), filename: "wine.jpg", content_type: "image/jpg")
 keyword5.save!
 
 keyword6 = Keyword.new(name: "art")
@@ -108,21 +108,36 @@ keyword12 = Keyword.new(name: "meditation")
 keyword12.photo.attach(io: URI.open("https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1399&q=80"), filename: "meditation.jpg", content_type: "image/jpg")
 keyword12.save!
 
-puts "making 2 events"
+puts "making events"
 event1 = Event.new(date: Time.new(2021), content: "text")
 event1.partner = partner1
 event1.inspo = inspo1
 event1.save!
 
 event2 = Event.new(date: Time.new(2023), content: "text")
-event2.partner = partner2
+event2.partner = partner1
 event2.inspo = inspo2
 event2.save!
 
-event3 = Event.new(date: Time.new(2023), content: "text")
-event3.partner = partner2
-event3.inspo = inspo5
+event3 = Event.new(date: Time.new(2023), content: inspo3.content)
+event3.partner = partner1
+event3.inspo = inspo3
 event3.save!
+
+event4 = Event.new(date: Time.new(2023), content: "text")
+event4.partner = partner1
+event4.inspo = inspo4
+event4.save!
+
+event5 = Event.new(date: Time.new(2023), content: "text")
+event5.partner = partner1
+event5.inspo = inspo5
+event5.save!
+
+event6 = Event.new(date: Time.new(2023), content: inspo6.content)
+event6.partner = partner1
+event6.inspo = inspo6
+event6.save!
 
 puts "making 2 preferences just in case"
 preference1 = Preference.new()
