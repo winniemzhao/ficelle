@@ -40,7 +40,7 @@ inspo1.photo.attach(io: URI.open("https://images.unsplash.com/photo-149871206738
 inspo1.save!
 
 inspo2 = Inspo.new(name: "Snorkeling in Peru", genre: "gift", location: "Peru", content: "Snorkeling trip to Peru", cost: 500.0)
-inspo2.photo.attach(io: URI.open("https://images.unsplash.com/photo-1473455811944-fdd1b0f282f3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80"), filename: "inspo2.avif", content_type: "image/avif")
+inspo2.photo.attach(io: URI.open("https://hips.hearstapps.com/hmg-prod/images/wh-sexting-1603812586.png?crop=0.49988000959923207xw:1xh;center,top&resize=1200:*"), filename: "inspo2.png", content_type: "image/png")
 inspo2.save!
 
 puts "eventing some keywords"
