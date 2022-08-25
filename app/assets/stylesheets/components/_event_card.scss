@@ -31,3 +31,13 @@
 .background-tangerine {
   background-color: rgba($tangerine, 0.15);
 }
+
+.event-description {
+  text-align: center;
+  margin: 16px 0;
+}
+
+.event-description p {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
