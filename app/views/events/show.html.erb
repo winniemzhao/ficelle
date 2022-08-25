@@ -3,7 +3,19 @@
 
     <div class="event-card">
       <div class="event-card-content">
-        <p class="event-icon color-orange"><i class="fa-solid fa-calendar-check"></i></p>
+        <% if @event.pending? %>
+          <p class="event-icon color-red">
+            <i class="fa-solid fa-circle-exclamation"></i>
+          </p>
+        <% elsif @event.confirmed? %>
+          <p class="event-icon color-orange">
+            <i class="fa-solid fa-calendar-check"></i>
+          </p>
+        <% elsif @event.completed? %>
+          <p class="event-icon color-blue">
+            <i class="fa-regular fa-thumbs-up"></i>
+          </p>
+        <% end %>
         <div class="event-card-info">
           <h6><%= @event.inspo.name %></h6>
           <p>
