@@ -40,7 +40,7 @@ inspo1.photo.attach(io: URI.open("https://phi.ca/uploads/_1920xAUTO_crop_center-
 inspo1.save!
 
 inspo2 = Inspo.new(name: "Louis Vuitton bag", genre: "gift", content: "Pochette Metis bag", cost: 2590.0)
-inspo2.photo.attach(io: URI.open("https://senmix.com/pictures/product/02/98/pochette-metis-monogram-m44875_1.jpg"), filename: "inspo8.jpg", content_type: "image/jpg")
+inspo2.photo.attach(io: URI.open("https://senmix.com/pictures/product/02/98/pochette-metis-monogram-m44875_1.jpg"), filename: "inspo2.jpg", content_type: "image/jpg")
 inspo2.save!
 
 inspo3 = Inspo.new(name: "Warm coffee with lovely cats", genre: "date", location: "Cafe Chat l'Heureux, 172 Duluth East", content: "Snorkeling trip to Peru", cost: 500.0)
@@ -64,7 +64,7 @@ inspo7.photo.attach(io: URI.open("https://pyxis.nymag.com/v1/imgs/e8e/c68/83930d
 inspo7.save!
 
 inspo8 = Inspo.new(name: "Steamy Text 💬", genre: "text", content: "🛏️🚇😮🍾😵")
-inspo8.photo.attach(io: URI.open("https://hips.hearstapps.com/hmg-prod/images/wh-sexting-1603812586.png?crop=0.49988000959923207xw:1xh;center,top&resize=1200:*"), filename: "inspo2.png", content_type: "image/png")
+inspo8.photo.attach(io: URI.open("https://hips.hearstapps.com/hmg-prod/images/wh-sexting-1603812586.png?crop=0.49988000959923207xw:1xh;center,top&resize=1200:*"), filename: "inspo8.png", content_type: "image/png")
 inspo8.save!
 
 puts "inventing some keywords"
