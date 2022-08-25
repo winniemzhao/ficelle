@@ -1,10 +1,11 @@
 <div class="wrapper">
   <%# add button to go back to previous page %>
   <h6>Select potential events</h6>
-
-  <% @inspos.each do |inspo| %>
-    <%= render "shared/inspo-card", inspo: inspo %>
-  <% end %>
-  <%# add counter for how many cards %>
-  <%# add skip button %>
+  <div data-controller="swipe-inspos">
+    <% @inspos.each_with_index do |inspo, index| %>
+      <%= render "shared/inspo-card", inspo: inspo, index: index %>
+    <% end %>
+    <%# add counter for how many cards %>
+    <%# add skip button %>
+  </div>
 </div>
