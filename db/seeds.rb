@@ -19,7 +19,7 @@ User.destroy_all
 
 puts "making two users"
 user1 = User.new(email: "a@gmail.com", password: "123456", name: "John", phone_number: "1234567890", location: "Montreal")
-user1.photo.attach(io: URI.open("https://www.computerhope.com/jargon/g/guest-user.jpg"), filename: "user.jpg", content_type: "image/jpg")
+user1.photo.attach(io: URI.open("https://www.computerhope.com/jargon/g/guest-user.jpg"), filename: "user1.jpg", content_type: "image/jpg")
 user1.save!
 
 user2 = User.create!(email: "b@gmail.com", password: "123456", name: "Michael", phone_number: "(514) 458-9946", location: "Toronto")
@@ -40,15 +40,15 @@ inspo1.photo.attach(io: URI.open("https://phi.ca/uploads/_1920xAUTO_crop_center-
 inspo1.save!
 
 inspo2 = Inspo.new(name: "Steamy Text 💬", genre: "text", content: "🛏️🚇😮🍾😵")
-inspo2.photo.attach(io: URI.open("https://pyxis.nymag.com/v1/imgs/e8e/c68/83930d962edd0049116885bd6033c8492e.2x.rhorizontal.w600.jpg"), filename: "inspo4.jpg", content_type: "image/avif")
+inspo2.photo.attach(io: URI.open("https://hips.hearstapps.com/hmg-prod/images/wh-sexting-1603812586.png?crop=0.49988000959923207xw:1xh;center,top&resize=1200:*"), filename: "inspo2.png", content_type: "image/png")
 inspo2.save!
 
 inspo3 = Inspo.new(name: "Warm coffee with lovely cats", genre: "date", location: "Cafe Chat l'Heureux, 172 Duluth East", content: "Snorkeling trip to Peru", cost: 500.0)
-inspo3.photo.attach(io: URI.open("https://cafechatlheureux.com/content/images/cats/Milady.JPG"), filename: "inspo2.jpg", content_type: "image/jpg")
+inspo3.photo.attach(io: URI.open("https://cafechatlheureux.com/content/images/cats/Milady.JPG"), filename: "inspo3.jpg", content_type: "image/jpg")
 inspo3.save!
 
 inspo4 = Inspo.new(name: "Good Morning Text 💬", genre: "text", content: "good mornin sunshiiine ❤️ ❤️")
-inspo4.photo.attach(io: URI.open("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/sunrise-quotes-21-1586892331.jpg"), filename: "inspo3.jpg", content_type: "image/jpg")
+inspo4.photo.attach(io: URI.open("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/sunrise-quotes-21-1586892331.jpg"), filename: "inspo4.jpg", content_type: "image/jpg")
 inspo4.save!
 
 inspo5 = Inspo.new(name: "Mojito & Margarita", genre: "date", location: "3127 Rue Masson, Montreal, Quebec", content: "Amazing Mexican & Cuban restaurant in the Vieux Rosemont", cost: 75.0)
@@ -60,7 +60,7 @@ inspo6.photo.attach(io: URI.open("https://i.pinimg.com/originals/e2/1e/c3/e21ec3
 inspo6.save!
 
 inspo7 = Inspo.new(name: "Bouquet of flowers", genre: "gift", content: "A mix of multicolor standard and garden roses", cost: 55.0)
-inspo7.photo.attach(io: URI.open("https://pyxis.nymag.com/v1/imgs/e8e/c68/83930d962edd0049116885bd6033c8492e.2x.rhorizontal.w600.jpg"), filename: "inspo4.jpg", content_type: "image/avif")
+inspo7.photo.attach(io: URI.open("https://pyxis.nymag.com/v1/imgs/e8e/c68/83930d962edd0049116885bd6033c8492e.2x.rhorizontal.w600.jpg"), filename: "inspo7.jpg", content_type: "image/jpg")
 inspo7.save!
 
 puts "inventing some keywords"
@@ -108,35 +108,35 @@ keyword12 = Keyword.new(name: "Meditation")
 keyword12.photo.attach(io: URI.open("https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1399&q=80"), filename: "meditation.jpg", content_type: "image/jpg")
 keyword12.save!
 
-puts "making events"
-event1 = Event.new(date: Time.new(2021), content: "text")
-event1.partner = partner1
-event1.inspo = inspo1
-event1.save!
+# puts "making events"
+# event1 = Event.new(date: Time.new(2021), content: "text")
+# event1.partner = partner1
+# event1.inspo = inspo1
+# event1.save!
 
-event2 = Event.new(date: Time.new(2023), content: inspo2.content)
-event2.partner = partner1
-event2.inspo = inspo2
-event2.save!
+# event2 = Event.new(date: Time.new(2023), content: inspo2.content)
+# event2.partner = partner1
+# event2.inspo = inspo2
+# event2.save!
 
-event3 = Event.new(date: Time.new(2023), content: "text")
-event3.partner = partner1
-event3.inspo = inspo3
-event3.save!
+# event3 = Event.new(date: Time.new(2023), content: "text")
+# event3.partner = partner1
+# event3.inspo = inspo3
+# event3.save!
 
-event4 = Event.new(date: Time.new(2023), content: inspo4.content)
-event4.partner = partner1
-event4.inspo = inspo4
-event4.save!
+# event4 = Event.new(date: Time.new(2023), content: inspo4.content)
+# event4.partner = partner1
+# event4.inspo = inspo4
+# event4.save!
 
-event5 = Event.new(date: Time.new(2023), content: "text")
-event5.partner = partner1
-event5.inspo = inspo5
-event5.save!
+# event5 = Event.new(date: Time.new(2023), content: "text")
+# event5.partner = partner1
+# event5.inspo = inspo5
+# event5.save!
 
-event6 = Event.new(date: Time.new(2023), content: inspo6.content)
-event6.partner = partner1
-event6.inspo = inspo6
-event6.save!
+# event6 = Event.new(date: Time.new(2023), content: inspo6.content)
+# event6.partner = partner1
+# event6.inspo = inspo6
+# event6.save!
 
 puts "all done"
