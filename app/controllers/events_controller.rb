@@ -21,6 +21,7 @@ class EventsController < ApplicationController
   end
 
   def edit
+    @inspo = @event.inspo
   end
 
   def update

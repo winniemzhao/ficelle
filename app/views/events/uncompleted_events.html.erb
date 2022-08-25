@@ -4,6 +4,7 @@
 <div class="wrapper">
   <ul>
     <% @events.each do |event| %>
+      <%# if statement for status, create partial for each card --> if event.pending? %>
       <%= render "shared/event-card", event: event %>
     <% end %>
   </ul>
