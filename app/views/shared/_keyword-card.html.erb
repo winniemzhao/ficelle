@@ -1,7 +1,7 @@
 <% if keyword.photo.attached? %>
-  <div class="keyword-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('<%= cl_image_path keyword.photo.key, height: 100, crop: :fill %>')" data-controller="keywords" data-action="click->keywords#toggle">
+  <div class="keyword-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('<%= cl_image_path keyword.photo.key, height: 100, crop: :fill %>')" data-controller="keywords" data-action="click->keywords#toggle" data-keywords-target="cards">
 <% else %>
-  <div class="keyword-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('<%= cl_image_path "../wtu1z51wksknvgrbgbie", width: 400, height: 300, crop: :fill %>')" data-controller="keywords" data-action="click->keywords#toggle">
+  <div class="keyword-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('<%= cl_image_path "../wtu1z51wksknvgrbgbie", width: 400, height: 300, crop: :fill %>')" data-controller="keywords" data-action="click->keywords#toggle" data-keywords-target="cards">
 <% end %>
   <h6><%= keyword.name %></h6>
 
