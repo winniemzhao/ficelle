@@ -39,8 +39,8 @@ inspo1 = Inspo.new(name: "Yayoi Kusama art exhibit", genre: "date", location: "C
 inspo1.photo.attach(io: URI.open("https://phi.ca/uploads/_1920xAUTO_crop_center-center_80_none/yayoi-kusama-fondation.jpg"), filename: "inspo1.jpg", content_type: "image/jpg")
 inspo1.save!
 
-inspo2 = Inspo.new(name: "Steamy Text 💬", genre: "text", content: "🛏️🚇😮🍾😵")
-inspo2.photo.attach(io: URI.open("https://hips.hearstapps.com/hmg-prod/images/wh-sexting-1603812586.png?crop=0.49988000959923207xw:1xh;center,top&resize=1200:*"), filename: "inspo2.png", content_type: "image/png")
+inspo2 = Inspo.new(name: "Louis Vuitton bag", genre: "gift", content: "Pochette Metis bag", cost: 2590.0)
+inspo2.photo.attach(io: URI.open("https://senmix.com/pictures/product/02/98/pochette-metis-monogram-m44875_1.jpg"), filename: "inspo2.jpg", content_type: "image/jpg")
 inspo2.save!
 
 inspo3 = Inspo.new(name: "Warm coffee with lovely cats", genre: "date", location: "Cafe Chat l'Heureux, 172 Duluth East", content: "Snorkeling trip to Peru", cost: 500.0)
@@ -63,7 +63,15 @@ inspo7 = Inspo.new(name: "Bouquet of flowers", genre: "gift", content: "A mix of
 inspo7.photo.attach(io: URI.open("https://pyxis.nymag.com/v1/imgs/e8e/c68/83930d962edd0049116885bd6033c8492e.2x.rhorizontal.w600.jpg"), filename: "inspo7.jpg", content_type: "image/jpg")
 inspo7.save!
 
+inspo8 = Inspo.new(name: "Steamy Text 💬", genre: "text", content: "🛏️🚇😮🍾😵")
+inspo8.photo.attach(io: URI.open("https://hips.hearstapps.com/hmg-prod/images/wh-sexting-1603812586.png?crop=0.49988000959923207xw:1xh;center,top&resize=1200:*"), filename: "inspo8.png", content_type: "image/png")
+inspo8.save!
+
 puts "inventing some keywords"
+keyword1 = Keyword.new(name: "Movies")
+keyword1.photo.attach(io: URI.open("https://images.unsplash.com/photo-1620177088260-a9150572baf4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2352&q=80"), filename: "movies.jpg", content_type: "image/jpg")
+keyword1.save!
+
 keyword2 = Keyword.new(name: "Flowers")
 keyword2.photo.attach(io: URI.open("https://m.media-amazon.com/images/I/71xK85Lm0rL._AC_SL1500_.jpg"), filename: "flowers.jpg", content_type: "image/jpg")
 keyword2.save!
