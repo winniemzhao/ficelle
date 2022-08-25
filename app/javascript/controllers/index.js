@@ -9,3 +9,7 @@ application.register("hello", HelloController)
 
 import SwipeInsposController from "./swipe_inspos_controller"
 application.register("swipe-inspos", SwipeInsposController)
+
+import KeywordsController from "./keywords_controller"
+application.register("keywords", KeywordsController)
+
