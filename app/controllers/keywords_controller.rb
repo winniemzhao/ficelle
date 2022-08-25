@@ -1,6 +1,6 @@
 class KeywordsController < ApplicationController
   def index
-    @partner = Partner.find(params[:partner_id])
+    @partner = current_user.partner
     @keywords = @partner.keywords.all
   end
 end
