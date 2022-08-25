@@ -1,0 +1,21 @@
+<%= link_to (event_path(event)) do %>
+  <div class="event-card">
+    <div class="event-card-content">
+      <p class="event-icon color-orange"><i class="fa-solid fa-calendar-check"></i></p>
+    <div class="event-card-info">
+        <h6>
+          <%= event.inspo.name %>
+          <% if event.inspo.genre == "date" %>
+            <i class="fa-solid fa-people-pulling"></i>
+          <% elsif event.inspo.genre == "gift" %>
+            <i class="fa-solid fa-gift"></i>
+          <% elsif event.inspo.genre == "text" %>
+            <i class="fa-solid fa-people-pulling"></i>
+          <% end %>
+        </h6>
+        <p>Scheduled</p>
+      </div>
+      <p><i class="fa-solid fa-ellipsis"></i></p>
+    </div>
+  </div>
+<% end %>
