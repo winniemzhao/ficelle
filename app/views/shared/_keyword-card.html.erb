@@ -2,10 +2,14 @@
   <h6><%= keyword.name %></h6>
   <p>
     <i class="fa-solid fa-circle-plus"></i>
-    <%#= if current_user.partner.preferences.find(keyword) %>
+
+    <%#= if current_user.partner.preferences.where(keyword) %>
       <%# <i class="fa-solid fa-circle-check"></i> %>
     <%# else %>
       <%# <i class="fa-solid fa-circle-plus"></i> %>
     <%# end %>
+  </p>
+  <p>
+    <%= current_user.partner.preferences %>
   </p>
 </div>
