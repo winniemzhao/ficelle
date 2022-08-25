@@ -1,3 +1,5 @@
 <h1>User: <%= current_user.name%></h1>
 <h1>Partner: <%= current_user.partner.name%></h1>
 <%= link_to "Edit Partner Profile", edit_partner_path(current_user.partner) %>
+
+<p>🧡 Deceiving your partner since <%= current_user && current_user.partner ? current_user.partner.created_at.strftime('%a %B %e, %Y') : 2022 %> 🧡</p>
