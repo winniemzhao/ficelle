@@ -1,9 +1,9 @@
-<div class="navbar-ficelle">
+<div class="navbar-ficelle" data-controller="navbar-active">
   <ul>
     <% if user_signed_in? %>
-      <li class="nav-item">
+      <li class="nav-item" data-action="click->navbar-active#iconActive">
         <%= link_to(dashboard_path) do %>
-          <p class="nav-icon nav-active"><i class="fa-solid fa-house"></i></p>
+          <p class="nav-icon"><i class="fa-solid fa-house" data-navbar-active-target="icon"></i></p>
           <p class="nav-info">dashboard</p>
         <% end %>
       </li>
