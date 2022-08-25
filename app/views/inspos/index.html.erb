@@ -2,10 +2,7 @@
   <%# add button to go back to previous page %>
   <h6>Select potential events</h6>
 
-  <p><%= @inspos.first.name %></p>
-  <% render "shared/inspo-card", inspo: @inspos.first %>
   <% @inspos.each do |inspo| %>
-    <%#= inspo.photo.attached? ? cl_image_tag(inspo.photo.key, width: 400, height: 300, crop: :fill) : cl_image_tag("wtu1z51wksknvgrbgbie", width: 400, height: 300, crop: :fill) %>
     <%= render "shared/inspo-card", inspo: inspo %>
   <% end %>
 
