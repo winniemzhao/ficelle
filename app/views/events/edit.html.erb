@@ -1,10 +1,10 @@
 <h1><%= @inspo.name %></h1>
 <%= simple_form_for [@event] do |f| %>
 <%= f.input :date %>
-<%= f.input :status, collection: Event.statuses.keys %>
+<%= f.hidden_field :status, :value => Event.statuses.key(1) %>
 <% if @event.inspo.genre == "text" %>
-    <%= f.input :content%>
-  <% end %>
+  <%= f.input :content%>
+<% end %>
 <%= f.submit "Confirm Event", class: "btn btn-primary" %>
 <br>
 <%= link_to "delete event",
