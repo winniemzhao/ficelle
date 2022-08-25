@@ -63,7 +63,7 @@ inspo7 = Inspo.new(name: "Bouquet of flowers", genre: "gift", content: "A mix of
 inspo7.photo.attach(io: URI.open("https://pyxis.nymag.com/v1/imgs/e8e/c68/83930d962edd0049116885bd6033c8492e.2x.rhorizontal.w600.jpg"), filename: "inspo4.jpg", content_type: "image/avif")
 inspo7.save!
 
-puts "eventing some keywords"
+puts "inventing some keywords"
 keyword2 = Keyword.new(name: "Flowers")
 keyword2.photo.attach(io: URI.open("https://m.media-amazon.com/images/I/71xK85Lm0rL._AC_SL1500_.jpg"), filename: "flowers.jpg", content_type: "image/jpg")
 keyword2.save!
@@ -138,27 +138,5 @@ event6 = Event.new(date: Time.new(2023), content: inspo6.content)
 event6.partner = partner1
 event6.inspo = inspo6
 event6.save!
-
-puts "making 2 preferences just in case"
-preference1 = Preference.new()
-preference1.partner = partner1
-preference1.keyword = keyword2
-preference1.save!
-
-preference2 = Preference.new()
-preference2.partner = partner2
-preference2.keyword = keyword3
-preference2.save!
-
-puts "making 2 inspo_keywords as well, just in case"
-inspo_keyword1 = InspoKeyword.new()
-inspo_keyword1.inspo = inspo1
-inspo_keyword1.keyword = keyword2
-inspo_keyword1.save!
-
-inspo_keyword2 = InspoKeyword.new()
-inspo_keyword2.inspo = inspo2
-inspo_keyword2.keyword = keyword3
-inspo_keyword2.save!
 
 puts "all done"
