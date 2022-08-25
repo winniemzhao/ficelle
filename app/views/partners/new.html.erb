@@ -1,10 +1,17 @@
-<h1>New Partner Profile</h1>
-<%= simple_form_for [@partner] do |f| %>
-  <%= f.input :name %>
-  <%= f.input :email %>
-  <%= f.input :location %>
-  <%= f.input :birthday %>
-  <%= f.input :phone_number %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit "Create Partner", class: "btn btn-primary" %>
-<% end %>
+<div class="wrapper">
+  <div class="form-wrapper">
+    <h5>Create your partner's profile</h5>
+
+    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fzultimate.com%2Fwp-content%2Fuploads%2F2019%2F12%2Fdefault-profile.png&f=1&nofb=1" alt="avatar" class="avatar form-avatar">
+
+    <%= simple_form_for [@partner] do |f| %>
+      <%= f.input :name, placeholder: "Your partner's name" %>
+      <%= f.input :email, placeholder: "Your partner's email" %>
+      <%= f.input :location, placeholder: "Your partner's address" %>
+      <%= f.input :birthday, html5: true, placeholder: "Your partner's birthday" %>
+      <%= f.input :phone_number, placeholder: "Your partner's phone number" %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit "Create Partner", class: "btn btn-flat" %>
+    <% end %>
+  </div>
+</div>
