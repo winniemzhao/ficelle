@@ -5,8 +5,6 @@
   <% @inspos.each do |inspo| %>
     <%= render "shared/inspo-card", inspo: inspo %>
   <% end %>
-  <%= link_to "like", toggle_favorite_inspo_path(inspo),  data: {turbo_method: :post}, class:'btn-flat' %>
   <%# add counter for how many cards %>
   <%# add skip button %>
 </div>
-
