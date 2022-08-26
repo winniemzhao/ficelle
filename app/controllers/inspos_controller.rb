@@ -2,7 +2,7 @@ class InsposController < ApplicationController
   before_action :authenticate_user!, only: :toggle_favorite
 
   def index
-    @inspos = Inspo.all.sample(5)
+    @inspos = Inspo.all.first(5)
   end
 
   def toggle_favorite
