@@ -11,8 +11,8 @@ ul, li {
 
 body {
   position: relative;
-  padding-bottom: 100px;
   min-height: 100vh;
+  padding-bottom: 64px;
 }
 
 h1 {
@@ -46,6 +46,10 @@ p {
 a {
   text-decoration: none;
   color: $white;
+}
+
+.dark-link {
+  color: $violet;
 }
 
 .wrapper {

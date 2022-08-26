@@ -3,9 +3,23 @@
   height: 116px;
   overflow: hidden;
   padding: 16px 32px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
-.banner h1 {
+.banner h4 {
   color: $white;
-  font-size: 32px;
+}
+
+.banner h6 {
+  color: $white;
+  font-weight: 400;
+}
+
+.banner-margin {
+  margin-top: 148px;
 }

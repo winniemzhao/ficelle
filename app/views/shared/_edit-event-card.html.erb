@@ -1,0 +1,54 @@
+<div class="event-card pending-event d-none" data-edit-event-target="edit">
+  <div class="event-card-content">
+    <% if event.pending? %>
+      <p class="event-icon color-red">
+        <i class="fa-solid fa-circle-exclamation"></i>
+      </p>
+    <% elsif event.confirmed? %>
+      <p class="event-icon color-orange">
+        <i class="fa-solid fa-calendar-check"></i>
+      </p>
+    <% elsif event.completed? %>
+      <p class="event-icon color-blue">
+        <i class="fa-regular fa-thumbs-up"></i>
+      </p>
+    <% end %>
+    <div class="event-card-info">
+      <h6>
+        <%= event.inspo.name %>
+        <% if event.inspo.genre == "date" %>
+          <i class="fa-solid fa-people-pulling"></i>
+        <% elsif event.inspo.genre == "gift" %>
+          <i class="fa-solid fa-gift"></i>
+        <% elsif event.inspo.genre == "text" %>
+          <i class="fa-solid fa-people-pulling"></i>
+        <% end %>
+      </h6>
+      <p>
+        <% if event.pending? %>
+          Pending Confirmation
+        <% elsif event.confirmed? %>
+          Scheduled
+        <% elsif event.completed? %>
+          Completed
+        <% end %>
+      </p>
+    </div>
+    <p data-action="click->edit-event#hideEdit"><i class="fa-solid fa-xmark"></i></p>
+  </div>
+  <div class="event-description">
+    <%= simple_form_for [event] do |f| %>
+      <%= f.input :date, html5: true %>
+      <%= f.hidden_field :status, :value => Event.statuses.key(1) %>
+      <% if event.inspo.genre == "text" %>
+        <%= f.input :content%>
+      <% end %>
+      <%= f.submit "Confirm Event", class: "btn btn-flat" %>
+    <% end %>
+    <%= link_to "Delete Event",
+      dashboard_path,
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+      class: "dark-link below-button"
+    %>
+  </div>
+</div>
