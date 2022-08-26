@@ -9,7 +9,10 @@
 <div class="button d-flex justify-content-center">
 <%= link_to "Next", inspos_path, class: "btn-flat" %>
 </div>
-  <%# add link to 'skip' to loading page (to generate events) %>
+    <div class="back-skip">
+    <%= link_to ('<i class="fa-solid fa-circle-arrow-left"></i> Back').html_safe, new_partner_path, class: "dark-link" %>
+    <%= link_to ('Skip <i class="fa-solid fa-circle-arrow-right"></i>').html_safe, dashboard_path, class: "dark-link" %>
+  </div>
 </div>
 
 
