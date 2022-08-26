@@ -1,6 +1,7 @@
 <div class="wrapper">
   <h5>Select your partner's interests</h5>
-  <div class="keyword-cards">
+
+  <div class="keyword-cards" data-controller="keywords" data-keywords-target="partner_id" data-partner_id="<%= @partner.id %>">
     <% @keywords.each do |keyword| %>
       <%= render "shared/keyword-card", keyword: keyword %>
     <% end %>
