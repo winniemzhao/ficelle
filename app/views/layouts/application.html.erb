@@ -16,8 +16,17 @@
 
     <%= yield %>
     <%#= request.fullpath %>
-    <% if request.fullpath != "/" %>
-      <%= render "shared/navbar" %>
+    <% if current_user && current_user.partner != nil %>
+      <%= render "shared/navbar5" %>
+    <% end %>
+      <% if request.fullpath == "/dashboard" %>
+        <%= render "shared/navbar" %>
+      <% elsif request.fullpath == "/completed_events" %>
+        <%= render "shared/navbar2" %>
+      <% elsif request.fullpath == "/us" %>
+        <%= render "shared/navbar3" %>
+      <% elsif request.fullpath == "/inspos" %>
+        <%= render "shared/navbar4" %>
     <% end %>
   </body>
 </html>

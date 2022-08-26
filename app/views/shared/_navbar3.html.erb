@@ -3,7 +3,7 @@
     <% if user_signed_in? %>
       <li class="nav-item" data-action="click->navbar-active#iconActive">
         <%= link_to(dashboard_path) do %>
-          <p class="nav-icon"><i class="fa-solid fa-house my-nav" data-navbar-active-target="icon"></i></p>
+          <p class="nav-icon"><i class="fa-solid fa-house " data-navbar-active-target="icon"></i></p>
           <p class="nav-info">dashboard</p>
         <% end %>
       </li>
@@ -15,7 +15,7 @@
       </li>
       <li class="nav-item">
         <%= link_to(us_path) do %>
-          <p class="nav-icon"><i class="fa-solid fa-user-group"></i></p>
+          <p class="nav-icon"><i class="fa-solid fa-user-group my-nav"></i></p>
           <p class="nav-info">relationship</p>
         <% end %>
       </li>
