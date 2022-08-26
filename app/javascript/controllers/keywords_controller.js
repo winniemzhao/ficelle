@@ -4,15 +4,14 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["partner_id", "cards"]
   connect() {
-    console.log(this.partner_idTarget.getAttribute("data-partner_id"))
+    console.log('Hello!')
   }
 
   toggle(event) {
-    console.log(event.target.getAttribute("data-keyword_id"))
-    if (this.element.classList.contains("keyword-outline")) {
-      this.element.classList.remove("keyword-outline");
+    if (this.cardsTarget.classList.contains("keyword-outline")) {
+      this.cardsTarget.classList.remove("keyword-outline");
     } else {
-      this.element.classList.add("keyword-outline");
+      this.cardsTarget.classList.add("keyword-outline");
       fetch(`/partners/${this.partner_idTarget.getAttribute("data-partner_id")}/preferences`, {
         method: "POST",
         body: { keyword_id: event.target.getAttribute("data-keyword_id") }
