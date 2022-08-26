@@ -3,13 +3,13 @@ class PreferencesController < ApplicationController
   end
 
   def create
-    @partner = Partner.find(params[:partner_id])
-    @preference = Preference.new(preference_params)
-    @preference.partner = @partner
+    p params
+    @preference = Preference.new(keyword_id: params[:keyword_id].to_i)
+    @preference.partner = current_user.partner
 
     respond_to do |format|
       if @preference.save
-        format.html { redirect_to partner_keywords_path(@partner) }
+        format.html { redirect_to partner_keywords_path(current_user.partner) }
         format.json
       else
         format.html { render "keywords/index", status: 422 }
@@ -24,6 +24,6 @@ class PreferencesController < ApplicationController
   private
 
   def preference_params
-    params.require(:preference).permit(:keyword_id, :partner_id)
+    params.require(:preference).permit(:keyword_id)
   end
 end
