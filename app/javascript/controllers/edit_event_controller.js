@@ -25,19 +25,27 @@ export default class extends Controller {
     editCurrent.classList.remove("d-none")
   }
 
-  revealShowConfirmed() {
-    console.log("click to show confirmed")
-    this.confirmedTarget.classList.add("d-none")
-    this.showTarget.classList.remove("d-none")
+  revealShowConfirmed(event) {
+    // console.log("click to show confirmed")
+
+    const current = this.confirmedTargets.find( confirmed => event.target.id === confirmed.id)
+    const showCurrent = this.showTargets.find( show => event.target.id === show.id)
+
+    current.classList.add("d-none")
+    showCurrent.classList.remove("d-none")
   }
 
-  revealShowCompleted() {
+  revealShowCompleted(event) {
     console.log("click to show completed")
-    this.completedTarget.classList.add("d-none")
-    this.showTarget.classList.remove("d-none")
+
+    const current = this.completedTargets.find( completed => event.target.id === completed.id)
+    const showCurrent = this.showTargets.find( show => event.target.id === show.id)
+
+    current.classList.add("d-none")
+    showCurrent.classList.remove("d-none")
   }
 
-  hideEdit() {
+  hideEdit(event) {
     // console.log("click to hide edit")
 
     const current = this.pendingTargets.find( pending => event.target.id === pending.id)
@@ -47,15 +55,23 @@ export default class extends Controller {
     editCurrent.classList.add("d-none")
   }
 
-  hideShowConfirmed() {
+  hideShowConfirmed(event) {
     console.log("click to hide show confirmed")
-    this.confirmedTarget.classList.remove("d-none")
-    this.showTarget.classList.add("d-none")
+
+    const current = this.confirmedTargets.find( confirmed => event.target.id === confirmed.id)
+    const showCurrent = this.showTargets.find( show => event.target.id === show.id)
+
+    current.classList.remove("d-none")
+    showCurrent.classList.add("d-none")
   }
 
-  hideShowCompleted() {
+  hideShowCompleted(event) {
     console.log("click to hide show completed")
-    this.completedTarget.classList.remove("d-none")
-    this.showTarget.classList.add("d-none")
+
+    const current = this.completedTargets.find( completed => event.target.id === completed.id)
+    const showCurrent = this.showTargets.find( show => event.target.id === show.id)
+
+    current.classList.remove("d-none")
+    showCurrent.classList.add("d-none")
   }
 }
