@@ -5,16 +5,16 @@ export default class extends Controller {
   static targets = ["pending", "confirmed", "completed", "edit", "show"]
 
   connect() {
-    console.log("hello from stimulus")
-    console.log(this.pendingTargets)
-    console.log(this.confirmedTargets)
-    console.log(this.completedTargets)
-    console.log(this.editTargets)
-    console.log(this.showTargets)
+    console.log("all pending targets", this.pendingTargets)
+    console.log("all confirmed targets", this.confirmedTargets)
+    console.log("all completed targets", this.completedTargets)
+    console.log("all edit targets",this.editTargets)
+    console.log("all show targets",this.showTargets)
   }
 
   revealEdit() {
     console.log("click to edit")
+    console.log(this.pendingTarget)
     this.pendingTarget.classList.add("d-none")
     this.editTarget.classList.remove("d-none")
   }
