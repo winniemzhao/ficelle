@@ -2,25 +2,27 @@
   <h1>Good Evening, <%= current_user.name %></h1>
 </div>
 <div class="landing">
-
   <div class="title">
     <% if current_user.partner == nil %>
       <h2>You don't have <br> a partner yet.</h2>
-  </div>
       <%= link_to "Create a partner profile", new_partner_path, class: "btn-flat mt-3" %>
     <% end %>
+  </div>
 </div>
 
 <div class="banner-margin">
   <div class="wrapper">
-    <ul>
+    <ul data-controller="edit-event">
       <% @events.each do |event| %>
         <% if event.pending? %>
           <%= render "shared/event-card-pending", event: event %>
+          <%= render "shared/edit-event-card", event: event %>
         <% elsif event.confirmed? %>
           <%= render "shared/event-card-completed", event: event %>
+          <%= render "shared/show-event-card", event: event %>
         <% elsif event.completed? %>
           <%= render "shared/event-card-confirmed", event: event %>
+          <%= render "shared/show-event-card", event: event %>
         <% end %>
       <% end %>
     </ul>

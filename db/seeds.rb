@@ -8,7 +8,7 @@ require "open-uri"
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-puts "destroying all this crap"
+puts "destroying all this crap 🗑️"
 InspoKeyword.destroy_all
 Preference.destroy_all
 Event.destroy_all
@@ -147,4 +147,4 @@ keyword12.save!
 # event6.inspo = inspo6
 # event6.save!
 
-puts "all done"
+puts "all done 💑"
