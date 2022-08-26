@@ -116,35 +116,61 @@ keyword12 = Keyword.new(name: "Meditation")
 keyword12.photo.attach(io: URI.open("https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1399&q=80"), filename: "meditation.jpg", content_type: "image/jpg")
 keyword12.save!
 
-# puts "making events"
-# event1 = Event.new(date: Time.new(2021), content: "text")
-# event1.partner = partner1
-# event1.inspo = inspo1
-# event1.save!
+puts "more keywords - keep if needed"
 
-# event2 = Event.new(date: Time.new(2023), content: inspo2.content)
-# event2.partner = partner1
-# event2.inspo = inspo2
-# event2.save!
+keyword13 = Keyword.new(name: "Sports")
+keyword13.photo.attach(io: URI.open("https://images.unsplash.com/photo-1541252260730-0412e8e2108e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1948&q=80"), filename: "sports.jpg", content_type: "image/jpg")
+keyword13.save!
 
-# event3 = Event.new(date: Time.new(2023), content: "text")
-# event3.partner = partner1
-# event3.inspo = inspo3
-# event3.save!
+keyword14 = Keyword.new(name: "Fashion")
+keyword14.photo.attach(io: URI.open("https://images.unsplash.com/photo-1554412933-514a83d2f3c8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=372&q=80"), filename: "fashion.jpg", content_type: "image/jpg")
+keyword14.save!
 
-# event4 = Event.new(date: Time.new(2023), content: inspo4.content)
-# event4.partner = partner1
-# event4.inspo = inspo4
-# event4.save!
+keyword15 = Keyword.new(name: "Travel")
+keyword15.photo.attach(io: URI.open("https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80"), filename: "travel.jpg", content_type: "image/jpg")
+keyword15.save!
 
-# event5 = Event.new(date: Time.new(2023), content: "text")
-# event5.partner = partner1
-# event5.inspo = inspo5
-# event5.save!
+keyword16 = Keyword.new(name: "Music")
+keyword16.photo.attach(io: URI.open("https://images.unsplash.com/photo-1507838153414-b4b713384a76?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"), filename: "music.jpg", content_type: "image/jpg")
+keyword16.save!
 
-# event6 = Event.new(date: Time.new(2023), content: inspo6.content)
-# event6.partner = partner1
-# event6.inspo = inspo6
-# event6.save!
+keyword17 = Keyword.new(name: "Birdwatching")
+keyword17.photo.attach(io: URI.open("https://images.unsplash.com/photo-1515622866498-b50a07b339e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"), filename: "birdwatching.jpg", content_type: "image/jpg")
+keyword17.save!
+
+keyword19 = Keyword.new(name: "Carpentry")
+keyword19.photo.attach(io: URI.open("https://images.unsplash.com/photo-1426927308491-6380b6a9936f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"), filename: "carpentry.jpg", content_type: "image/jpg")
+keyword19.save!
+
+puts "making events for testing purposes"
+event1 = Event.new(date: Time.new(2021), content: "text")
+event1.partner = partner1
+event1.inspo = inspo1
+event1.save!
+
+event2 = Event.new(date: Time.new(2023), content: inspo2.content)
+event2.partner = partner1
+event2.inspo = inspo2
+event2.save!
+
+event3 = Event.new(date: Time.new(2023), content: "text")
+event3.partner = partner1
+event3.inspo = inspo3
+event3.save!
+
+event4 = Event.new(date: Time.new(2023), content: inspo4.content)
+event4.partner = partner1
+event4.inspo = inspo4
+event4.save!
+
+event5 = Event.new(date: Time.new(2023), content: "text")
+event5.partner = partner1
+event5.inspo = inspo5
+event5.save!
+
+event6 = Event.new(date: Time.new(2023), content: inspo6.content)
+event6.partner = partner1
+event6.inspo = inspo6
+event6.save!
 
 puts "all done 💑"
