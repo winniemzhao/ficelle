@@ -1,5 +1,16 @@
 <div class="banner">
-  <h1>Good Evening, <%= current_user.name %></h1>
+  <div>
+    <h4>
+      <% if DateTime.now.hour < 12 %>
+        Good morning, <%= current_user.name %>
+      <% elsif DateTime.now.hour > 17 %>
+        Good evening, <%= current_user.name %>
+      <% else %>
+        Good afternoon, <%= current_user.name %>
+      <% end %>
+    </h4>
+    <h6 class="mt-2">Today is <%= DateTime.now.strftime("%A, %b %e") %></h6>
+  </div>
 </div>
 
 <div class="banner-margin">
@@ -16,6 +27,7 @@
 
     <ul data-controller="edit-event">
       <% @events.each do |event| %>
+        <h5 class="mb-2"><%= event.date.strftime("%A, %b %e") %></h5>
         <% if event.pending? %>
           <%= render "shared/event-card-pending", event: event %>
           <%= render "shared/edit-event-card", event: event %>
