@@ -143,34 +143,34 @@ keyword19.photo.attach(io: URI.open("https://images.unsplash.com/photo-142692730
 keyword19.save!
 
 puts "making events for testing purposes"
-event1 = Event.new(date: Time.new(2021), content: "text")
-event1.partner = partner1
-event1.inspo = inspo1
-event1.save!
+# event1 = Event.new(date: Time.new(2021), content: "text")
+# event1.partner = partner1
+# event1.inspo = inspo1
+# event1.save!
 
-event2 = Event.new(date: Time.new(2023), content: inspo2.content)
-event2.partner = partner1
-event2.inspo = inspo2
-event2.save!
+# event2 = Event.new(date: Time.new(2023), content: inspo2.content)
+# event2.partner = partner1
+# event2.inspo = inspo2
+# event2.save!
 
-event3 = Event.new(date: Time.new(2023), content: "text")
-event3.partner = partner1
-event3.inspo = inspo3
-event3.save!
+# event3 = Event.new(date: Time.new(2023), content: "text")
+# event3.partner = partner1
+# event3.inspo = inspo3
+# event3.save!
 
 event4 = Event.new(date: Time.new(2023), content: inspo4.content)
 event4.partner = partner1
 event4.inspo = inspo4
 event4.save!
 
-event5 = Event.new(date: Time.new(2023), content: "text")
-event5.partner = partner1
-event5.inspo = inspo5
-event5.save!
+# event5 = Event.new(date: Time.new(2023), content: "text")
+# event5.partner = partner1
+# event5.inspo = inspo5
+# event5.save!
 
-event6 = Event.new(date: Time.new(2023), content: inspo6.content)
-event6.partner = partner1
-event6.inspo = inspo6
-event6.save!
+# event6 = Event.new(date: Time.new(2023), content: inspo6.content)
+# event6.partner = partner1
+# event6.inspo = inspo6
+# event6.save!
 
 puts "all done 💑"
