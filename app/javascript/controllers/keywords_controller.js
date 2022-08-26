@@ -12,9 +12,10 @@ export default class extends Controller {
       this.element.classList.remove("keyword-outline");
     } else {
       this.element.classList.add("keyword-outline");
-      fetch(this.cardsTarget.action, {
-        method: "GET" path_to
-      })
+      // fetch(this.cardsTarget.action, {
+      //   method: "GET",
+      //   url: path_to new_partner_preference_path
+      // })
     }
   }
 
