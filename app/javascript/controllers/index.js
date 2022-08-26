@@ -5,8 +5,8 @@
 import { application } from "./application"
 
 
-import HelloController from "./hello_controller"
-application.register("hello", HelloController)
+// import HelloController from "./hello_controller"
+// application.register("hello", HelloController)
 
 import SwipeInsposController from "./swipe_inspos_controller"
 application.register("swipe-inspos", SwipeInsposController)
