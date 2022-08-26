@@ -1,17 +1,19 @@
 <div class="banner">
   <h1>Good Evening, <%= current_user.name %></h1>
 </div>
-<div class="landing">
-  <div class="title">
-    <% if current_user.partner == nil %>
-      <h2>You don't have <br> a partner yet.</h2>
-      <%= link_to "Create a partner profile", new_partner_path, class: "btn-flat mt-3" %>
-    <% end %>
-  </div>
-</div>
 
 <div class="banner-margin">
   <div class="wrapper">
+
+    <% if current_user.partner == nil %>
+      <div class="landing">
+        <div class="title">
+            <h2>You don't have <br> a partner yet.</h2>
+            <%= link_to "Create a partner profile", new_partner_path, class: "btn-flat mt-3" %>
+        </div>
+      </div>
+    <% end %>
+
     <ul data-controller="edit-event">
       <% @events.each do |event| %>
         <% if event.pending? %>
