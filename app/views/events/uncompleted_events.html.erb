@@ -25,19 +25,22 @@
       </div>
     <% end %>
 
-    <ul data-controller="edit-event">
+    <ul class="events-list" data-controller="edit-event">
       <% @events.each do |event| %>
         <h5 class="mb-2"><%= event.date.strftime("%A, %b %e") %></h5>
-        <% if event.pending? %>
-          <%= render "shared/event-card-pending", event: event %>
-          <%= render "shared/edit-event-card", event: event %>
-        <% elsif event.confirmed? %>
-          <%= render "shared/event-card-confirmed", event: event %>
-          <%= render "shared/show-event-card", event: event %>
-        <% elsif event.completed? %>
-          <%= render "shared/event-card-completed", event: event %>
-          <%= render "shared/show-event-card", event: event %>
-        <% end %>
+        <div>
+          <% if event.pending? %>
+            <%= render "shared/event-card-pending", event: event %>
+            <%= render "shared/edit-event-card", event: event %>
+          <% elsif event.confirmed? %>
+            <%= render "shared/event-card-confirmed", event: event %>
+            <%= render "shared/show-event-card", event: event %>
+          <% elsif event.completed? %>
+            <%= render "shared/event-card-completed", event: event %>
+            <%= render "shared/show-event-card", event: event %>
+          <% end %>
+        </div>
+
       <% end %>
     </ul>
 
