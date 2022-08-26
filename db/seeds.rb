@@ -117,12 +117,16 @@ keyword12.photo.attach(io: URI.open("https://images.unsplash.com/photo-150612661
 keyword12.save!
 
 puts "making events"
+
 event1 = Event.new(date: Time.new(2022, 8, 29, 19), content: "text")
+
 event1.partner = partner1
 event1.inspo = inspo1
 event1.save!
 
+
 event2 = Event.new(date: Time.new(2022, 8, 31, 15), content: "text")
+
 event2.partner = partner1
 event2.inspo = inspo2
 event2.save!

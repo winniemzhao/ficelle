@@ -1,15 +1,17 @@
 <% if keyword.photo.attached? %>
-  <div class="keyword-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('<%= cl_image_path keyword.photo.key, height: 100, crop: :fill %>')" data-controller="keywords">
+  <div class="keyword-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('<%= cl_image_path keyword.photo.key, height: 100, crop: :fill %>')"  data-controller="keywords" data-keywords-target="partner_id" data-partner_id="<%= @partner.id %>" data-action="click->keywords#toggle" data-keywords-target="cards" data-keyword_id="<%= keyword.id %>">
 <% else %>
-  <div class="keyword-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('<%= cl_image_path "../wtu1z51wksknvgrbgbie", width: 400, height: 300, crop: :fill %>')" data-controller="keywords">
+  <div class="keyword-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('<%= cl_image_path "../wtu1z51wksknvgrbgbie", width: 400, height: 300, crop: :fill %>')"  data-controller="keywords" data-keywords-target="partner_id" data-partner_id="<%= @partner.id %>" data-action="click->keywords#toggle" data-keywords-target="cards" data-keyword_id="<%= keyword.id %>">
 <% end %>
-  <h6><%= keyword.name %></h6>
+  <h6 data-keyword_id="<%= keyword.id %>"><%= keyword.name %></h6>
 
   <p>
-    <% if current_user.partner.keywords.include?(keyword) %>
-      <i class="fa-solid fa-circle-check"></i>
-    <% else %>
-      <i class="fa-solid fa-circle-plus"></i>
+    <% unless current_user.partner.nil? %>
+      <% if current_user.partner.keywords.include?(keyword) %>
+        <i data-keyword_id="<%= keyword.id %>" class="fa-solid fa-circle-check"></i>
+      <% else %>
+        <i data-keyword_id="<%= keyword.id %>" class="fa-solid fa-circle-plus"></i>
+      <% end %>
     <% end %>
   </p>
 </div>
