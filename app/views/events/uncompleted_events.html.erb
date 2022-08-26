@@ -32,10 +32,10 @@
           <%= render "shared/event-card-pending", event: event %>
           <%= render "shared/edit-event-card", event: event %>
         <% elsif event.confirmed? %>
-          <%= render "shared/event-card-completed", event: event %>
+          <%= render "shared/event-card-confirmed", event: event %>
           <%= render "shared/show-event-card", event: event %>
         <% elsif event.completed? %>
-          <%= render "shared/event-card-confirmed", event: event %>
+          <%= render "shared/event-card-completed", event: event %>
           <%= render "shared/show-event-card", event: event %>
         <% end %>
       <% end %>
