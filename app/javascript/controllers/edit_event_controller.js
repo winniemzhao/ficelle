@@ -5,18 +5,24 @@ export default class extends Controller {
   static targets = ["pending", "confirmed", "completed", "edit", "show"]
 
   connect() {
-    console.log("all pending targets", this.pendingTargets)
-    console.log("all confirmed targets", this.confirmedTargets)
-    console.log("all completed targets", this.completedTargets)
-    console.log("all edit targets",this.editTargets)
-    console.log("all show targets",this.showTargets)
+    // console.log("all pending targets", this.pendingTargets)
+    // console.log("all confirmed targets", this.confirmedTargets)
+    // console.log("all completed targets", this.completedTargets)
+    // console.log("all edit targets",this.editTargets)
+    // console.log("all show targets",this.showTargets)
   }
 
-  revealEdit() {
-    console.log("click to edit")
-    console.log(this.pendingTarget)
-    this.pendingTarget.classList.add("d-none")
-    this.editTarget.classList.remove("d-none")
+  revealEdit(event) {
+    // console.log("click to edit")
+    // console.log(event.target.id)
+
+    const current = this.pendingTargets.find( pending => event.target.id === pending.id)
+    const editCurrent = this.editTargets.find( edit => event.target.id === edit.id)
+
+    // console.log(editCurrent)
+
+    current.classList.add("d-none")
+    editCurrent.classList.remove("d-none")
   }
 
   revealShowConfirmed() {
@@ -32,9 +38,13 @@ export default class extends Controller {
   }
 
   hideEdit() {
-    console.log("click to hide edit")
-    this.pendingTarget.classList.remove("d-none")
-    this.editTarget.classList.add("d-none")
+    // console.log("click to hide edit")
+
+    const current = this.pendingTargets.find( pending => event.target.id === pending.id)
+    const editCurrent = this.editTargets.find( edit => event.target.id === edit.id)
+
+    current.classList.remove("d-none")
+    editCurrent.classList.add("d-none")
   }
 
   hideShowConfirmed() {
