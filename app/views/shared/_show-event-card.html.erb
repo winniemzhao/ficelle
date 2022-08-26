@@ -39,7 +39,7 @@
   <div class="event-description">
     <p>Content: <%= event.inspo.content %></p>
     <p>Genre: <%= event.inspo.genre.capitalize %></p>
-    <p>Date: <%= event.date %></p>
+    <p>Date: <%= event.date.strftime("%A, %b %e") %></p>
     <p>Location: <%= event.inspo.location %></p>
     <p>Cost: $<%= event.inspo.cost %></p>
     <%= link_to "Delete Event",
