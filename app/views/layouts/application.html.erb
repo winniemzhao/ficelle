@@ -15,6 +15,9 @@
     <%#= render "shared/flashes" %>
 
     <%= yield %>
-    <%= render "shared/navbar" %>
+
+    <% if request.fullpath != "/" %>
+      <%= render "shared/navbar" %>
+    <% end %>
   </body>
 </html>
