@@ -1,29 +1,48 @@
 <div class="banner">
-  <h1>Good Evening, <%= current_user.name %></h1>
-</div>
-<div class="landing">
-
-  <div class="title">
-    <% if current_user.partner == nil %>
-      <h2>You don't have <br> a partner yet.</h2>
-  </div>
-      <%= link_to "Create a partner profile", new_partner_path, class: "btn-flat mt-3" %>
-    <% end %>
-</div>
-  <ul>
-    <% @events.each do |event| %>
-      <% if event.pending? %>
-        <%= render "shared/event-card-pending", event: event %>
-      <% elsif event.confirmed? %>
-        <%= render "shared/event-card-completed", event: event %>
-      <% elsif event.completed? %>
-        <%= render "shared/event-card-confirmed", event: event %>
+  <div>
+    <h4>
+      <% if DateTime.now.hour < 12 %>
+        Good morning, <%= current_user.name %>
+      <% elsif DateTime.now.hour > 17 %>
+        Good evening, <%= current_user.name %>
+      <% else %>
+        Good afternoon, <%= current_user.name %>
       <% end %>
-    <% end %>
-  </ul>
-
-<div style="position: absolute; right: 0px; bottom: 60px;">
-  <%= button_to("Log Out", destroy_user_session_path, method: :delete, class: "btn btn-outline-light") %>
+    </h4>
+    <h6 class="mt-2">Today is <%= DateTime.now.strftime("%A, %b %e") %></h6>
+  </div>
 </div>
 
+<div class="banner-margin">
+  <div class="wrapper">
+
+    <% if current_user.partner == nil %>
+      <div class="landing">
+        <div class="title">
+            <h2>You don't have <br> a partner yet.</h2>
+            <%= link_to "Create a partner profile", new_partner_path, class: "btn-flat mt-3" %>
+        </div>
+      </div>
+    <% end %>
+
+    <ul data-controller="edit-event">
+      <% @events.each do |event| %>
+        <h5 class="mb-2"><%= event.date.strftime("%A, %b %e") %></h5>
+        <% if event.pending? %>
+          <%= render "shared/event-card-pending", event: event %>
+          <%= render "shared/edit-event-card", event: event %>
+        <% elsif event.confirmed? %>
+          <%= render "shared/event-card-completed", event: event %>
+          <%= render "shared/show-event-card", event: event %>
+        <% elsif event.completed? %>
+          <%= render "shared/event-card-confirmed", event: event %>
+          <%= render "shared/show-event-card", event: event %>
+        <% end %>
+      <% end %>
+    </ul>
+
+    <div style="position: absolute; right: 0px; bottom: 60px;">
+      <%= button_to("Log Out", destroy_user_session_path, method: :delete, class: "btn btn-outline-light") %>
+    </div>
+  </div>
 </div>

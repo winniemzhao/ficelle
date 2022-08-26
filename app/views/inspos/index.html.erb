@@ -1,12 +1,17 @@
 <div class="wrapper">
-  <%# add button to go back to previous page %>
-  <h6>Select potential events</h6>
+  <h6 class="mt-2">Select potential events</h6>
+  <div data-controller="swipe-inspos">
 
-  <% @inspos.each do |inspo| %>
-    <%= render "shared/inspo-card", inspo: inspo %>
-  <% end %>
-  <%= link_to "like", toggle_favorite_inspo_path(inspo),  data: {turbo_method: :post}, class:'btn-flat' %>
-  <%# add counter for how many cards %>
-  <%# add skip button %>
+
+    <% @inspos.each_with_index do |inspo, index| %>
+      <%= render "shared/inspo-card", inspo: inspo, index: index, total: @inspos.count %>
+    <% end %>
+    <%= render "shared/loading" %>
+
+    <div class="back-skip">
+      <%= link_to ('<i class="fa-solid fa-circle-arrow-left"></i> Back').html_safe, new_partner_path, class: "dark-link" %>
+
+      <%= link_to ('Skip <i class="fa-solid fa-circle-arrow-right"></i>').html_safe, dashboard_path, class: "dark-link" %>
+    </div>
+  </div>
 </div>
-
