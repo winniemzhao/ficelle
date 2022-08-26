@@ -1,4 +1,4 @@
-<div class="event-card pending-event d-none" data-edit-event-target="edit">
+<div class="event-card pending-event d-none" data-edit-event-target="edit" id="event-<%= event.id %>">
   <div class="event-card-content">
     <% if event.pending? %>
       <p class="event-icon color-red">
@@ -34,7 +34,7 @@
         <% end %>
       </p>
     </div>
-    <p data-action="click->edit-event#hideEdit"><i class="fa-solid fa-xmark"></i></p>
+    <p><i class="fa-solid fa-xmark" data-action="click->edit-event#hideEdit" id="event-<%= event.id %>"></i></p>
   </div>
   <div class="event-description">
     <%= simple_form_for [event] do |f| %>

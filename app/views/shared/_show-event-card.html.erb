@@ -1,4 +1,4 @@
-<div class="event-card d-none" data-edit-event-target="show">
+<div class="event-card d-none" data-edit-event-target="show" id="event-<%= event.id %>">
   <div class="event-card-content">
     <% if event.pending? %>
       <p class="event-icon color-red">
@@ -34,7 +34,13 @@
         <% end %>
       </p>
     </div>
-    <p data-action="click->edit-event#hideShowConfirmed" data-action="click->edit-event#hideShowCompleted"><i class="fa-solid fa-xmark"></i></p>
+    <p><i class="fa-solid fa-xmark"
+    <% if event.confirmed? %>
+      data-action="click->edit-event#hideShowConfirmed"
+    <% elsif event.completed? %>
+      data-action="click->edit-event#hideShowCompleted"
+    <% end %>
+     id="event-<%= event.id %>"></i></p>
   </div>
   <div class="event-description">
     <p>Content: <%= event.inspo.content %></p>
