@@ -6,8 +6,11 @@
       <%= render "shared/keyword-card", keyword: keyword %>
     <% end %>
   </div>
-  <%# add button link to inspo swipe %>
+<div class="button d-flex justify-content-center">
+<%= link_to "Next", inspos_path, class: "btn-flat" %>
+</div>
   <%# add link to 'skip' to loading page (to generate events) %>
 </div>
+
 
 <%#= keyword.photo.attached? ? cl_image_tag(keyword.photo.key, width: 400, height: 300, crop: :fill) : cl_image_tag("../pvvsjborrwmoiefhvpog", width: 400, height: 300, crop: :fill) %>
