@@ -3,13 +3,13 @@
     <% if user_signed_in? %>
       <li class="nav-item" data-action="click->navbar-active#iconActive">
         <%= link_to(dashboard_path) do %>
-          <p class="nav-icon"><i class="fa-solid fa-house my-nav" data-navbar-active-target="icon"></i></p>
+          <p class="nav-icon"><i class="fa-solid fa-house " data-navbar-active-target="icon"></i></p>
           <p class="nav-info">dashboard</p>
         <% end %>
       </li>
       <li class="nav-item">
         <%= link_to(history_path) do %>
-          <p class="nav-icon"><i class="fa-solid fa-list-ul"></i></p>
+          <p class="nav-icon"><i class="fa-solid fa-list-ul my-nav"></i></p>
           <p class="nav-info">past events</p>
         <% end %>
       </li>
@@ -39,10 +39,10 @@
       <%# </li> %>
       <%# put above logout into settings %>
 
-    <%# else %>
-      <%# <li class="nav-item"> %>
-        <%#= link_to "Login", new_user_session_path %>
-      <%# </li> %>
+    <% else %>
+      <li>
+        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      </li>
     <% end %>
   </ul>
 

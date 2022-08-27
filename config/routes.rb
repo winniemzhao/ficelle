@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :partners, only: [:new, :create, :edit, :update, :destroy] do
     get '/keywords', to: 'keywords#index'
-    resources :preferences, only: [:new, :create, :update]
   end
   # Defines the root path route ("/")
   # root "articles#index"
@@ -19,4 +18,5 @@ Rails.application.routes.draw do
       post 'toggle_favorite', to: "inspos#toggle_favorite"
     end
   end
+  get '/preferences', to: 'preferences#create'
 end

@@ -5,11 +5,14 @@
   position: relative;
   padding: 36px;
   margin: 16px 0;
+  height: 427px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .inspo-card-info {
   text-align: center;
-  margin: 100px 0;
 }
 
 .inspo-card-info h2, .inspo-card-info h4 {
@@ -18,13 +21,11 @@
   margin-top: 16px;
 }
 
-
-
 .inspo-card-buttons {
   display: flex;
   justify-content: space-between;
   position: relative;
-  bottom: 0px;
+  bottom: -85px;
   left: 0px;
 }
 
@@ -52,4 +53,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.back-skip {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
 }

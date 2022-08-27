@@ -1,4 +1,4 @@
-<div class="event-card" data-edit-event-target="confirmed"  data-action="click->edit-event#revealShowConfirmed">
+<div class="event-card" data-edit-event-target="confirmed" id="event-<%= event.id %>">
   <div class="event-card-content">
     <p class="event-icon color-orange"><i class="fa-solid fa-calendar-check"></i></p>
     <div class="event-card-info">
@@ -14,6 +14,6 @@
       </h6>
       <p>Scheduled</p>
     </div>
-    <p><i class="fa-solid fa-ellipsis"></i></p>
+    <p><i class="fa-solid fa-ellipsis" data-action="click->edit-event#revealShowConfirmed" id="event-<%= event.id %>"></i></p>
   </div>
 </div>

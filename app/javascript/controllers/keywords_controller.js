@@ -2,26 +2,17 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="keywords"
 export default class extends Controller {
-  static targets = ["cards"]
+  static targets = ["partner_id"]
   connect() {
+    // console.log(this.element)
   }
 
   toggle(event) {
-    event.preventDefault()
     if (this.element.classList.contains("keyword-outline")) {
       this.element.classList.remove("keyword-outline");
     } else {
       this.element.classList.add("keyword-outline");
-      // fetch(this.cardsTarget.action, {
-      //   method: "GET",
-      //   url: path_to new_partner_preference_path
-      // })
+      fetch(`/preferences?keyword_id=${event.target.getAttribute("data-keyword_id")}`)
     }
-  }
-
-  send(event) {
-    event.preventDefault()
-
-    console.log("TODO: send request in AJAX")
   }
 }
