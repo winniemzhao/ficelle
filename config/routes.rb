@@ -18,5 +18,6 @@ Rails.application.routes.draw do
       post 'toggle_favorite', to: "inspos#toggle_favorite"
     end
   end
-  get '/preferences', to: 'preferences#create'
+  get '/preferences/create', to: 'preferences#create'
+  get '/preferences/destroy', to: 'preferences#destroy'
 end
