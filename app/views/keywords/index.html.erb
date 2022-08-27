@@ -8,4 +8,10 @@
   <div class="button d-flex justify-content-center">
     <%= link_to "Next", inspos_path, class: "btn-flat" %>
   </div>
+  <div class="back-skip">
+    <%= link_to ('<i class="fa-solid fa-circle-arrow-left"></i> Back').html_safe, edit_partner_path(current_user.partner), class: "dark-link" %>
+    <%= link_to ('Skip <i class="fa-solid fa-circle-arrow-right"></i>').html_safe, dashboard_path, class: "dark-link" %>
+  </div>
 </div>
+
+<%#= keyword.photo.attached? ? cl_image_tag(keyword.photo.key, width: 400, height: 300, crop: :fill) : cl_image_tag("../pvvsjborrwmoiefhvpog", width: 400, height: 300, crop: :fill) %>
