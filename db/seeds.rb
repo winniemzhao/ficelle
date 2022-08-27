@@ -8,7 +8,6 @@ require "open-uri"
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-puts "destroying all this crap 🗑️"
 InspoKeyword.destroy_all
 Preference.destroy_all
 Event.destroy_all
@@ -17,7 +16,6 @@ Inspo.destroy_all
 Partner.destroy_all
 User.destroy_all
 
-puts "making 3 users"
 user1 = User.new(email: "a@gmail.com", password: "123456", name: "John", phone_number: "1234567890", location: "Montreal")
 user1.photo.attach(io: URI.open("https://www.computerhope.com/jargon/g/guest-user.jpg"), filename: "user1.jpg", content_type: "image/jpg")
 user1.save!
@@ -28,13 +26,11 @@ user3 = User.new(email: "c@gmail.com", password: "123456", name: "Marc", phone_n
 user3.photo.attach(io: URI.open("https://www.computerhope.com/jargon/g/guest-user.jpg"), filename: "user3.jpg", content_type: "image/jpg")
 user3.save!
 
-puts "making 1 partner"
 partner1 = Partner.new(name: "Gillian", birthday: Date.new(1980,01,01), phone_number: "1234567", email: "c@gmail.com", location: "Montreal")
 partner1.photo.attach(io: URI.open("https://corporate.zalando.com/sites/default/files/styles/fullimage_extra_big/public/media/Zalando%20SE_brand%20partner_teaser%20image.jpg"), filename: "partner1.jpg", content_type: "image/jpg")
 partner1.user = user1
 partner1.save!
 
-puts "making ingenious inspos"
 inspo1 = Inspo.new(name: "Yayoi Kusama art exhibit", genre: "date", location: "Centre PHI, 315 Saint-Paul St W", content: "Yayoi Kusama Exhibit at Centre PHI", cost: 40.0)
 inspo1.photo.attach(io: URI.open("https://phi.ca/uploads/_1920xAUTO_crop_center-center_80_none/yayoi-kusama-fondation.jpg"), filename: "inspo1.jpg", content_type: "image/jpg")
 inspo1.save!
@@ -67,7 +63,6 @@ inspo7 = Inspo.new(name: "Louis Vuitton bag", genre: "gift", content: "Pochette 
 inspo7.photo.attach(io: URI.open("https://senmix.com/pictures/product/02/98/pochette-metis-monogram-m44875_1.jpg"), filename: "inspo2.jpg", content_type: "image/jpg")
 inspo7.save!
 
-puts "inventing some keywords"
 keyword1 = Keyword.new(name: "Movies")
 keyword1.photo.attach(io: URI.open("https://images.unsplash.com/photo-1620177088260-a9150572baf4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2352&q=80"), filename: "movies.jpg", content_type: "image/jpg")
 keyword1.save!
@@ -116,17 +111,13 @@ keyword12 = Keyword.new(name: "Meditation")
 keyword12.photo.attach(io: URI.open("https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1399&q=80"), filename: "meditation.jpg", content_type: "image/jpg")
 keyword12.save!
 
-puts "making events"
 
 event1 = Event.new(date: Time.new(2022, 8, 29, 19), content: "text")
-
 event1.partner = partner1
 event1.inspo = inspo1
 event1.save!
 
-
 event2 = Event.new(date: Time.new(2022, 8, 31, 15), content: "text")
-
 event2.partner = partner1
 event2.inspo = inspo2
 event2.save!
@@ -150,5 +141,3 @@ event3.save!
 # event6.partner = partner1
 # event6.inspo = inspo6
 # event6.save!
-
-puts "all done 💑"
