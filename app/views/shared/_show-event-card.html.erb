@@ -1,4 +1,4 @@
-<div class="event-card d-none" data-edit-event-target="show">
+<div class="event-card d-none" data-edit-event-target="show" id="event-<%= event.id %>">
   <div class="event-card-content">
     <% if event.pending? %>
       <p class="event-icon color-red">
@@ -34,14 +34,26 @@
         <% end %>
       </p>
     </div>
-    <p data-action="click->edit-event#hideShowConfirmed" data-action="click->edit-event#hideShowCompleted"><i class="fa-solid fa-xmark"></i></p>
+    <p><i class="fa-solid fa-xmark"
+    <% if event.confirmed? %>
+      data-action="click->edit-event#hideShowConfirmed"
+    <% elsif event.completed? %>
+      data-action="click->edit-event#hideShowCompleted"
+    <% end %>
+     id="event-<%= event.id %>"></i></p>
   </div>
   <div class="event-description">
-    <p>Content: <%= event.inspo.content %></p>
+    <% if event.inspo.genre == "text" %>
+      <p>Content: <%= event.content %></p>
+    <% end %>
     <p>Genre: <%= event.inspo.genre.capitalize %></p>
-    <p>Date: <%= event.date.strftime("%A, %b %e") %></p>
-    <p>Location: <%= event.inspo.location %></p>
-    <p>Cost: $<%= event.inspo.cost %></p>
+    <p>Date: <%= event.date.strftime("%A, %b %e at %l:%M %p") %></p>
+    <% if event.inspo.genre != "text" %>
+      <p>Location: <%= event.inspo.location %></p>
+    <% end %>
+    <% if event.inspo.cost %>
+      <p>Cost: $<%= event.inspo.cost %></p>
+    <% end %>
     <%= link_to "Delete Event",
       dashboard_path,
       data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},

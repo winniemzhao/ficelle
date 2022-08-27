@@ -1,4 +1,4 @@
-<div class="event-card pending-event" data-edit-event-target="pending"  data-action="click->edit-event#revealEdit">
+<div class="event-card pending-event" data-edit-event-target="pending" id="event-<%= event.id %>">
   <div class="event-card-content">
     <p class="event-icon color-red"><i class="fa-solid fa-circle-exclamation"></i></p>
     <div class="event-card-info">
@@ -14,6 +14,6 @@
       </h6>
       <p>Pending Confirmation</p>
     </div>
-    <p><i class="fa-solid fa-ellipsis"></i></p>
+    <p><i class="fa-solid fa-ellipsis" data-action="click->edit-event#revealEdit" id="event-<%= event.id %>"></i></p>
   </div>
 </div>

@@ -1,12 +1,14 @@
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
-<div class="landing">
-  <div class="title">
-    <h1>ficelle</h1>
-    <h6>show your love, without lifting a finger</h6>
+<div class="wrapper">
+  <div class="landing">
+    <div class="title">
+      <h1>ficelle</h1>
+      <h6>show your love, without lifting a finger</h6>
+    </div>
+    <lottie-player src="https://assets1.lottiefiles.com/private_files/lf30_e0vedzue.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
+    <%= link_to "Get started", new_partner_path, class: "btn-flat" %>
+    <%# change path back to new_user_registration_path for the final demo %>
+    <p class="login">Already have an account? <%= link_to "Log in", user_session_path %></p>
   </div>
-  <lottie-player src="https://assets1.lottiefiles.com/private_files/lf30_e0vedzue.json"  background="transparent"  speed="1"  style="width: 200px; height: 200px;"  loop autoplay></lottie-player>
-  <%= link_to "Get started", new_partner_path, class: "btn-flat" %>
-  <%# change path back to new_user_registration_path for the final demo %>
-  <p class="login">Already have an account? <%= link_to "Log in", user_session_path %></p>
 </div>
