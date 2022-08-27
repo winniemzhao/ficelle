@@ -43,20 +43,19 @@
      id="event-<%= event.id %>"></i></p>
   </div>
   <div class="event-description">
+    <p><strong>Event Type: </strong><br><%= event.inspo.genre.capitalize %></p>
+    <p><strong>Event Date: </strong><br><%= event.date.strftime("%A, %b %e at %l:%M %p") %></p>
     <% if event.inspo.genre == "text" %>
-      <p>Content: <%= event.content %></p>
-    <% end %>
-    <p>Genre: <%= event.inspo.genre.capitalize %></p>
-    <p>Date: <%= event.date.strftime("%A, %b %e at %l:%M %p") %></p>
-    <% if event.inspo.genre != "text" %>
-      <p>Location: <%= event.inspo.location %></p>
+      <p><strong>Content: </strong><br><%= event.content %></p>
+    <% elsif event.inspo.genre == "date" %>
+      <p><strong>Location: </strong><br><%= event.inspo.location %></p>
     <% end %>
     <% if event.inspo.cost %>
-      <p>Cost: $<%= event.inspo.cost %></p>
+      <p><strong>Cost: </strong><br>$<%= event.inspo.cost %></p>
     <% end %>
     <%= link_to "Delete Event",
       dashboard_path,
-      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+      data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this event?"},
       class: "btn btn-flat"
     %>
   </div>
