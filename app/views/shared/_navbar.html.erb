@@ -1,35 +1,35 @@
-<div class="navbar-ficelle" data-controller="navbar-active">
+<div class="navbar-ficelle">
   <ul>
     <% if user_signed_in? %>
-      <li class="nav-item" data-action="click->navbar-active#iconActive">
+      <li class="nav-item">
         <%= link_to(dashboard_path) do %>
-          <p class="nav-icon"><i class="fa-solid fa-house my-nav" data-navbar-active-target="icon"></i></p>
+          <p class="nav-icon"><i class="fa-solid fa-house <%= 'my-nav' if request.fullpath == dashboard_path %>"></i></p>
           <p class="nav-info">dashboard</p>
         <% end %>
       </li>
       <li class="nav-item">
         <%= link_to(history_path) do %>
-          <p class="nav-icon"><i class="fa-solid fa-list-ul"></i></p>
+          <p class="nav-icon"><i class="fa-solid fa-list-ul <%= 'my-nav' if request.fullpath == history_path%>"></i></p>
           <p class="nav-info">past events</p>
         <% end %>
       </li>
       <li class="nav-item">
         <%= link_to(us_path) do %>
-          <p class="nav-icon"><i class="fa-solid fa-user-group"></i></p>
+          <p class="nav-icon"><i class="fa-solid fa-user-group <%= 'my-nav' if request.fullpath == us_path%>"></i></p>
           <p class="nav-info">relationship</p>
         <% end %>
       </li>
       <li class="nav-item">
         <%#= replace dashboard_path for path to inspo swipe %>
         <%= link_to(inspos_path) do %>
-          <p class="nav-icon"><i class="fa-solid fa-hand-holding-heart"></i></p>
+          <p class="nav-icon"><i class="fa-solid fa-hand-holding-heart <%= 'my-nav' if request.fullpath == inspos_path%>"></i></p>
           <p class="nav-info">inspiration</p>
         <% end %>
       </li>
       <li class="nav-item">
         <%#= replace dashboard_path for path to settings %>
         <%= link_to(dashboard_path) do %>
-          <p class="nav-icon"><i class="fa-solid fa-gear"></i></p>
+          <p class="nav-icon"><i class="fa-solid fa-gear <%#= 'my-nav' if request.fullpath == settings_path%>"></i></p>
           <p class="nav-info">settings</p>
         <% end %>
       </li>
@@ -45,5 +45,4 @@
       <%# </li> %>
     <% end %>
   </ul>
-
 </div>
