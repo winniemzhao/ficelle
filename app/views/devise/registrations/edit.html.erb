@@ -3,7 +3,7 @@
 
     <h2>Edit <%= resource_name.to_s.humanize %></h2>
 
-    <%= current_user.photo.attached? ? cl_image_tag(current_user.photo.key, class: "avatar form-avatar") : cl_image_tag("../pvvsjborrwmoiefhvpog", class: "avatar form-avatar") %>
+    <%= current_user.photo.attached? ? cl_image_tag(current_user.photo.key, class: "avatar form-avatar") : image_tag("https://res.cloudinary.com/dbw6oqu08/image/upload/v1661686948/user_default.png", class: "avatar form-avatar") %>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= f.error_notification %>

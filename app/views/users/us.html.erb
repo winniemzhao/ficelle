@@ -9,19 +9,17 @@
     <% else %>
       <div class="relationship-avatars">
         <div class="avatar-name">
-          <%= current_user.photo.attached? ? cl_image_tag(current_user.photo.key, class: "avatar form-avatar") : cl_image_tag("../pvvsjborrwmoiefhvpog", class: "avatar form-avatar") %>
+          <%= current_user.photo.attached? ? cl_image_tag(current_user.photo.key, class: "avatar form-avatar") : image_tag("https://res.cloudinary.com/dbw6oqu08/image/upload/v1661686948/user_default.png", class: "avatar form-avatar") %>
           <%= current_user.name %>
           <%= link_to ('<i class="fa-solid fa-pen"></i>').html_safe, edit_user_registration_path %>
         </div>
         <h3>&</h3>
         <div class="avatar-name">
-          <%= current_user.partner.photo.attached? ? cl_image_tag(current_user.partner.photo.key, class: "avatar form-avatar") : cl_image_tag("../pvvsjborrwmoiefhvpog", class: "avatar form-avatar") %>
+          <%= current_user.partner.photo.attached? ? cl_image_tag(current_user.partner.photo.key, class: "avatar form-avatar") : image_tag("https://res.cloudinary.com/dbw6oqu08/image/upload/v1661685019/partner_default.png", class: "avatar form-avatar") %>
           <%= current_user.partner.name %>
           <%= link_to ('<i class="fa-solid fa-pen"></i>').html_safe, edit_partner_path(current_user.partner) %>
         </div>
       </div>
-
-      <p>🧡 Deceiving your partner since <%= current_user && current_user.partner ? current_user.partner.created_at.strftime('%a %B %e, %Y') : 2022 %> 🧡</p>
 
       <div class="relationship-stats">
         <div class="stat-genre">

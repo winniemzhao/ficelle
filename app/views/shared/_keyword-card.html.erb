@@ -1,8 +1,5 @@
-<% if keyword.photo.attached? %>
-  <div class="keyword-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('<%= cl_image_path keyword.photo.key, height: 100, width: 100, crop: :fill %>')"  data-controller="keywords" data-action="click->keywords#toggle" data-keyword_id="<%= keyword.id %>">
-<% else %>
-  <div class="keyword-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url('<%= cl_image_path "../wtu1z51wksknvgrbgbie", width: 400, height: 300, crop: :fill %>')"  data-controller="keywords" data-action="click->keywords#toggle" data-keyword_id="<%= keyword.id %>">
-<% end %>
+<% url = keyword.photo.attached? ? (cl_image_path keyword.photo.key, height: 100, width: 100, crop: :fill) : "https://res.cloudinary.com/dbw6oqu08/image/upload/c_scale,w_100/v1661685503/keyword_default.jpg" %>
+<div class="keyword-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url(<%= url %>)"  data-controller="keywords" data-action="click->keywords#toggle" data-keyword_id="<%= keyword.id %>">
   <h6 data-keyword_id="<%= keyword.id %>"><%= keyword.name %></h6>
 
   <p>
