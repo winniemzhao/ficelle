@@ -9,7 +9,7 @@ class PartnersController < ApplicationController
     if @partner.save
       redirect_to partner_keywords_path(@partner)
     else
-      render :new, status: unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
