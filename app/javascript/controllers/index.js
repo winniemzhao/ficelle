@@ -13,9 +13,6 @@ application.register("hello", HelloController)
 import KeywordsController from "./keywords_controller"
 application.register("keywords", KeywordsController)
 
-import LoadingController from "./loading_controller"
-application.register("loading", LoadingController)
-
 import NavbarActiveController from "./navbar_active_controller"
 application.register("navbar-active", NavbarActiveController)
 
