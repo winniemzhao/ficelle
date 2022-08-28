@@ -1,13 +1,5 @@
 require "open-uri"
 
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
-
 puts "Destroying previous instances"
 InspoKeyword.destroy_all
 Preference.destroy_all
@@ -18,7 +10,6 @@ Partner.destroy_all
 User.destroy_all
 
 puts "Creating users"
-Cloudinary::Uploader.upload("https://www.computerhope.com/jargon/g/guest-user.jpg", :public_id => "user_default")
 
 user1 = User.new(email: "a@gmail.com", password: "123456", name: "John", phone_number: "1234567890", location: "Montreal")
 user1.photo.attach(io: URI.open("https://www.computerhope.com/jargon/g/guest-user.jpg"), filename: "user1.jpg", content_type: "image/jpg")
@@ -31,7 +22,6 @@ user3.photo.attach(io: URI.open("https://www.computerhope.com/jargon/g/guest-use
 user3.save!
 
 puts "Creating partners"
-Cloudinary::Uploader.upload("https://avatar-management--avatars.us-west-2.prod.public.atl-paas.net/default-avatar.png", :public_id => "partner_default")
 
 partner1 = Partner.new(name: "Gillian", birthday: Date.new(1980,01,01), phone_number: "1234567", email: "c@gmail.com", location: "Montreal")
 partner1.photo.attach(io: URI.open("https://corporate.zalando.com/sites/default/files/styles/fullimage_extra_big/public/media/Zalando%20SE_brand%20partner_teaser%20image.jpg"), filename: "partner1.jpg", content_type: "image/jpg")
@@ -41,6 +31,7 @@ partner1.save!
 partner2 = Partner.new(name: "partner2")
 
 puts "Creating inspos"
+
 inspo1 = Inspo.new(name: "Yayoi Kusama art exhibit", genre: "date", location: "Centre PHI, 315 Saint-Paul St W", content: "Yayoi Kusama Exhibit at Centre PHI", cost: 40.0)
 inspo1.photo.attach(io: URI.open("https://phi.ca/uploads/_1920xAUTO_crop_center-center_80_none/yayoi-kusama-fondation.jpg"), filename: "inspo1.jpg", content_type: "image/jpg")
 inspo1.save!
@@ -74,6 +65,7 @@ inspo7.photo.attach(io: URI.open("https://senmix.com/pictures/product/02/98/poch
 inspo7.save!
 
 puts "Creating keywords"
+
 keyword1 = Keyword.new(name: "Movies")
 keyword1.photo.attach(io: URI.open("https://images.unsplash.com/photo-1620177088260-a9150572baf4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2352&q=80"), filename: "movies.jpg", content_type: "image/jpg")
 keyword1.save!

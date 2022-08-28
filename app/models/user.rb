@@ -6,4 +6,5 @@ class User < ApplicationRecord
   acts_as_favoritor
   has_one :partner
   has_one_attached :photo
+  validates :name, presence: true
 end
