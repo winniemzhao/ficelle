@@ -1,5 +1,47 @@
-<h1>User: <%= current_user.name%></h1>
-<h1>Partner: <%= current_user.partner.name%></h1>
-<%= link_to "Edit Partner Profile", edit_partner_path(current_user.partner) %>
+<div class="wrapper">
+  <div class="us">
+    <% if current_user.partner == nil %>
+      <div class="title">
+        <h2>You don't have <br> a partner yet.</h2>
+        <br>
+        <%= link_to "Create a partner profile", new_partner_path, class: "btn-flat mt-3" %>
+      </div>
+    <% else %>
+      <div class="relationship-avatars">
+        <div class="avatar-name">
+          <%= current_user.photo.attached? ? cl_image_tag(current_user.photo.key, class: "avatar form-avatar") : cl_image_tag("../pvvsjborrwmoiefhvpog", class: "avatar form-avatar") %>
+          <%= current_user.name %>
+          <%= link_to ('<i class="fa-solid fa-pen"></i>').html_safe, edit_user_registration_path %>
+        </div>
+        <h3>&</h3>
+        <div class="avatar-name">
+          <%= current_user.partner.photo.attached? ? cl_image_tag(current_user.partner.photo.key, class: "avatar form-avatar") : cl_image_tag("../pvvsjborrwmoiefhvpog", class: "avatar form-avatar") %>
+          <%= current_user.partner.name %>
+          <%= link_to ('<i class="fa-solid fa-pen"></i>').html_safe, edit_partner_path(current_user.partner) %>
+        </div>
+      </div>
 
-<p>🧡 Deceiving your partner since <%= current_user && current_user.partner ? current_user.partner.created_at.strftime('%a %B %e, %Y') : 2022 %> 🧡</p>
+      <p>🧡 Deceiving your partner since <%= current_user && current_user.partner ? current_user.partner.created_at.strftime('%a %B %e, %Y') : 2022 %> 🧡</p>
+
+      <div class="relationship-stats">
+        <div class="stat-genre">
+          <i class="fa-solid fa-people-pulling"></i>
+          <p>DATES</p>
+          <h4><%= current_user.partner.events.where(status: 2).select { |event| event.inspo.genre == "date"}.count %></h4>
+
+        </div>
+        <div class="stat-genre">
+          <i class="fa-solid fa-gift"></i>
+          <p>TEXTS</p>
+          <h4><%= current_user.partner.events.where(status: 2).select { |event| event.inspo.genre == "text"}.count %></h4>
+        </div>
+        <div class="stat-genre">
+          <i class="fa-solid fa-comment-dots"></i>
+          <p>GIFTS</p>
+          <h4><%= current_user.partner.events.where(status: 2).select { |event| event.inspo.genre == "gift"}.count %></h4>
+        </div>
+      </div>
+      <h6>COMPLETED EVENTS</h6>
+    <% end %>
+  </div>
+</div>

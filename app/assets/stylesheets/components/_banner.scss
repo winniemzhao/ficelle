@@ -23,3 +23,11 @@
 .banner-margin {
   margin-top: 148px;
 }
+
+.partnerless-dashboard {
+  height: calc(100vh - 116px - 64px - 64px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

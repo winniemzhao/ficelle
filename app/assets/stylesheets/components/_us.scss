@@ -1,0 +1,68 @@
+.relationship-avatars {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.avatar-name {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar-name img {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+.avatar-name a {
+  color: $white;
+  background-color: $green;
+  font-size: 12px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  bottom: 65px;
+  right: -30px;
+}
+
+.relationship-stats {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 64px;
+  width: 100%;
+}
+
+.stat-genre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-genre i {
+  font-size: 32px;
+}
+
+.stat-genre p {
+  margin: 8px 0;
+  font-size: 16px;
+}
+
+.us {
+  height: calc(100vh - 128px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.us h6 {
+  margin-top: 24px;
+}
