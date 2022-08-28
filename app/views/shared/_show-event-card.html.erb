@@ -51,7 +51,7 @@
       <p><strong>Location: </strong><br><%= event.inspo.location %></p>
     <% end %>
     <% if event.inspo.cost %>
-      <p><strong>Cost: </strong><br>$<%= event.inspo.cost %></p>
+      <p><strong>Cost: </strong><br><%= number_to_currency(event.inspo.cost) %></p>
     <% end %>
     <%= link_to "Delete Event",
       dashboard_path,

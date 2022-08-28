@@ -18,12 +18,9 @@
   <div class="wrapper">
 
     <% if current_user.partner == nil %>
-      <div class="landing">
-        <div class="title">
-            <h2>You don't have <br> a partner yet.</h2>
-            <br>
-            <%= link_to "Create a partner profile", new_partner_path, class: "btn-flat mt-3" %>
-        </div>
+      <div class="partnerless-dashboard">
+        <h2>You don't have <br> a partner yet.</h2>
+        <%= link_to "Create a partner profile", new_partner_path, class: "btn-flat mt-3" %>
       </div>
     <% end %>
 

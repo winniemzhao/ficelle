@@ -14,7 +14,11 @@ class PartnersController < ApplicationController
   end
 
   def edit
-    @partner = Partner.find(params[:id])
+    if current_user.partner.nil?
+      redirect_to dashboard_path
+    else
+      @partner = Partner.find(params[:id])
+    end
   end
 
   def update
