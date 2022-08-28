@@ -1,8 +1,19 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
-  config.action_mailer.default_url_options = { host: "http://TODO_PUT_YOUR_DOMAIN_HERE" }
+  #config.action_mailer.default_url_options = { host: "http://TODO_PUT_YOUR_DOMAIN_HERE" }
   # Settings specified here will take precedence over those in config/application.rb.
+
+  config.action_mailer.smtp_settings = {
+      port:  ENV['MAILGUN_SMTP_PORT'],
+      address: ENV['MAILGUN_SMTP_SERVER'],
+      user_name: ENV['MAILGUN_SMTP_LOGIN'],
+      password: ENV['MAILGUN_SMTP_PASSWORD'],
+      domain: 'ficelle.ca',
+      authentication: :plain
+  }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
 
   # Code is not reloaded between requests.
   config.cache_classes = true
