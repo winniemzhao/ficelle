@@ -17,7 +17,7 @@ class EventsController < ApplicationController
     if @event.save
       redirect_to dashboard_path
     else
-      render :new, status: unprocessable_entity
+      render :new, status: :unprocessable_entity
     end
   end
 
