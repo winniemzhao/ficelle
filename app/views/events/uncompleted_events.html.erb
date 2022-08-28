@@ -10,7 +10,7 @@
         Good afternoon, <%= current_user.name %>
       <% end %>
     </h4>
-    <h6 class="mt-2">Today is <%= DateTime.now.strftime("%A, %b %e") %></h6>
+    <h6 class="mt-2">Today is <%= Time.now.in_time_zone('Eastern Time (US & Canada)').strftime("%A, %b %e") %></h6>
   </div>
 </div>
 

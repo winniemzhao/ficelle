@@ -45,6 +45,9 @@ class EventsController < ApplicationController
     @events = Event.where(status: :completed)
   end
 
+  def loading
+  end
+
   private
 
   def set_event
