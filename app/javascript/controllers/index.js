@@ -4,18 +4,20 @@
 
 import { application } from "./application"
 
+import EditEventController from "./edit_event_controller"
+application.register("edit-event", EditEventController)
 
-// import HelloController from "./hello_controller"
-// application.register("hello", HelloController)
+import HelloController from "./hello_controller"
+application.register("hello", HelloController)
+
+import KeywordsController from "./keywords_controller"
+application.register("keywords", KeywordsController)
+
+import LoadingController from "./loading_controller"
+application.register("loading", LoadingController)
 
 import NavbarActiveController from "./navbar_active_controller"
 application.register("navbar-active", NavbarActiveController)
 
 import SwipeInsposController from "./swipe_inspos_controller"
 application.register("swipe-inspos", SwipeInsposController)
-
-import EditEventController from "./edit_event_controller"
-application.register("edit-event", EditEventController)
-
-import KeywordsController from "./keywords_controller"
-application.register("keywords", KeywordsController)
