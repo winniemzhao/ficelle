@@ -82,3 +82,5 @@ gem "cloudinary"
 # gem "dotenv-rails", groups: [:development, :test]
 # dotenv-rails was listed here twice for some reason (see line 58), so I commented it out.
 gem 'local_time'
+gem 'sinatra'
+gem 'twilio-ruby'
