@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="wrapper" data-controller="loading">
   <h6 class="mt-2">Select potential events</h6>
   <div data-controller="swipe-inspos">
     <% @inspos.each_with_index do |inspo, index| %>
@@ -10,6 +10,6 @@
   </div>
   <div class="back-skip">
     <%= link_to ('<i class="fa-solid fa-circle-arrow-left"></i> Back').html_safe, new_partner_path, class: "dark-link" %>
-    <%= link_to ('Skip <i class="fa-solid fa-circle-arrow-right"></i>').html_safe, dashboard_path, class: "dark-link" %>
+    <span data-action="click->loading#load"><%= link_to ('Skip <i class="fa-solid fa-circle-arrow-right"></i>').html_safe, dashboard_path, class: "dark-link" %></span>
   </div>
 </div>
