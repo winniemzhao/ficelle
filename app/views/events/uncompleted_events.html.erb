@@ -1,9 +1,10 @@
 <div class="banner">
   <div>
     <h4>
-      <% if DateTime.now.hour < 12 %>
+      <% hour = Time.now.in_time_zone('Eastern Time (US & Canada)').hour %>
+      <% if hour > 3 && hour < 12 %>
         Good morning, <%= current_user.name %>
-      <% elsif DateTime.now.hour > 17 %>
+      <% elsif hour > 17 || hour <= 3 %>
         Good evening, <%= current_user.name %>
       <% else %>
         Good afternoon, <%= current_user.name %>
