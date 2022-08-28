@@ -13,8 +13,5 @@ application.register("hello", HelloController)
 import KeywordsController from "./keywords_controller"
 application.register("keywords", KeywordsController)
 
-import LoadingController from "./loading_controller"
-application.register("loading", LoadingController)
-
 import SwipeInsposController from "./swipe_inspos_controller"
 application.register("swipe-inspos", SwipeInsposController)
