@@ -14,6 +14,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+    @event.partner_id = current_user.partner.id
     if @event.save
       redirect_to dashboard_path
     else
@@ -59,7 +60,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:date, :success, :status, :content)
+    params.require(:event).permit(:date, :success, :status, :content, :inspo_id)
   end
 
 
