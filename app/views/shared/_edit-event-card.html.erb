@@ -47,7 +47,7 @@
       <%= f.input :date, html5: true, label: "Event Date:" %>
       <%= f.hidden_field :status, :value => Event.statuses.key(1) %>
       <% if event.inspo.genre == "text" %>
-        <%= f.input :content, label: "Message:" %>
+        <%= f.input :content, label: "Message:", placeholder: event.inspo.content %>
       <% end %>
       <%= f.submit "Confirm Event", class: "btn btn-flat" %>
     <% end %>

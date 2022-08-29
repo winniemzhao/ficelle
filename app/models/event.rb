@@ -14,6 +14,7 @@ class Event < ApplicationRecord
       else
         date = Time.new(Date.today.year, Date.today.month, Date.today.day, rand(17..19))
       end
+      content = inspo.content if inspo.genre == 'text'
       event = Event.new(date: date + 86400 * rand(1..14))
       event.partner = user.partner
       event.inspo = inspo
