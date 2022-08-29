@@ -7,6 +7,10 @@ class EventsController < ApplicationController
 
   def uncompleted_events
     @events = Event.where.not(status: :completed)
+    @completed_events = Event.select { |event| DateTime.now > event.date }
+    @completed_events = @completed_events.each do |event|
+      status_completed(event)
+    end
   end
 
   def show
@@ -45,7 +49,7 @@ class EventsController < ApplicationController
   end
 
   def completed_events
-    @events = Event.where(status: :completed)
+   @events = Event.where(status: :completed)
   end
 
   def loading
@@ -59,5 +63,10 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:date, :success, :status, :content)
+  end
+
+  def status_completed(event)
+    event.status = 2
+    event.save!
   end
 end

@@ -138,20 +138,20 @@ keyword12.save!
 # keyword19.photo.attach(io: URI.open("https://images.unsplash.com/photo-1426927308491-6380b6a9936f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"), filename: "carpentry.jpg", content_type: "image/jpg")
 # keyword19.save!
 
-# event1 = Event.new(date: Time.new(2022, 8, 29, 19), content: "text")
-# event1.partner = partner1
-# event1.inspo = inspo1
-# event1.save!
+event1 = Event.new(date: Time.new(2022, 8, 28, 19), content: "text")
+event1.partner = partner1
+event1.inspo = inspo1
+event1.save!
 
-# event2 = Event.new(date: Time.new(2022, 8, 31, 15), content: "text")
-# event2.partner = partner1
-# event2.inspo = inspo2
-# event2.save!
+event2 = Event.new(date: Time.new(2022, 8, 27, 15), content: "text")
+event2.partner = partner1
+event2.inspo = inspo2
+event2.save!
 
-# event3 = Event.new(date: Time.new(2022, 9, 2), content: inspo8.content)
-# event3.partner = partner1
-# event3.inspo = inspo8
-# event3.save!
+event3 = Event.new(date: Time.new(2022, 9, 2), content: inspo8.content)
+event3.partner = partner1
+event3.inspo = inspo8
+event3.save!
 
 # event4 = Event.new(date: Time.new(2023), content: inspo4.content)
 # event4.partner = partner1
