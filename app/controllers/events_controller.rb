@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: %i[show edit update destroy]
+  before_action :set_event, only: %i[show edit update destroy edit_success update_success]
 
   def new
     @event = Event.new
@@ -46,6 +46,17 @@ class EventsController < ApplicationController
   end
 
   def update_success
+    if @event.success
+      @event.success = false
+    else
+      @event.success = true
+    end
+    @event.save
+
+    respond_to do |format|
+      format.html { redirect_to history_path }
+      format.json
+    end
   end
 
   def completed_events

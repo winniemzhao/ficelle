@@ -9,9 +9,15 @@
         <i class="fa-solid fa-calendar-check"></i>
       </p>
     <% elsif event.completed? %>
-      <p class="event-icon color-blue">
-        <i class="fa-regular fa-thumbs-up"></i>
-      </p>
+      <% if event.success %>
+        <p class="event-icon color-blue">
+          <i class="fa-solid fa-thumbs-up"></i>
+        </p>
+      <% else %>
+        <p class="event-icon color-blue">
+          <i class="fa-regular fa-thumbs-up"></i>
+        </p>
+      <% end %>
     <% end %>
     <div class="event-card-info">
       <h6>

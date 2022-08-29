@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="edit-event"
 export default class extends Controller {
-  static targets = ["pending", "confirmed", "completed", "edit", "show"]
+  static targets = ["pending", "confirmed", "completed", "edit", "show", "success"]
 
   connect() {
     // console.log("all pending targets", this.pendingTargets)
@@ -73,5 +73,24 @@ export default class extends Controller {
 
     current.classList.remove("d-none")
     showCurrent.classList.add("d-none")
+  }
+
+  eventSuccess(event) {
+    const url = `/events/${event.target.id}/success`
+    // console.log(event.target);
+
+    fetch(url, {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      // body: JSON.stringify({
+
+      // })
+    })
+      // .then(response => response.json())
+      // .then((data) => {
+      //   console.log(data)
+      // })
+
+
   }
 }
