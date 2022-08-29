@@ -28,8 +28,8 @@
       </li>
       <li class="nav-item">
         <%#= replace dashboard_path for path to settings %>
-        <%= link_to(dashboard_path) do %>
-          <p class="nav-icon"><i class="fa-solid fa-gear <%#= 'my-nav' if request.fullpath == settings_path%>"></i></p>
+        <%= link_to(setting_path) do %>
+          <p class="nav-icon"><i class="fa-solid fa-gear <%= 'my-nav' if request.fullpath == setting_path%>"></i></p>
           <p class="nav-info">settings</p>
         <% end %>
       </li>

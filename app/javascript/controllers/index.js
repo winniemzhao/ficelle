@@ -13,5 +13,8 @@ application.register("hello", HelloController)
 import KeywordsController from "./keywords_controller"
 application.register("keywords", KeywordsController)
 
+import SettingsController from "./settings_controller"
+application.register("settings", SettingsController)
+
 import SwipeInsposController from "./swipe_inspos_controller"
 application.register("swipe-inspos", SwipeInsposController)

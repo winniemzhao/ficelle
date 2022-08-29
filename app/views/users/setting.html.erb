@@ -1,0 +1,30 @@
+<div class="banner">
+  <div>
+    <h4>
+      Settings
+    </h4>
+  </div>
+</div>
+
+<div class="banner-margin">
+  <div class="wrapper" data-controller="settings">
+
+    <%= render "shared/setting-card-frequency"%>
+    <%= render "shared/edit-setting-card-frequency"%>
+    <%= render "shared/setting-card-payment"%>
+    <%= render "shared/edit-setting-card-payment"%>
+
+    <div class="event-card">
+      <div class="event-card-content">
+        <p class="event-icon color-dark">
+        <i class="fa-solid fa-key"></i>
+        </p>
+        <div class="event-card-info">
+            <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+        </div>
+        <p><i class=" "></i></p>
+      </div>
+    </div>
+
+  </div>
+</div>
