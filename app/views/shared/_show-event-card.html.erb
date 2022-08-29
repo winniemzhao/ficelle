@@ -50,7 +50,8 @@
   </div>
   <div class="event-description">
     <p><strong>Event Type: </strong><br><%= event.inspo.genre.capitalize %></p>
-    <p><strong>Event Date: </strong><br><%= event.date.strftime("%A, %b %e at %l:%M %p") %></p>
+    <p><strong>Event Date: </strong><br><%= event.date
+    .in_time_zone('Eastern Time (US & Canada)').strftime("%A, %b %e at %l:%M %p") %></p>
     <% if event.inspo.genre == "text" %>
       <p><strong>Content: </strong><br><%= event.content %></p>
     <% elsif event.inspo.genre == "date" %>
