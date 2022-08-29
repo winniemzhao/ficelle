@@ -16,7 +16,7 @@ class Event < ApplicationRecord
       end
       event = Event.new(date: date + 86400 * rand(1..14))
       event.partner = user.partner
-      event.inspo = Inspo.find(favorite.favoritable_id)
+      event.inspo = inspo
       event.save!
     end
   end
