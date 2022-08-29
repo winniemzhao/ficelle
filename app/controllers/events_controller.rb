@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update destroy edit_success update_success]
+  skip_before_action :verify_authenticity_token
 
   def new
     @event = Event.new
@@ -46,15 +47,11 @@ class EventsController < ApplicationController
   end
 
   def update_success
-    if @event.success
-      @event.success = false
-    else
-      @event.success = true
-    end
-    @event.save
+    @event.success = !@event.success
+    @event.update(event_params)
 
     respond_to do |format|
-      format.html { redirect_to history_path }
+      format.html
       format.json
     end
   end
@@ -73,7 +70,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:date, :success, :status, :content)
+    params.require(:event).permit(:date, :success, :status, :content, :id)
   end
 
   def status_completed(event)

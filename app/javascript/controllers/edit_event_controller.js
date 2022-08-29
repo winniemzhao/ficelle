@@ -77,16 +77,21 @@ export default class extends Controller {
 
   eventSuccess(event) {
     const url = `/events/${event.target.id}/success`
-    // console.log(event.target);
+    console.log(url);
+
+    const csrfToken = document.getElementsByName("csrf-token")[0].content;
 
     fetch(url, {
       method: "PATCH",
-      headers: { "Content-Type": "application/json" },
-      // body: JSON.stringify({
-
-      // })
+      headers: {
+        "X-CRSF-Token": csrfToken,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        id: event.target.id
+      })
     })
-      // .then(response => response.json())
+      .then((response) => {console.log(response)})
       // .then((data) => {
       //   console.log(data)
       // })

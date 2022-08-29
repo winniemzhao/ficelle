@@ -1,6 +1,13 @@
 <div class="event-card" data-edit-event-target="completed" id="event-<%= event.id %>">
   <div class="event-card-content">
-    <p class="event-icon color-blue" data-edit-event-target="success" data-action="click->edit-event#eventSuccess"><i class="fa-regular fa-thumbs-up" id="<%= event.id %>"></i></p>
+    <p class="event-icon color-blue" data-edit-event-target="success" data-action="click->edit-event#eventSuccess">
+      <% if event.success %>
+        <i class="fa-solid fa-thumbs-up" id="<%= event.id %>"></i>
+      <% else %>
+        <i class="fa-regular fa-thumbs-up" id="<%= event.id %>"></i>
+      <% end %>
+    </p>
+
     <div class="event-card-info">
       <h6>
         <%= event.inspo.name %>
