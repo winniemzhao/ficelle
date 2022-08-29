@@ -7,13 +7,13 @@ class EventsController < ApplicationController
   end
 
   def uncompleted_events
-    @events = Event.where.not(status: :completed)
-    @events = @events.sort_by(&:date)
-
-    @completed_events = Event.select { |event| DateTime.now > event.date }
+    @completed_events = Event.where(partner_id: current_user.partner).select { |event| DateTime.now > event.date }
     @completed_events = @completed_events.each do |event|
       status_completed(event)
     end
+
+    @events = Event.where(partner_id: current_user.partner).where.not(status: :completed)
+    @events = @events.sort_by(&:date)
   end
 
   def show
