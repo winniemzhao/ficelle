@@ -7,36 +7,24 @@
 </div>
 
 <div class="banner-margin">
-  <div class="wrapper">
+  <div class="wrapper" data-controller="settings">
 
-<%= render "shared/setting-card-frequency"%>
-<%= render "shared/setting-card-payment"%>
+    <%= render "shared/setting-card-frequency"%>
+    <%= render "shared/edit-setting-card-frequency"%>
+    <%= render "shared/setting-card-payment"%>
+    <%= render "shared/edit-setting-card-payment"%>
 
     <div class="event-card">
       <div class="event-card-content">
+        <p class="event-icon color-dark">
+        <i class="fa-solid fa-key"></i>
+        </p>
         <div class="event-card-info">
-          <h6>
             <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-          </h6>
         </div>
-        <p><i class="fa-solid fa-ellipsis"></i></p>
+        <p><i class=" "></i></p>
       </div>
     </div>
 
   </div>
 </div>
-
-
-<%#
-<h3>Event Frequency</h3>
-<h3># of events per month</h3> %>
-<%#= current_user.event_frequency %>
-<%# <br>
-<br>
-<h3>Payment</h3>
-<h3>Budget per gift</h3> %>
-<%#= current_user.budget %>
-<%# <br>
-<br> %>
-
-<%#= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
