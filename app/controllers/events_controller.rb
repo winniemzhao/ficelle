@@ -62,6 +62,7 @@ class EventsController < ApplicationController
 
   def completed_events
    @events = Event.where(status: :completed)
+   @events = @events.sort_by(&:date).reverse
   end
 
   def loading
