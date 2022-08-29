@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="edit-event"
 export default class extends Controller {
-  static targets = ["pending", "confirmed", "completed", "edit", "show"]
+  static targets = ["pending", "confirmed", "completed", "edit", "show", "success"]
 
   connect() {
     // console.log("all pending targets", this.pendingTargets)
@@ -73,5 +73,41 @@ export default class extends Controller {
 
     current.classList.remove("d-none")
     showCurrent.classList.add("d-none")
+  }
+
+  eventSuccess(event) {
+    const url = `/events/${event.target.id}/success`
+
+    const csrfToken = document.getElementsByName("csrf-token")[0].content;
+
+    fetch(url, {
+      method: "PATCH",
+      headers: {
+        "X-CSRF-Token": csrfToken,
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        event: { id: event.target.id }
+      })
+    })
+      .then(response => response.json())
+      .then((data) => {
+        console.log(data.success)
+        const current = this.successTargets.find( success => event.target.id === success.id)
+        // console.log(current);
+        // console.log(current.classList);
+        // console.log(current.classList[1]);
+
+        if (data.success) {
+          current.classList.remove("fa-regular")
+          current.classList.add("fa-solid")
+        } else {
+          current.classList.add("fa-regular")
+          current.classList.remove("fa-solid")
+        }
+
+      })
+
+
   }
 }
