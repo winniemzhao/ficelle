@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: %i[show edit update destroy]
+  before_action :set_event, only: %i[show edit update destroy edit_success update_success]
+  skip_before_action :verify_authenticity_token
 
   def new
     @event = Event.new
@@ -7,6 +8,10 @@ class EventsController < ApplicationController
 
   def uncompleted_events
     @events = Event.where.not(status: :completed)
+    @completed_events = Event.select { |event| DateTime.now > event.date }
+    @completed_events = @completed_events.each do |event|
+      status_completed(event)
+    end
   end
 
   def show
@@ -43,10 +48,18 @@ class EventsController < ApplicationController
   end
 
   def update_success
+    @event.success = !@event.success
+    @event.save
+    p "the params are: #{params}"
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @event }
+    end
   end
 
   def completed_events
-    @events = Event.where(status: :completed)
+   @events = Event.where(status: :completed)
   end
 
   def loading
@@ -63,5 +76,9 @@ class EventsController < ApplicationController
     params.require(:event).permit(:date, :success, :status, :content, :inspo_id)
   end
 
+  def status_completed(event)
+    event.status = 2
+    event.save!
+  end
 
 end

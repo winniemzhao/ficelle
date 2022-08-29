@@ -192,20 +192,20 @@ ik49 = InspoKeyword.new(); ik49.inspo = inspo14; ik49.keyword = keyword12; ik49.
 ik50 = InspoKeyword.new(); ik50.inspo = inspo15; ik50.keyword = keyword6; ik50.save!
 
 
-# event1 = Event.new(date: Time.new(2022, 8, 29, 19), content: "text")
-# event1.partner = partner1
-# event1.inspo = inspo1
-# event1.save!
+event1 = Event.new(date: Time.new(2022, 8, 28, 19), content: "text")
+event1.partner = partner1
+event1.inspo = inspo1
+event1.save!
 
-# event2 = Event.new(date: Time.new(2022, 8, 31, 15), content: "text")
-# event2.partner = partner1
-# event2.inspo = inspo2
-# event2.save!
+event2 = Event.new(date: Time.new(2022, 8, 27, 15), content: "text")
+event2.partner = partner1
+event2.inspo = inspo2
+event2.save!
 
-# event3 = Event.new(date: Time.new(2022, 9, 2), content: inspo8.content)
-# event3.partner = partner1
-# event3.inspo = inspo8
-# event3.save!
+event3 = Event.new(date: Time.new(2022, 9, 2), content: inspo8.content)
+event3.partner = partner1
+event3.inspo = inspo8
+event3.save!
 
 # event4 = Event.new(date: Time.new(2023), content: inspo4.content)
 # event4.partner = partner1
