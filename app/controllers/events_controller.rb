@@ -8,6 +8,8 @@ class EventsController < ApplicationController
 
   def uncompleted_events
     @events = Event.where.not(status: :completed)
+    @events = @events.sort_by(&:date)
+
     @completed_events = Event.select { |event| DateTime.now > event.date }
     @completed_events = @completed_events.each do |event|
       status_completed(event)
