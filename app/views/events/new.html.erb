@@ -1,6 +1,10 @@
-<h1>New Event</h1>
-<%= simple_form_for [@event] do |f| %>
-  <%= f.association :inspo %>
-  <%= f.input :date, html5: true, label: "Event Date:" %>
-  <%= f.submit "Create Event", class: "btn btn-primary" %>
-<% end %>
+<div class="wrapper">
+  <div class="form-wrapper">
+    <h2 class="mb-2">New Event</h2>
+    <%= simple_form_for [@event] do |f| %>
+      <%= f.association :inspo, label: "Choose a curated event:" %>
+      <%= f.input :date, html5: true, label: "Event Date:" %>
+      <%= f.submit "Create Event", class: "btn btn-flat" %>
+    <% end %>
+  </div>
+</div>
