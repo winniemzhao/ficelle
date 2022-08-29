@@ -17,24 +17,11 @@
     <div class="event-card">
       <div class="event-card-content">
         <p class="event-icon color-dark">
-        <i class="fa-solid fa-ellipsis"></i>
-        </p>
-        <div class="event-card-info">
-            <%= link_to "User settings", edit_user_registration_path %>
-        </div>
-        <p><i class=" "></i></p>
-      </div>
-    </div>
-
-    <div class="event-card">
-      <div class="event-card-content">
-        <p class="event-icon color-dark">
         <i class="fa-solid fa-key"></i>
         </p>
         <div class="event-card-info">
             <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
         </div>
-        <p><i class=" "></i></p>
       </div>
     </div>
   </div>
