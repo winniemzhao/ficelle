@@ -77,7 +77,6 @@ export default class extends Controller {
 
   eventSuccess(event) {
     const url = `/events/${event.target.id}/success`
-    console.log(url);
 
     const csrfToken = document.getElementsByName("csrf-token")[0].content;
 
@@ -91,10 +90,16 @@ export default class extends Controller {
         id: event.target.id
       })
     })
-      .then((response) => {console.log(response)})
-      // .then((data) => {
-      //   console.log(data)
-      // })
+      // .then(response => response.json())
+      .then((data) => {
+        // console.log(data)
+        const current = this.successTargets.find( success => event.target.id === success.id)
+        console.log(current);
+        console.log(current.classList);
+        console.log(current.classList[1]);
+
+
+      })
 
 
   }

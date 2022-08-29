@@ -1,10 +1,10 @@
 <div class="event-card" data-edit-event-target="completed" id="event-<%= event.id %>">
   <div class="event-card-content">
-    <p class="event-icon color-blue" data-edit-event-target="success" data-action="click->edit-event#eventSuccess">
+    <p class="event-icon color-blue"data-action="click->edit-event#eventSuccess">
       <% if event.success %>
-        <i class="fa-solid fa-thumbs-up" id="<%= event.id %>"></i>
+        <i class="icon-thumb fa-solid fa-thumbs-up" id="<%= event.id %>" data-edit-event-target="success"></i>
       <% else %>
-        <i class="fa-regular fa-thumbs-up" id="<%= event.id %>"></i>
+        <i class="icon-thumb fa-regular fa-thumbs-up" id="<%= event.id %>" data-edit-event-target="success"></i>
       <% end %>
     </p>
 
