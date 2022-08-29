@@ -28,11 +28,11 @@ partner1.photo.attach(io: URI.open("https://corporate.zalando.com/sites/default/
 partner1.user = user1
 partner1.save!
 
-partner2 = Partner.new(name: "partner2")
+# partner2 = Partner.new(name: "partner2")
 
 puts "Creating inspos"
 
-inspo1 = Inspo.new(name: "Yayoi Kusama art exhibit", genre: "date", location: "Centre PHI, 315 Saint-Paul St W", content: "Yayoi Kusama Exhibit at Centre PHI", cost: 40.0)
+inspo1 = Inspo.new(name: "Yayoi Kusama Art Exhibit", genre: "date", location: "Centre PHI, 315 Saint-Paul St W", content: "Yayoi Kusama Exhibit at Centre PHI", cost: 40.0)
 inspo1.photo.attach(io: URI.open("https://phi.ca/uploads/_1920xAUTO_crop_center-center_80_none/yayoi-kusama-fondation.jpg"), filename: "inspo1.jpg", content_type: "image/jpg")
 inspo1.save!
 
@@ -40,11 +40,11 @@ inspo8 = Inspo.new(name: "Steamy Text 💬", genre: "text", content: "🛏️�
 inspo8.photo.attach(io: URI.open("https://hips.hearstapps.com/hmg-prod/images/wh-sexting-1603812586.png?crop=0.49988000959923207xw:1xh;center,top&resize=1200:*"), filename: "inspo8.png", content_type: "image/png")
 inspo8.save!
 
-inspo3 = Inspo.new(name: "Warm coffee with lovely cats", genre: "date", location: "Cafe Chat l'Heureux, 172 Duluth East", content: "Snorkeling trip to Peru", cost: 500.0)
+inspo3 = Inspo.new(name: "Warm Coffee with Lovely Cats", genre: "date", location: "Cafe Chat l'Heureux, 172 Duluth East", content: "At Café Chat L'Heureux!", cost: 500.0)
 inspo3.photo.attach(io: URI.open("https://cafechatlheureux.com/content/images/cats/Milady.JPG"), filename: "inspo3.jpg", content_type: "image/jpg")
 inspo3.save!
 
-inspo2 = Inspo.new(name: "Bouquet of flowers", genre: "gift", content: "A mix of multicolor standard and garden roses", cost: 55.0)
+inspo2 = Inspo.new(name: "Bouquet of Flowers", genre: "gift", content: "A mix of multicolor standard and garden roses", cost: 55.0)
 inspo2.photo.attach(io: URI.open("https://pyxis.nymag.com/v1/imgs/e8e/c68/83930d962edd0049116885bd6033c8492e.2x.rhorizontal.w600.jpg"), filename: "inspo7.jpg", content_type: "image/jpg")
 inspo2.save!
 
@@ -60,9 +60,37 @@ inspo6 = Inspo.new(name: "Cat Memes 💬 ", genre: "text", content: "SO CUUUUUTE
 inspo6.photo.attach(io: URI.open("https://i.pinimg.com/originals/e2/1e/c3/e21ec38a960ed856a9cbc2950654818c.jpg"), filename: "inspo6.jpg", content_type: "image/jpg")
 inspo6.save!
 
-inspo7 = Inspo.new(name: "Louis Vuitton bag", genre: "gift", content: "Pochette Metis bag", cost: 2590.0)
+inspo7 = Inspo.new(name: "Louis Vuitton Bag", genre: "gift", content: "Pochette Metis bag", cost: 2590.0)
 inspo7.photo.attach(io: URI.open("https://senmix.com/pictures/product/02/98/pochette-metis-monogram-m44875_1.jpg"), filename: "inspo2.jpg", content_type: "image/jpg")
 inspo7.save!
+
+inspo9 = Inspo.new(name: "Dinner and a Movie!", genre: "date", content: "Charm your date with your good taste", cost: 100.0)
+inspo9.photo.attach(io: URI.open("https://images.unsplash.com/photo-1440404653325-ab127d49abc1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"), filename: "inspo9.jpg", content_type: "image/jpg")
+inspo9.save!
+
+inspo10 = Inspo.new(name: "Try a Mexican Restaurant", genre: "date", location: "1206 Union Ave, Montreal, Quebec H3B 3A7", content: "Escondite Union is a good choice", cost: 200.0)
+inspo10.photo.attach(io: URI.open("https://images.unsplash.com/photo-1517638851339-a711cfcf3279?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"), filename: "inspo10.jpg", content_type: "image/jpg")
+inspo10.save!
+
+inspo11 = Inspo.new(name: "Explore Mount Royal as a Couple", genre: "date", location: "Montreal, QC H3H 1A1", content: "Get your hiking boots out!", cost: 1.0)
+inspo11.photo.attach(io: URI.open("https://images.unsplash.com/photo-1602599151411-875a848f71b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"), filename: "inspo11.jpg", content_type: "image/jpg")
+inspo11.save!
+
+inspo12 = Inspo.new(name: "Visit a Bookstore Together", genre: "date", content: "Be sure to surprise your date with new books", cost: 50.0)
+inspo12.photo.attach(io: URI.open("https://images.unsplash.com/photo-1593061231114-1798846fd643?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"), filename: "inspo12.jpg", content_type: "image/jpg")
+inspo12.save!
+
+inspo13 = Inspo.new(name: "Make Sushi for Your Partner", genre: "gift", content: "The best ingredients can be found at Miyamoto", cost: 100.0)
+inspo13.photo.attach(io: URI.open("https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=327&q=80"), filename: "inspo13.jpg", content_type: "image/jpg")
+inspo13.save!
+
+inspo14 = Inspo.new(name: "Meditation Retreat", genre: "gift", content: "Escape together", cost: 500.0)
+inspo14.photo.attach(io: URI.open("https://images.unsplash.com/photo-1520363147109-9ab9d1c8f8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1256&q=80"), filename: "inspo14.jpg", content_type: "image/jpg")
+inspo14.save!
+
+inspo15 = Inspo.new(name: "Send a Love Poem", genre: "text", content: "Every time\nI see your face\nit reminds\nme of you.", cost: 0)
+inspo15.photo.attach(io: URI.open("https://images.unsplash.com/photo-1517867065801-e20f409696b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"), filename: "inspo15.jpg", content_type: "image/jpg")
+inspo15.save!
 
 puts "Creating keywords"
 
@@ -130,13 +158,39 @@ keyword12.save!
 # keyword16.photo.attach(io: URI.open("https://images.unsplash.com/photo-1507838153414-b4b713384a76?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"), filename: "music.jpg", content_type: "image/jpg")
 # keyword16.save!
 
-# keyword17 = Keyword.new(name: "Birdwatching")
-# keyword17.photo.attach(io: URI.open("https://images.unsplash.com/photo-1515622866498-b50a07b339e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"), filename: "birdwatching.jpg", content_type: "image/jpg")
+# keyword17 = Keyword.new(name: "Nature")
+# keyword17.photo.attach(io: URI.open("https://images.unsplash.com/photo-1515622866498-b50a07b339e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"), filename: "nature.jpg", content_type: "image/jpg")
 # keyword17.save!
 
-# keyword19 = Keyword.new(name: "Carpentry")
-# keyword19.photo.attach(io: URI.open("https://images.unsplash.com/photo-1426927308491-6380b6a9936f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"), filename: "carpentry.jpg", content_type: "image/jpg")
-# keyword19.save!
+# keyword18 = Keyword.new(name: "Carpentry")
+# keyword18.photo.attach(io: URI.open("https://images.unsplash.com/photo-1426927308491-6380b6a9936f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"), filename: "carpentry.jpg", content_type: "image/jpg")
+# keyword18.save!
+
+puts "Hardcoding InspoKeywords 'cause we're hacks"
+
+ik1 = InspoKeyword.new(); ik1.inspo = inspo1; ik1.keyword = keyword6; ik1.save!
+ik2 = InspoKeyword.new(); ik2.inspo = inspo2; ik2.keyword = keyword2; ik2.save!
+ik3 = InspoKeyword.new(); ik3.inspo = inspo3; ik3.keyword = keyword9; ik3.save!
+ik4 = InspoKeyword.new(); ik4.inspo = inspo3; ik4.keyword = keyword11; ik4.save!
+Keyword.all.each do |keyword|
+  ik5 = InspoKeyword.new(); ik5.inspo = inspo4; ik5.keyword = keyword; ik5.save!
+end
+ik17 = InspoKeyword.new(); ik17.inspo = inspo5; ik17.keyword = keyword5; ik17.save!
+ik18 = InspoKeyword.new(); ik18.inspo = inspo6; ik18.keyword = keyword11; ik18.save!
+ik19 = InspoKeyword.new(); ik19.inspo = inspo7; ik19.keyword = keyword6; ik19.save!
+ik20 = InspoKeyword.new(); ik20.inspo = inspo7; ik20.keyword = keyword8; ik20.save!
+Keyword.all.each do |keyword|
+  ik21 = InspoKeyword.new(); ik21.inspo = inspo8; ik21.keyword = keyword; ik21.save!
+end
+ik33 = InspoKeyword.new(); ik33.inspo = inspo9; ik33.keyword = keyword1; ik33.save!
+ik44 = InspoKeyword.new(); ik44.inspo = inspo10; ik44.keyword = keyword3; ik44.save!
+ik45 = InspoKeyword.new(); ik45.inspo = inspo11; ik45.keyword = keyword4; ik45.save!
+ik46 = InspoKeyword.new(); ik46.inspo = inspo12; ik46.keyword = keyword7; ik46.save!
+ik47 = InspoKeyword.new(); ik47.inspo = inspo12; ik47.keyword = keyword8; ik47.save!
+ik48 = InspoKeyword.new(); ik48.inspo = inspo13; ik48.keyword = keyword10; ik48.save!
+ik49 = InspoKeyword.new(); ik49.inspo = inspo14; ik49.keyword = keyword12; ik49.save!
+ik50 = InspoKeyword.new(); ik50.inspo = inspo15; ik50.keyword = keyword6; ik50.save!
+
 
 # event1 = Event.new(date: Time.new(2022, 8, 29, 19), content: "text")
 # event1.partner = partner1

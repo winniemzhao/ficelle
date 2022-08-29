@@ -1,6 +1,6 @@
 class InsposController < ApplicationController
   def index
-    @inspos = Inspo.all.first(5)
+    @inspos = current_user.partner.inspos.uniq.select { |inspo| inspo.favorited_by?(current_user) }
   end
 
   def toggle_favorite

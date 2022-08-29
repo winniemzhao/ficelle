@@ -49,6 +49,7 @@ class EventsController < ApplicationController
   end
 
   def loading
+    Event.load(current_user)
   end
 
   private
