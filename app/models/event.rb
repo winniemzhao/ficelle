@@ -8,9 +8,9 @@ class Event < ApplicationRecord
     Favorite.for_favoritor(user).each do |favorite|
       inspo = Inspo.find(favorite.favoritable_id)
       if inspo.genre = 'text'
-        date = Time.now.in_time_zone('Eastern Time (US & Canada)') + rand(0..86400)
+        date = Time.new(Date.today.year, Date.today.month, Date.today.day, rand(8..20), [15, 30, 45, 0].sample)
       elsif inspo.genre = 'gift'
-        date = Time.now.in_time_zone('Eastern Time (US & Canada)')
+        date = Time.new(Date.today.year, Date.today.month, Date.today.day, rand(8..20))
       else
         date = Time.new(Date.today.year, Date.today.month, Date.today.day, rand(17..19))
       end
