@@ -1,5 +1,7 @@
 class Inspo < ApplicationRecord
   has_many :events
+  has_many :inspo_keywords
+  has_many :keywords, through: :inspo_keywords
 
   validates :name, presence: true
   validates :genre, presence: true
