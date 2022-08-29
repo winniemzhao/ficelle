@@ -25,6 +25,7 @@
     <% end %>
     <% if current_user.partner.events.count == 0 %>
       <h4 class="mb-2">You have no upcoming events.</h4>
+      <%# include button here to generate events %>
     <% else %>
       <h4 class="mb-2">Upcoming events</h4>
     <% end %>
