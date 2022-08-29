@@ -36,7 +36,7 @@ inspo1 = Inspo.new(name: "Yayoi Kusama Art Exhibit", genre: "date", location: "C
 inspo1.photo.attach(io: URI.open("https://phi.ca/uploads/_1920xAUTO_crop_center-center_80_none/yayoi-kusama-fondation.jpg"), filename: "inspo1.jpg", content_type: "image/jpg")
 inspo1.save!
 
-inspo8 = Inspo.new(name: "Steamy Text 💬", genre: "text", content: "🛏️🚇😮🍾😵")
+inspo8 = Inspo.new(name: "Steamy Text", genre: "text", content: "🛏️🚇😮🍾😵")
 inspo8.photo.attach(io: URI.open("https://hips.hearstapps.com/hmg-prod/images/wh-sexting-1603812586.png?crop=0.49988000959923207xw:1xh;center,top&resize=1200:*"), filename: "inspo8.png", content_type: "image/png")
 inspo8.save!
 
@@ -48,7 +48,7 @@ inspo2 = Inspo.new(name: "Bouquet of Flowers", genre: "gift", content: "A mix of
 inspo2.photo.attach(io: URI.open("https://pyxis.nymag.com/v1/imgs/e8e/c68/83930d962edd0049116885bd6033c8492e.2x.rhorizontal.w600.jpg"), filename: "inspo7.jpg", content_type: "image/jpg")
 inspo2.save!
 
-inspo4 = Inspo.new(name: "Good Morning Text 💬", genre: "text", content: "good mornin sunshiiine ❤️ ❤️")
+inspo4 = Inspo.new(name: "Good Morning Text", genre: "text", content: "good mornin sunshiiine ❤️ ❤️")
 inspo4.photo.attach(io: URI.open("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/sunrise-quotes-21-1586892331.jpg"), filename: "inspo4.jpg", content_type: "image/jpg")
 inspo4.save!
 
@@ -56,7 +56,7 @@ inspo5 = Inspo.new(name: "Mojito & Margarita", genre: "date", location: "3127 Ru
 inspo5.photo.attach(io: URI.open("https://media-cdn.tripadvisor.com/media/photo-m/1280/1b/1a/ee/08/photo0jpg.jpg"), filename: "inspo5.jpg", content_type: "image/jpg")
 inspo5.save!
 
-inspo6 = Inspo.new(name: "Cat Memes 💬 ", genre: "text", content: "SO CUUUUUTE")
+inspo6 = Inspo.new(name: "Cat Memes", genre: "text", content: "SO CUUUUUTE")
 inspo6.photo.attach(io: URI.open("https://i.pinimg.com/originals/e2/1e/c3/e21ec38a960ed856a9cbc2950654818c.jpg"), filename: "inspo6.jpg", content_type: "image/jpg")
 inspo6.save!
 
@@ -80,7 +80,7 @@ inspo12 = Inspo.new(name: "Visit a Bookstore Together", genre: "date", content: 
 inspo12.photo.attach(io: URI.open("https://images.unsplash.com/photo-1593061231114-1798846fd643?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"), filename: "inspo12.jpg", content_type: "image/jpg")
 inspo12.save!
 
-inspo13 = Inspo.new(name: "Make Sushi for Your Partner", genre: "gift", content: "The best ingredients can be found at Miyamoto", cost: 100.0)
+inspo13 = Inspo.new(name: "Make Sushi for Your Partner", genre: "date", content: "The best ingredients can be found at Miyamoto", cost: 100.0)
 inspo13.photo.attach(io: URI.open("https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=327&q=80"), filename: "inspo13.jpg", content_type: "image/jpg")
 inspo13.save!
 
