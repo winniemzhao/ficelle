@@ -3,6 +3,8 @@ class Partner < ApplicationRecord
   has_many :events, dependent: :destroy
   has_many :preferences, dependent: :destroy
   has_many :keywords, through: :preferences
+  has_many :inspo_keywords, through: :keywords
+  has_many :inspos, through: :inspo_keywords
 
   validates :name, presence: true
   validates :name, uniqueness: true

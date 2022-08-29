@@ -6,6 +6,7 @@ class PartnersController < ApplicationController
   def create
     @partner = Partner.new(partner_params)
     @partner.user = current_user
+    ### this should be current_user.partner = @partner (otherwise the demo will be wrong)
     if @partner.save
       redirect_to partner_keywords_path(@partner)
     else

@@ -50,6 +50,7 @@ class EventsController < ApplicationController
   end
 
   def loading
+    Event.load(current_user)
   end
 
   private
@@ -61,4 +62,6 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:date, :success, :status, :content, :inspo_id)
   end
+
+
 end
