@@ -27,6 +27,9 @@ class EventsController < ApplicationController
 
   def update
     @event.update(event_params)
+    if @event.inspo.genre == 'date'
+      EventMailer.with(event: @event, user: current_user).invite_email.deliver_now
+    end
     redirect_to dashboard_path
   end
 
@@ -55,7 +58,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:date, :success, :status)
+    params.require(:event).permit(:date, :success, :status, :content)
   end
 
 
