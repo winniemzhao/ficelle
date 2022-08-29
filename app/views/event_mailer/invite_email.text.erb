@@ -1,7 +1,7 @@
 Get ready for our next date, <%= @user.partner.name %>
 
-Name: <%= @event.inspo.name %>.
-Date: <%= @event.date %>.
-Location: <%= @event.inspo.location %>.
-I am super excited, hope you are too
-Love, <%= @user.name %>.
+Name: <%= @event.inspo.name %>
+Date: Date: <%= @event.date.in_time_zone('Eastern Time (US & Canada)').strftime("%A, %b %e, %Y") %>
+Location: <%= @event.inspo.location %>
+I'm super excited, hope you are too
+Love, <%= @user.name %>
