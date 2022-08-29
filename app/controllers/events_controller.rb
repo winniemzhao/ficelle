@@ -48,7 +48,8 @@ class EventsController < ApplicationController
 
   def update_success
     @event.success = !@event.success
-    @event.update(event_params)
+    @event.save
+    p "the params are: #{params}"
 
     respond_to do |format|
       format.html
@@ -70,7 +71,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:date, :success, :status, :content, :id)
+    params.require(:event).permit(:date, :success, :status, :content)
   end
 
   def status_completed(event)

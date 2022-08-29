@@ -83,21 +83,28 @@ export default class extends Controller {
     fetch(url, {
       method: "PATCH",
       headers: {
-        "X-CRSF-Token": csrfToken,
-        "Content-Type": "application/json"
+        "X-CSRF-Token": csrfToken,
+        "Accept": "application/json"
       },
       body: JSON.stringify({
-        id: event.target.id
+        event: { id: event.target.id }
       })
     })
-      // .then(response => response.json())
+      .then(response => response.json())
       .then((data) => {
-        // console.log(data)
+        console.log(data.success)
         const current = this.successTargets.find( success => event.target.id === success.id)
-        console.log(current);
-        console.log(current.classList);
-        console.log(current.classList[1]);
+        // console.log(current);
+        // console.log(current.classList);
+        // console.log(current.classList[1]);
 
+        if (data.success) {
+          current.classList.remove("fa-regular")
+          current.classList.add("fa-solid")
+        } else {
+          current.classList.add("fa-regular")
+          current.classList.remove("fa-solid")
+        }
 
       })
 
