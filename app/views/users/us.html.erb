@@ -29,12 +29,12 @@
 
         </div>
         <div class="stat-genre">
-          <i class="fa-solid fa-gift"></i>
+          <i class="fa-solid fa-comment-dots"></i>
           <p>TEXTS</p>
           <h4><%= current_user.partner.events.where(status: 2).select { |event| event.inspo.genre == "text"}.count %></h4>
         </div>
         <div class="stat-genre">
-          <i class="fa-solid fa-comment-dots"></i>
+          <i class="fa-solid fa-gift"></i>
           <p>GIFTS</p>
           <h4><%= current_user.partner.events.where(status: 2).select { |event| event.inspo.genre == "gift"}.count %></h4>
         </div>

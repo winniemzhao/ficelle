@@ -61,7 +61,7 @@ class EventsController < ApplicationController
   end
 
   def completed_events
-   @events = Event.where(status: :completed)
+   @events = Event.where(partner_id: current_user.partner).where(status: :completed)
    @events = @events.sort_by(&:date).reverse
   end
 
