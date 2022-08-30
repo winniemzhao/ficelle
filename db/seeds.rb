@@ -150,15 +150,15 @@ file23 = URI.open("https://www.headphonesty.com/wp-content/uploads/2019/10/Apple
 inspo23.photo.attach(io: file23, filename: "inspo23.jpg", content_type: "image/jpg")
 inspo23.save!
 
-inspo24 = Inspo.new(name: "Karaoke Night", genre: "date", content: "Have a date at Le Date", cost: 50.00, location: "1218 St Catherine St E, Montreal, Quebec")
-file24 = URI.open("https://api.time.com/wp-content/uploads/2019/09/karaoke-mic.jpg?quality=85&w=1600")
-inspo24.photo.attach(io: file24, filename: "inspo24.jpg", content_type: "image/jpg")
-inspo24.save!
+# inspo24 = Inspo.new(name: "Karaoke Night", genre: "date", content: "Have a date at Le Date", cost: 50.00, location: "1218 St Catherine St E, Montreal, Quebec")
+# file24 = URI.open("https://api.time.com/wp-content/uploads/2019/09/karaoke-mic.jpg?quality=85&w=1600")
+# inspo24.photo.attach(io: file24, filename: "inspo24.jpg", content_type: "image/jpg")
+# inspo24.save!
 
-inspo25 = Inspo.new(name: "Yoga with Surya", genre: "date", content: "The best class is on Wednesdays from 12:30-1:00pm at Le Wagon with Bernard", cost: 20.00, location: "5333 Av. Casgrain, Montréal, Quebec")
-file25 = URI.open("https://blog.goodlifefitness.com/media/1456/12008.jpg")
-inspo25.photo.attach(io: file25, filename: "inspo25.jpg", content_type: "image/jpg")
-inspo25.save!
+# inspo25 = Inspo.new(name: "Yoga with Surya", genre: "date", content: "The best class is on Wednesdays from 12:30-1:00pm at Le Wagon with Bernard", cost: 20.00, location: "5333 Av. Casgrain, Montréal, Quebec")
+# file25 = URI.open("https://blog.goodlifefitness.com/media/1456/12008.jpg")
+# inspo25.photo.attach(io: file25, filename: "inspo25.jpg", content_type: "image/jpg")
+# inspo25.save!
 
 puts "Creating keywords"
 
