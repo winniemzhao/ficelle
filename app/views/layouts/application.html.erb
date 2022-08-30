@@ -12,6 +12,7 @@
   </head>
 
   <body>
+    <%= render "shared/flashes" %>
     <%= yield %>
     <% unless request.fullpath == events_loading_path || request.fullpath == root_path || request.fullpath == new_partner_path || request.fullpath == partners_path %>
       <%= render "shared/navbar" %>

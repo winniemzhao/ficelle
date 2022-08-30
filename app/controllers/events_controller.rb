@@ -37,6 +37,9 @@ class EventsController < ApplicationController
     @event.update(event_params)
     if @event.inspo.genre == 'date'
       EventMailer.with(event: @event, user: current_user).invite_email.deliver_now
+      flash[:notice] = "A confirmation email will been sent to #{current_user.partner.name} ❤️❤️"
+    elsif @event.inspo.genre == 'text'
+      flash[:notice] = "#{@event.inspo.name} will be sent to #{current_user.partner.name} ❤️❤️"
     end
     redirect_to dashboard_path
   end

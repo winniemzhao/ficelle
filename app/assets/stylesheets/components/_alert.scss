@@ -1,6 +1,12 @@
 .alert {
   position: fixed;
-  bottom: 16px;
+  top: 16px;
   right: 16px;
   z-index: 1000;
+  background-color: #FEECE8;
+  transition: 0.3s;
+}
+
+.alert:hover {
+  background-color: #f9dad4;
 }
