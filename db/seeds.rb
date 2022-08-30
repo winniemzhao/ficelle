@@ -158,14 +158,11 @@ inspo20.photo.attach(io: file_t, filename: "inspo20.jpg", content_type: "image/j
 inspo20.save!
 file_t.close
 
-p "sleeping for 5 seconds"
-sleep(5)
-
-# file_u = URI.open("https://p0.pikist.com/photos/451/474/kobo-reading-light-ebook-hammock-reading-reader-tablet-digital-holiday.jpg", { 'User-Agent' => 'ruby' })
-# inspo21 = Inspo.new(name: "Kobo Clara HD", genre: "gift", content: "The perfect reading companion for any book lover", cost: 150.00)
-# inspo21.photo.attach(io: file_u, filename: "inspo21.jpg", content_type: "image/jpg")
-# inspo21.save!
-# file_u.close
+file_u = URI.open("https://expertreviews.b-cdn.net/sites/expertreviews/files/styles/er_main_wide/public/2019/07/kob_clara_hd_review_kobo_store.jpg?itok=Dxhh-V0m", { 'User-Agent' => 'ruby' })
+inspo21 = Inspo.new(name: "Kobo Clara HD", genre: "gift", content: "The perfect reading companion for any book lover", cost: 150.00)
+inspo21.photo.attach(io: file_u, filename: "inspo21.jpg", content_type: "image/jpg")
+inspo21.save!
+file_u.close
 
 file_v = URI.open("https://www.comunicaffe.com/wp-content/uploads/2020/08/Dispatch_Coffee_Dispatch_Coffee_Raises__1_26M_Seed_Round_to_Fuel-scaled.jpg", { 'User-Agent' => 'ruby' })
 inspo22 = Inspo.new(name: "Dispatch Coffee", genre: "gift", content: "Coffee that tastes good and does good", cost: 30.00)
