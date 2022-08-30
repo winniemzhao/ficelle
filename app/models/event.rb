@@ -7,18 +7,20 @@ class Event < ApplicationRecord
   def self.load(user)
     Favorite.for_favoritor(user).each do |favorite|
       inspo = Inspo.find(favorite.favoritable_id)
-      if inspo.genre = 'text'
-        date = Time.new(Date.today.year, Date.today.month, Date.today.day, rand(8..20), [15, 30, 45, 0].sample)
-      elsif inspo.genre = 'gift'
-        date = Time.new(Date.today.year, Date.today.month, Date.today.day, rand(8..20))
-      else
-        date = Time.new(Date.today.year, Date.today.month, Date.today.day, rand(17..19))
+      if Event.where(inspo_id: inspo.id).empty?
+        if inspo.genre = 'text'
+          date = Time.new(Date.today.year, Date.today.month, Date.today.day, rand(8..20), [15, 30, 45, 0].sample)
+        elsif inspo.genre = 'gift'
+          date = Time.new(Date.today.year, Date.today.month, Date.today.day, rand(8..20))
+        else
+          date = Time.new(Date.today.year, Date.today.month, Date.today.day, rand(17..19))
+        end
+        content = inspo.content if inspo.genre == 'text'
+        event = Event.new(date: date + 86400 * rand(1..14))
+        event.partner = user.partner
+        event.inspo = inspo
+        event.save!
       end
-      content = inspo.content if inspo.genre == 'text'
-      event = Event.new(date: date + 86400 * rand(1..14))
-      event.partner = user.partner
-      event.inspo = inspo
-      event.save!
     end
   end
 end
