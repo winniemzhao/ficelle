@@ -209,8 +209,8 @@ keyword3.save!
 keyword_file_c.close
 
 keyword_file_d = URI.open("https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80", { 'User-Agent' => 'ruby' })
-keyword4 = Keyword.new(name: "Hiking")
-keyword4.photo.attach(io: keyword_file_d, filename: "hiking.jpg", content_type: "image/jpg")
+keyword4 = Keyword.new(name: "Outdoors")
+keyword4.photo.attach(io: keyword_file_d, filename: "outdoors.jpg", content_type: "image/jpg")
 keyword4.save!
 keyword_file_d.close
 
@@ -250,9 +250,9 @@ keyword10.photo.attach(io: keyword_file_j, filename: "music.jpg", content_type: 
 keyword10.save!
 keyword_file_j.close
 
-keyword_file_k = URI.open("https://images.unsplash.com/photo-1572252821143-035a024857ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80", { 'User-Agent' => 'ruby' })
-keyword11 = Keyword.new(name: "Cats")
-keyword11.photo.attach(io: keyword_file_k, filename: "cats.jpg", content_type: "image/jpg")
+keyword_file_k = URI.open("https://images.unsplash.com/photo-1563460716037-460a3ad24ba9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80https://images.unsplash.com/photo-1572252821143-035a024857ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80", { 'User-Agent' => 'ruby' })
+keyword11 = Keyword.new(name: "Animals")
+keyword11.photo.attach(io: keyword_file_k, filename: "animals.jpg", content_type: "image/jpg")
 keyword11.save!
 keyword_file_k.close
 
