@@ -1,6 +1,6 @@
 require "open-uri"
 
-puts "Destroying previous instances"
+p "Destroying previous instances"
 InspoKeyword.destroy_all
 Preference.destroy_all
 Event.destroy_all
@@ -9,7 +9,7 @@ Inspo.destroy_all
 Partner.destroy_all
 User.destroy_all
 
-puts "Creating users"
+p "Creating users"
 
 user_file_a = URI.open("https://www.computerhope.com/jargon/g/guest-user.jpg", { 'User-Agent' => 'ruby' })
 user1 = User.new(email: "sarahlfulham@gmail.com", password: "123456", name: "John", phone_number: "1234567890", location: "Montreal")
@@ -25,7 +25,7 @@ user3.photo.attach(io: user_file_b, filename: "user3.jpg", content_type: "image/
 user3.save!
 user_file_b.close
 
-puts "Creating partners"
+p "Creating partners"
 
 partner_file_a = URI.open("https://corporate.zalando.com/sites/default/files/styles/fullimage_extra_big/public/media/Zalando%20SE_brand%20partner_teaser%20image.jpg", { 'User-Agent' => 'ruby' })
 partner1 = Partner.new(name: "Gillian", birthday: Date.new(1980,01,01), phone_number: "1234567", email: "c@gmail.com", location: "Montreal")
@@ -36,7 +36,7 @@ partner_file_a.close
 
 # partner2 = Partner.new(name: "partner2")
 
-puts "Creating inspos"
+p "Creating inspos"
 
 file_a = URI.open("https://phi.ca/uploads/_1920xAUTO_crop_center-center_80_none/yayoi-kusama-fondation.jpg", { 'User-Agent' => 'ruby' })
 inspo1 = Inspo.new(name: "Yayoi Kusama Art Exhibit", genre: "date", location: "Centre PHI, 315 Saint-Paul St W", content: "Yayoi Kusama Exhibit at Centre PHI", cost: 40.00)
@@ -158,6 +158,9 @@ inspo20.photo.attach(io: file_t, filename: "inspo20.jpg", content_type: "image/j
 inspo20.save!
 file_t.close
 
+p "sleeping for 5 seconds"
+sleep(5)
+
 file_u = URI.open("https://p0.pikist.com/photos/451/474/kobo-reading-light-ebook-hammock-reading-reader-tablet-digital-holiday.jpg", { 'User-Agent' => 'ruby' })
 inspo21 = Inspo.new(name: "Kobo Clara HD", genre: "gift", content: "The perfect reading companion for any book lover", cost: 150.00)
 inspo21.photo.attach(io: file_u, filename: "inspo21.jpg", content_type: "image/jpg")
@@ -188,7 +191,7 @@ file_w.close
 # inspo25.save!
 # file_y.close
 
-puts "Creating keywords"
+p "Creating keywords"
 
 keyword_file_a = URI.open("https://images.unsplash.com/photo-1620177088260-a9150572baf4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2352&q=80", { 'User-Agent' => 'ruby' })
 keyword1 = Keyword.new(name: "Movies")
@@ -286,7 +289,7 @@ keyword_file_l.close
 # keyword18.photo.attach(io: URI.open("https://images.unsplash.com/photo-1426927308491-6380b6a9936f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"), filename: "carpentry.jpg", content_type: "image/jpg", { 'User-Agent' => 'ruby' })
 # keyword18.save!
 
-puts "Hardcoding InspoKeywords 'cause we're hacks"
+p "Hardcoding InspoKeywords 'cause we're hacks"
 
 # ik1 = InspoKeyword.new(); ik1.inspo = inspo1; ik1.keyword = keyword6; ik1.save!
 # ik2 = InspoKeyword.new(); ik2.inspo = inspo2; ik2.keyword = keyword2; ik2.save!
@@ -358,4 +361,4 @@ puts "Hardcoding InspoKeywords 'cause we're hacks"
 # event6.inspo = inspo6
 # event6.save!
 
-puts "Done"
+p "Done"
