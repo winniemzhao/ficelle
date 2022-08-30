@@ -10,14 +10,14 @@ class Event < ApplicationRecord
       inspo = Inspo.find(favorite.favoritable_id)
       if Event.where(inspo_id: inspo.id).empty?
         if inspo.genre = 'text'
-          date = Time.new(Date.today.year, Date.today.month, Date.today.day, rand(8..20), [15, 30, 45, 0].sample)
+          date = Time.new(Date.today.year, Date.today.month, Date.today.day, rand(8..20), [15, 30, 45, 0].sample) + (86400 * rand(1..5))
         elsif inspo.genre = 'gift'
-          date = Time.new(Date.today.year, Date.today.month, Date.today.day, rand(8..20))
+          date = Time.new(Date.today.year, Date.today.month, Date.today.day, rand(8..20)) + (86400 * rand(1..7))
         else
-          date = Time.new(Date.today.year, Date.today.month, Date.today.day, rand(17..19))
+          date = Time.new(Date.today.year, Date.today.month, Date.today.day, rand(17..19)) + (86400 * rand(1..14))
         end
         content = inspo.content if inspo.genre == 'text'
-        event = Event.new(date: date + 86400 * rand(1..14))
+        event = Event.new(date: date)
         event.partner = user.partner
         event.inspo = inspo
         event.save!
