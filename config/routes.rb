@@ -24,4 +24,7 @@ Rails.application.routes.draw do
   end
   get '/preferences/create', to: 'preferences#create'
   get '/preferences/destroy', to: 'preferences#destroy'
+  as :user do
+    get '/us/', to: 'devise/registrations#edit', as: :user_root
+  end
 end
