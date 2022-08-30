@@ -15,6 +15,7 @@ user_file_a = URI.open("https://www.computerhope.com/jargon/g/guest-user.jpg", {
 user1 = User.new(email: "sarahlfulham@gmail.com", password: "123456", name: "John", phone_number: "1234567890", location: "Montreal")
 user1.photo.attach(io: user_file_a, filename: "user1.jpg", content_type: "image/jpg")
 user1.save!
+user_file_a.rewind
 
 user2 = User.create!(email: "winniemaizhao@gmail.com", password: "123456", name: "Winnie", phone_number: "(514) 589-9046", location: "Toronto")
 
@@ -22,6 +23,7 @@ user_file_b = URI.open("https://www.computerhope.com/jargon/g/guest-user.jpg", {
 user3 = User.new(email: "sarahlfulham+1@gmail.com", password: "123456", name: "Marc", phone_number: "(514) 438-2355", location: "Montreal")
 user3.photo.attach(io: user_file_b, filename: "user3.jpg", content_type: "image/jpg")
 user3.save!
+user_file_b.rewind
 
 puts "Creating partners"
 
@@ -30,197 +32,235 @@ partner1 = Partner.new(name: "Gillian", birthday: Date.new(1980,01,01), phone_nu
 partner1.photo.attach(io: partner_file_a, filename: "partner1.jpg", content_type: "image/jpg")
 partner1.user = user1
 partner1.save!
+partner_file_a.rewind
 
 # partner2 = Partner.new(name: "partner2")
 
 puts "Creating inspos"
 
-filea = URI.open("https://phi.ca/uploads/_1920xAUTO_crop_center-center_80_none/yayoi-kusama-fondation.jpg", {'User-Agent' => 'ruby'})
+file_a = URI.open("https://phi.ca/uploads/_1920xAUTO_crop_center-center_80_none/yayoi-kusama-fondation.jpg", {'User-Agent' => 'ruby'})
 inspo1 = Inspo.new(name: "Yayoi Kusama Art Exhibit", genre: "date", location: "Centre PHI, 315 Saint-Paul St W", content: "Yayoi Kusama Exhibit at Centre PHI", cost: 40.00)
-inspo1.photo.attach(io: filea, filename: "inspo1.jpg", content_type: "image/jpg")
+inspo1.photo.attach(io: file_a, filename: "inspo1.jpg", content_type: "image/jpg")
 inspo1.save!
+file_a.rewind
 
-fileb = URI.open("https://pyxis.nymag.com/v1/imgs/e8e/c68/83930d962edd0049116885bd6033c8492e.2x.rhorizontal.w600.jpg", {'User-Agent' => 'ruby'})
+file_b = URI.open("https://pyxis.nymag.com/v1/imgs/e8e/c68/83930d962edd0049116885bd6033c8492e.2x.rhorizontal.w600.jpg", {'User-Agent' => 'ruby'})
 inspo2 = Inspo.new(name: "Bouquet of Flowers", genre: "gift", content: "A mix of multicolor standard and garden roses", cost: 55.00)
-inspo2.photo.attach(io: fileb, filename: "inspo7.jpg", content_type: "image/jpg")
+inspo2.photo.attach(io: file_b, filename: "inspo7.jpg", content_type: "image/jpg")
 inspo2.save!
+file_b.rewind
 
-filec = URI.open("https://cafechatlheureux.com/content/images/cats/Milady.JPG", {'User-Agent' => 'ruby'})
+file_c = URI.open("https://cafechatlheureux.com/content/images/cats/Milady.JPG", {'User-Agent' => 'ruby'})
 inspo3 = Inspo.new(name: "Cat Cafe", genre: "date", location: "Cafe Chat l'Heureux, 172 Duluth East", content: "At Café Chat L'Heureux!", cost: 500.00)
-inspo3.photo.attach(io: filec, filename: "inspo3.jpg", content_type: "image/jpg")
+inspo3.photo.attach(io: file_c, filename: "inspo3.jpg", content_type: "image/jpg")
 inspo3.save!
+file_c.rewind
 
-filed = URI.open("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/sunrise-quotes-21-1586892331.jpg", {'User-Agent' => 'ruby'})
+file_d = URI.open("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/sunrise-quotes-21-1586892331.jpg", {'User-Agent' => 'ruby'})
 inspo4 = Inspo.new(name: "Good Morning Text", genre: "text", content: "good mornin sunshiiine ❤️ ❤️")
-inspo4.photo.attach(io: filed, filename: "inspo4.jpg", content_type: "image/jpg")
+inspo4.photo.attach(io: file_d, filename: "inspo4.jpg", content_type: "image/jpg")
 inspo4.save!
+file_d.rewind
 
-filee = URI.open("https://media-cdn.tripadvisor.com/media/photo-m/1280/1b/1a/ee/08/photo0jpg.jpg", {'User-Agent' => 'ruby'})
+file_e = URI.open("https://media-cdn.tripadvisor.com/media/photo-m/1280/1b/1a/ee/08/photo0jpg.jpg", {'User-Agent' => 'ruby'})
 inspo5 = Inspo.new(name: "Mojitos & Margaritas", genre: "date", location: "3127 Rue Masson, Montreal, Quebec", content: "Amazing Mexican & Cuban restaurant in the Vieux Rosemont", cost: 75.00)
-inspo5.photo.attach(io: filee, filename: "inspo5.jpg", content_type: "image/jpg")
+inspo5.photo.attach(io: file_e, filename: "inspo5.jpg", content_type: "image/jpg")
 inspo5.save!
+file_e.rewind
 
-filef = URI.open("https://i.pinimg.com/originals/e2/1e/c3/e21ec38a960ed856a9cbc2950654818c.jpg", {'User-Agent' => 'ruby'})
+file_f = URI.open("https://i.pinimg.com/originals/e2/1e/c3/e21ec38a960ed856a9cbc2950654818c.jpg", {'User-Agent' => 'ruby'})
 inspo6 = Inspo.new(name: "Cat Memes", genre: "text", content: "SO CUUUUUTE")
-inspo6.photo.attach(io: filef, filename: "inspo6.jpg", content_type: "image/jpg")
+inspo6.photo.attach(io: file_f, filename: "inspo6.jpg", content_type: "image/jpg")
 inspo6.save!
+file_f.rewind
 
-fileg = URI.open("https://senmix.com/pictures/product/02/98/pochette-metis-monogram-m44875_1.jpg", {'User-Agent' => 'ruby'})
+file_g = URI.open("https://senmix.com/pictures/product/02/98/pochette-metis-monogram-m44875_1.jpg", {'User-Agent' => 'ruby'})
 inspo7 = Inspo.new(name: "Louis Vuitton Bag", genre: "gift", content: "Pochette Metis bag", cost: 2590.00)
-inspo7.photo.attach(io: fileg, filename: "inspo2.jpg", content_type: "image/jpg")
+inspo7.photo.attach(io: file_g, filename: "inspo2.jpg", content_type: "image/jpg")
 inspo7.save!
+file_g.rewind
 
-fileh = URI.open("https://hips.hearstapps.com/hmg-prod/images/wh-sexting-1603812586.png?crop=0.49988000959923207xw:1xh;center,top&resize=1200:*", {'User-Agent' => 'ruby'})
+file_h = URI.open("https://hips.hearstapps.com/hmg-prod/images/wh-sexting-1603812586.png?crop=0.49988000959923207xw:1xh;center,top&resize=1200:*", {'User-Agent' => 'ruby'})
 inspo8 = Inspo.new(name: "Steamy Text", genre: "text", content: "🛏️🚇😮🍾😵")
-inspo8.photo.attach(io: fileh, filename: "inspo8.png", content_type: "image/png")
+inspo8.photo.attach(io: file_h, filename: "inspo8.png", content_type: "image/png")
 inspo8.save!
+file_h.rewind
 
-filei = URI.open("https://images.unsplash.com/photo-1440404653325-ab127d49abc1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", {'User-Agent' => 'ruby'})
+file_i = URI.open("https://images.unsplash.com/photo-1440404653325-ab127d49abc1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", {'User-Agent' => 'ruby'})
 inspo9 = Inspo.new(name: "Dinner and a Movie", genre: "date", content: "Charm your date with your good taste", cost: 100.00)
-inspo9.photo.attach(io: filei, filename: "inspo9.jpg", content_type: "image/jpg")
+inspo9.photo.attach(io: file_i, filename: "inspo9.jpg", content_type: "image/jpg")
 inspo9.save!
+file_i.rewind
 
-filej = URI.open("https://images.unsplash.com/photo-1517638851339-a711cfcf3279?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", {'User-Agent' => 'ruby'})
+file_j = URI.open("https://images.unsplash.com/photo-1517638851339-a711cfcf3279?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", {'User-Agent' => 'ruby'})
 inspo10 = Inspo.new(name: "Restaurante Mexicano", genre: "date", location: "1206 Union Ave, Montreal, Quebec H3B 3A7", content: "Escondite Union is a good choice", cost: 200.00)
-inspo10.photo.attach(io: filej, filename: "inspo10.jpg", content_type: "image/jpg")
+inspo10.photo.attach(io: file_j, filename: "inspo10.jpg", content_type: "image/jpg")
 inspo10.save!
+file_j.rewind
 
-filek = URI.open("https://images.unsplash.com/photo-1602599151411-875a848f71b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", {'User-Agent' => 'ruby'})
+file_k = URI.open("https://images.unsplash.com/photo-1602599151411-875a848f71b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", {'User-Agent' => 'ruby'})
 inspo11 = Inspo.new(name: "Watch the Sunset on Mount Royal", genre: "date", location: "Montreal, QC H3H 1A1", content: "Get your hiking boots out!", cost: 1.00)
-inspo11.photo.attach(io: filek, filename: "inspo11.jpg", content_type: "image/jpg")
+inspo11.photo.attach(io: file_k, filename: "inspo11.jpg", content_type: "image/jpg")
 inspo11.save!
+file_k.rewind
 
-filel = URI.open("https://images.unsplash.com/photo-1593061231114-1798846fd643?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", {'User-Agent' => 'ruby'})
+file_l = URI.open("https://images.unsplash.com/photo-1593061231114-1798846fd643?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", {'User-Agent' => 'ruby'})
 inspo12 = Inspo.new(name: "Get Lost in a Bookstore", genre: "date", content: "Be sure to surprise your date with new books", cost: 50.00)
-inspo12.photo.attach(io: filel, filename: "inspo12.jpg", content_type: "image/jpg")
+inspo12.photo.attach(io: file_l, filename: "inspo12.jpg", content_type: "image/jpg")
 inspo12.save!
+file_l.rewind
 
-filem = URI.open("https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=327&q=80", {'User-Agent' => 'ruby'})
+file_m = URI.open("https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=327&q=80", {'User-Agent' => 'ruby'})
 inspo13 = Inspo.new(name: "DIY Sushi Night", genre: "date", content: "The best ingredients can be found at Miyamoto", cost: 100.00)
-inspo13.photo.attach(io: filem, filename: "inspo13.jpg", content_type: "image/jpg")
+inspo13.photo.attach(io: file_m, filename: "inspo13.jpg", content_type: "image/jpg")
 inspo13.save!
+file_m.rewind
 
-filen = URI.open("https://images.unsplash.com/photo-1520363147109-9ab9d1c8f8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1256&q=80", {'User-Agent' => 'ruby'})
+file_n = URI.open("https://images.unsplash.com/photo-1520363147109-9ab9d1c8f8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1256&q=80", {'User-Agent' => 'ruby'})
 inspo14 = Inspo.new(name: "Meditation Retreat", genre: "gift", content: "Escape together", cost: 500.00)
-inspo14.photo.attach(io: filen, filename: "inspo14.jpg", content_type: "image/jpg")
+inspo14.photo.attach(io: file_n, filename: "inspo14.jpg", content_type: "image/jpg")
 inspo14.save!
+file_n.rewind
 
-fileo = URI.open("https://images.unsplash.com/photo-1517867065801-e20f409696b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80", {'User-Agent' => 'ruby'})
+file_o = URI.open("https://images.unsplash.com/photo-1517867065801-e20f409696b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80", {'User-Agent' => 'ruby'})
 inspo15 = Inspo.new(name: "Send a Love Poem", genre: "text", content: "Every time\nI see your face\nit reminds\nme of you.")
-inspo15.photo.attach(io: fileo, filename: "inspo15.jpg", content_type: "image/jpg")
+inspo15.photo.attach(io: file_o, filename: "inspo15.jpg", content_type: "image/jpg")
 inspo15.save!
+file_o.rewind
 
-filep = URI.open("https://sm.askmen.com/t/askmen_in/article/n/netflix-an/netflix-and-chill_xjgm.1200.jpg", {'User-Agent' => 'ruby'})
+file_p = URI.open("https://sm.askmen.com/t/askmen_in/article/n/netflix-an/netflix-and-chill_xjgm.1200.jpg", {'User-Agent' => 'ruby'})
 inspo16 = Inspo.new(name: "Netflix and Chill", genre: "date", content: "🎬🍿😏", cost: 20.00)
-inspo16.photo.attach(io: filep, filename: "inspo16.jpg", content_type: "image/jpg")
+inspo16.photo.attach(io: file_p, filename: "inspo16.jpg", content_type: "image/jpg")
 inspo16.save!
+file_p.rewind
 
-fileq = URI.open("https://d1q0twczwkl2ie.cloudfront.net/wp-content/uploads/2015/03/new.jpg", {'User-Agent' => 'ruby'})
+file_q = URI.open("https://d1q0twczwkl2ie.cloudfront.net/wp-content/uploads/2015/03/new.jpg", {'User-Agent' => 'ruby'})
 inspo17 = Inspo.new(name: "Explore the Botanical Gardens", genre: "date", content: "An oasis in the middle of the city", cost: 45.00, location: "4101 Sherbrooke Street East, Montréal, Quebec")
-inspo17.photo.attach(io: fileq, filename: "inspo17.jpg", content_type: "image/jpg")
+inspo17.photo.attach(io: file_q, filename: "inspo17.jpg", content_type: "image/jpg")
 inspo17.save!
+file_q.rewind
 
-filer = URI.open("https://media.timeout.com/images/105897435/1372/1029/image.jpg", {'User-Agent' => 'ruby'})
+file_r = URI.open("https://media.timeout.com/images/105897435/1372/1029/image.jpg", {'User-Agent' => 'ruby'})
 inspo18 = Inspo.new(name: "Stroll along the Lachine Canal", genre: "date", content: "For a 2-hour walk, make Atwater Market your goal from McGill and de la Commune")
-inspo18.photo.attach(io: filer, filename: "inspo18.jpg", content_type: "image/jpg")
+inspo18.photo.attach(io: file_r, filename: "inspo18.jpg", content_type: "image/jpg")
 inspo18.save!
+file_r.rewind
 
-files = URI.open("https://www.pamperedchef.ca/iceberg/com/product/100013-lg.jpg", {'User-Agent' => 'ruby'})
+file_s = URI.open("https://www.pamperedchef.ca/iceberg/com/product/100013-lg.jpg", {'User-Agent' => 'ruby'})
 inspo19 = Inspo.new(name: "Mixology Kit", genre: "gift", content: "Why pay $15 for a drink at the bar when your partner can make you one for free?", cost: 127.00)
-inspo19.photo.attach(io: files, filename: "inspo19.jpg", content_type: "image/jpg")
+inspo19.photo.attach(io: file_s, filename: "inspo19.jpg", content_type: "image/jpg")
 inspo19.save!
+file_s.rewind
 
-filet = URI.open("https://www.mtl.org/sites/default/files/styles/hero/public/2022-04/44730_1.jpg?itok=qu90_lwC", {'User-Agent' => 'ruby'})
+file_t = URI.open("https://www.mtl.org/sites/default/files/styles/hero/public/2022-04/44730_1.jpg?itok=qu90_lwC", {'User-Agent' => 'ruby'})
 inspo20 = Inspo.new(name: "Street Art Hunt", genre: "date", content: "Where's Waldo: Street Art Edition")
-inspo20.photo.attach(io: filet, filename: "inspo20.jpg", content_type: "image/jpg")
+inspo20.photo.attach(io: file_t, filename: "inspo20.jpg", content_type: "image/jpg")
 inspo20.save!
+file_t.rewind
 
-fileu = URI.open("https://p0.pikist.com/photos/451/474/kobo-reading-light-ebook-hammock-reading-reader-tablet-digital-holiday.jpg", {'User-Agent' => 'ruby'})
+file_u = URI.open("https://p0.pikist.com/photos/451/474/kobo-reading-light-ebook-hammock-reading-reader-tablet-digital-holiday.jpg", {'User-Agent' => 'ruby'})
 inspo21 = Inspo.new(name: "Kobo Clara HD", genre: "gift", content: "The perfect reading companion for any book lover", cost: 150.00)
-inspo21.photo.attach(io: fileu, filename: "inspo21.jpg", content_type: "image/jpg")
+inspo21.photo.attach(io: file_u, filename: "inspo21.jpg", content_type: "image/jpg")
 inspo21.save!
+file_u.rewind
 
-filev = URI.open("https://www.comunicaffe.com/wp-content/uploads/2020/08/Dispatch_Coffee_Dispatch_Coffee_Raises__1_26M_Seed_Round_to_Fuel-scaled.jpg", {'User-Agent' => 'ruby'})
+file_v = URI.open("https://www.comunicaffe.com/wp-content/uploads/2020/08/Dispatch_Coffee_Dispatch_Coffee_Raises__1_26M_Seed_Round_to_Fuel-scaled.jpg", {'User-Agent' => 'ruby'})
 inspo22 = Inspo.new(name: "Dispatch Coffee", genre: "gift", content: "Coffee that tastes good and does good", cost: 30.00)
-inspo22.photo.attach(io: filev, filename: "inspo22.jpg", content_type: "image/jpg")
+inspo22.photo.attach(io: file_v, filename: "inspo22.jpg", content_type: "image/jpg")
 inspo22.save!
+file_v.rewind
 
-filew = URI.open("https://www.headphonesty.com/wp-content/uploads/2019/10/Apple-AirPods-Pro-Featured-Image.jpg", {'User-Agent' => 'ruby'})
+file_w = URI.open("https://www.headphonesty.com/wp-content/uploads/2019/10/Apple-AirPods-Pro-Featured-Image.jpg", {'User-Agent' => 'ruby'})
 inspo23 = Inspo.new(name: "AirPods 3rd Generation", genre: "gift", content: "You can even personalize an engraving!", cost: 239.00)
-inspo23.photo.attach(io: filew, filename: "inspo23.jpg", content_type: "image/jpg")
+inspo23.photo.attach(io: file_w, filename: "inspo23.jpg", content_type: "image/jpg")
 inspo23.save!
+file_w.rewind
 
-# filex = URI.open("https://www.carsmash.nl/filt/wp-content/uploads/2020/08/Karaoke.jpg", {'User-Agent' => 'ruby'})
+# file_x = URI.open("https://www.carsmash.nl/filt/wp-content/uploads/2020/08/Karaoke.jpg", {'User-Agent' => 'ruby'})
 # inspo24 = Inspo.new(name: "Karaoke Night", genre: "date", content: "Have a date at Le Date", cost: 50.00, location: "1218 St Catherine St E, Montreal, Quebec")
-# inspo24.photo.attach(io: filex, filename: "inspo24.jpg", content_type: "image/jpg")
+# inspo24.photo.attach(io: file_x, filename: "inspo24.jpg", content_type: "image/jpg")
 # inspo24.save!
+# file_x.rewind
 
-# filey = URI.open("https://blog.goodlifefitness.com/media/1456/12008.jpg", {'User-Agent' => 'ruby'})
+# file_y = URI.open("https://blog.goodlifefitness.com/media/1456/12008.jpg", {'User-Agent' => 'ruby'})
 # inspo25 = Inspo.new(name: "Yoga with Surya", genre: "date", content: "The best class is on Wednesdays from 12:30-1:00pm at Le Wagon with Bernard", cost: 20.00, location: "5333 Av. Casgrain, Montréal, Quebec")
-# inspo25.photo.attach(io: filey, filename: "inspo25.jpg", content_type: "image/jpg")
+# inspo25.photo.attach(io: file_y, filename: "inspo25.jpg", content_type: "image/jpg")
 # inspo25.save!
+# file_y.rewind
 
 puts "Creating keywords"
 
-keyword_filea = URI.open("https://images.unsplash.com/photo-1620177088260-a9150572baf4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2352&q=80", {'User-Agent' => 'ruby'})
+keyword_file_a = URI.open("https://images.unsplash.com/photo-1620177088260-a9150572baf4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2352&q=80", {'User-Agent' => 'ruby'})
 keyword1 = Keyword.new(name: "Movies")
-keyword1.photo.attach(io: keyword_filea, filename: "movies.jpg", content_type: "image/jpg")
+keyword1.photo.attach(io: keyword_file_a, filename: "movies.jpg", content_type: "image/jpg")
 keyword1.save!
+keyword_file_a.rewind
 
-keyword_fileb = URI.open("https://m.media-amazon.com/images/I/71xK85Lm0rL._AC_SL1500_.jpg", {'User-Agent' => 'ruby'})
+keyword_file_b = URI.open("https://m.media-amazon.com/images/I/71xK85Lm0rL._AC_SL1500_.jpg", {'User-Agent' => 'ruby'})
 keyword2 = Keyword.new(name: "Flowers")
-keyword2.photo.attach(io: keyword_fileb, filename: "flowers.jpg", content_type: "image/jpg")
+keyword2.photo.attach(io: keyword_file_b, filename: "flowers.jpg", content_type: "image/jpg")
 keyword2.save!
+keyword_file_b.rewind
 
-keyword_filec = URI.open("https://images.unsplash.com/photo-1598763773372-127da881eb84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80", {'User-Agent' => 'ruby'})
+keyword_file_c = URI.open("https://images.unsplash.com/photo-1598763773372-127da881eb84?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80", {'User-Agent' => 'ruby'})
 keyword3 = Keyword.new(name: "Food")
-keyword3.photo.attach(io: keyword_filec, filename: "tacos.jpg", content_type: "image/jpg")
+keyword3.photo.attach(io: keyword_file_c, filename: "tacos.jpg", content_type: "image/jpg")
 keyword3.save!
+keyword_file_c.rewind
 
-keyword_filed = URI.open("https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80", {'User-Agent' => 'ruby'})
+keyword_file_d = URI.open("https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80", {'User-Agent' => 'ruby'})
 keyword4 = Keyword.new(name: "Hiking")
-keyword4.photo.attach(io: keyword_filed, filename: "hiking.jpg", content_type: "image/jpg")
+keyword4.photo.attach(io: keyword_file_d, filename: "hiking.jpg", content_type: "image/jpg")
 keyword4.save!
+keyword_file_d.rewind
 
-keyword_filee = URI.open("https://images.unsplash.com/photo-1561461056-77634126673a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80", {'User-Agent' => 'ruby'})
+keyword_file_e = URI.open("https://images.unsplash.com/photo-1561461056-77634126673a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80", {'User-Agent' => 'ruby'})
 keyword5 = Keyword.new(name: "Wine")
-keyword5.photo.attach(io: keyword_filee, filename: "wine.jpg", content_type: "image/jpg")
+keyword5.photo.attach(io: keyword_file_e, filename: "wine.jpg", content_type: "image/jpg")
 keyword5.save!
+keyword_file_e.rewind
 
-keyword_filef = URI.open("https://images.unsplash.com/photo-1545989253-02cc26577f88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80", {'User-Agent' => 'ruby'})
+keyword_file_f = URI.open("https://images.unsplash.com/photo-1545989253-02cc26577f88?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80", {'User-Agent' => 'ruby'})
 keyword6 = Keyword.new(name: "Art")
-keyword6.photo.attach(io: keyword_filef, filename: "art.jpg", content_type: "image/jpg")
+keyword6.photo.attach(io: keyword_file_f, filename: "art.jpg", content_type: "image/jpg")
 keyword6.save!
+keyword_file_f.rewind
 
-keyword_fileg = URI.open("https://images.unsplash.com/photo-1535905557558-afc4877a26fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80", {'User-Agent' => 'ruby'})
+keyword_file_g = URI.open("https://images.unsplash.com/photo-1535905557558-afc4877a26fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80", {'User-Agent' => 'ruby'})
 keyword7 = Keyword.new(name: "Books")
-keyword7.photo.attach(io: keyword_fileg, filename: "books.jpg", content_type: "image/jpg")
+keyword7.photo.attach(io: keyword_file_g, filename: "books.jpg", content_type: "image/jpg")
 keyword7.save!
+keyword_file_g.rewind
 
-keyword_fileh = URI.open("https://images.unsplash.com/photo-1561715276-a2d087060f1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80", {'User-Agent' => 'ruby'})
+keyword_file_h = URI.open("https://images.unsplash.com/photo-1561715276-a2d087060f1d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80", {'User-Agent' => 'ruby'})
 keyword8 = Keyword.new(name: "Shopping")
-keyword8.photo.attach(io: keyword_fileh, filename: "shopping.jpg", content_type: "image/jpg")
+keyword8.photo.attach(io: keyword_file_h, filename: "shopping.jpg", content_type: "image/jpg")
 keyword8.save!
+keyword_file_h.rewind
 
-keyword_filei = URI.open("https://images.unsplash.com/photo-1596018589855-e9a2a91f687f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1925&q=80", {'User-Agent' => 'ruby'})
+keyword_file_i = URI.open("https://images.unsplash.com/photo-1596018589855-e9a2a91f687f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1925&q=80", {'User-Agent' => 'ruby'})
 keyword9 = Keyword.new(name: "Coffee")
-keyword9.photo.attach(io: keyword_filei, filename: "coffee.jpg", content_type: "image/jpg")
+keyword9.photo.attach(io: keyword_file_i, filename: "coffee.jpg", content_type: "image/jpg")
 keyword9.save!
+keyword_file_i.rewind
 
-keyword_filej = URI.open("https://images.unsplash.com/photo-1507838153414-b4b713384a76?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", {'User-Agent' => 'ruby'})
+keyword_file_j = URI.open("https://images.unsplash.com/photo-1507838153414-b4b713384a76?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", {'User-Agent' => 'ruby'})
 keyword10 = Keyword.new(name: "Music")
-keyword10.photo.attach(io: keyword_filej, filename: "music.jpg", content_type: "image/jpg")
+keyword10.photo.attach(io: keyword_file_j, filename: "music.jpg", content_type: "image/jpg")
 keyword10.save!
+keyword_file_j.rewind
 
-keyword_filek = URI.open("https://images.unsplash.com/photo-1572252821143-035a024857ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80", {'User-Agent' => 'ruby'})
+keyword_file_k = URI.open("https://images.unsplash.com/photo-1572252821143-035a024857ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80", {'User-Agent' => 'ruby'})
 keyword11 = Keyword.new(name: "Cats")
-keyword11.photo.attach(io: keyword_filek, filename: "cats.jpg", content_type: "image/jpg")
+keyword11.photo.attach(io: keyword_file_k, filename: "cats.jpg", content_type: "image/jpg")
 keyword11.save!
+keyword_file_k.rewind
 
-keyword_filel = URI.open("https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1399&q=80", {'User-Agent' => 'ruby'})
+keyword_file_l = URI.open("https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1399&q=80", {'User-Agent' => 'ruby'})
 keyword12 = Keyword.new(name: "Spirituality")
-keyword12.photo.attach(io: keyword_filel, filename: "meditation.jpg", content_type: "image/jpg")
+keyword12.photo.attach(io: keyword_file_l, filename: "meditation.jpg", content_type: "image/jpg")
 keyword12.save!
+keyword_file_l.rewind
 
 # keyword13 = Keyword.new(name: "Sports")
 # keyword13.photo.attach(io: URI.open("https://images.unsplash.com/photo-1541252260730-0412e8e2108e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1948&q=80"), filename: "sports.jpg", content_type: "image/jpg", {'User-Agent' => 'ruby'})
