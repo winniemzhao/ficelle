@@ -16,7 +16,6 @@
 
 <div class="banner-margin">
   <div class="wrapper">
-
     <% if current_user.partner == nil %>
       <div class="partnerless-dashboard">
         <h2>You don't have <br> a partner yet.</h2>
@@ -24,9 +23,9 @@
       </div>
     <% end %>
     <% if current_user.partner && current_user.partner.events.count == 0 %>
-      <h4 class="mb-2">You have no upcoming events.</h4>
-      <h6><%= link_to 'Automatically generate events', partner_keywords_path(current_user.partner) %></h6>
-    <% else %>
+      <h4 class="mb-3">You have no upcoming events.</h4>
+      <%= link_to 'Automatically generate events', partner_keywords_path(current_user.partner), class:"btn btn-flat" %>
+    <% elsif current_user.partner %>
       <h4 class="mb-2">Upcoming events</h4>
     <% end %>
     <ul class="events-list" data-controller="edit-event">
@@ -45,8 +44,9 @@
           <% end %>
         </div>
       <% end %>
-      <p><%= link_to 'Create New Event', new_event_path %></p>
-
+      <% if current_user.partner %>
+        <%= link_to 'Create new event', new_event_path, class:"btn btn-flat mt-3" %>
+      <% end %>
     </ul>
   </div>
 </div>
