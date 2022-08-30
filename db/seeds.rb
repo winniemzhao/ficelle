@@ -182,6 +182,30 @@ keyword12 = Keyword.new(name: "Spirituality")
 keyword12.photo.attach(io: URI.open("https://images.unsplash.com/photo-1506126613408-eca07ce68773?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1399&q=80"), filename: "meditation.jpg", content_type: "image/jpg")
 keyword12.save!
 
+# keyword13 = Keyword.new(name: "Sports")
+# keyword13.photo.attach(io: URI.open("https://images.unsplash.com/photo-1541252260730-0412e8e2108e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1948&q=80"), filename: "sports.jpg", content_type: "image/jpg")
+# keyword13.save!
+
+# keyword14 = Keyword.new(name: "Fashion")
+# keyword14.photo.attach(io: URI.open("https://images.unsplash.com/photo-1554412933-514a83d2f3c8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=372&q=80"), filename: "fashion.jpg", content_type: "image/jpg")
+# keyword14.save!
+
+# keyword15 = Keyword.new(name: "Travel")
+# keyword15.photo.attach(io: URI.open("https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1035&q=80"), filename: "travel.jpg", content_type: "image/jpg")
+# keyword15.save!
+
+# keyword16 = Keyword.new(name: "Sushi")
+# keyword16.photo.attach(io: URI.open("https://images.unsplash.com/photo-1584583570840-0a3d88497593?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=927&q=80"), filename: "sushi.jpg", content_type: "image/jpg")
+# keyword16.save!
+
+# keyword17 = Keyword.new(name: "Nature")
+# keyword17.photo.attach(io: URI.open("https://images.unsplash.com/photo-1515622866498-b50a07b339e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"), filename: "nature.jpg", content_type: "image/jpg")
+# keyword17.save!
+
+# keyword18 = Keyword.new(name: "Carpentry")
+# keyword18.photo.attach(io: URI.open("https://images.unsplash.com/photo-1426927308491-6380b6a9936f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80"), filename: "carpentry.jpg", content_type: "image/jpg")
+# keyword18.save!
+
 puts "Hardcoding InspoKeywords 'cause we're hacks"
 
 ik1 = InspoKeyword.new(); ik1.inspo = inspo1; ik1.keyword = keyword6; ik1.save!
