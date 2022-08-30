@@ -12,7 +12,7 @@ User.destroy_all
 p "Creating users"
 
 user_file_a = URI.open("https://www.computerhope.com/jargon/g/guest-user.jpg", { 'User-Agent' => 'ruby' })
-user1 = User.new(email: "sarahlfulham@gmail.com", password: "123456", name: "John", phone_number: "1234567890", location: "Montreal")
+user1 = User.new(email: "sarahlfulham@gmail.com", password: "123456", name: "Sarah", phone_number: "1234567890", location: "Montreal")
 user1.photo.attach(io: user_file_a, filename: "user1.jpg", content_type: "image/jpg")
 user1.save!
 user_file_a.close
@@ -28,7 +28,7 @@ user_file_b.close
 p "Creating partners"
 
 partner_file_a = URI.open("https://corporate.zalando.com/sites/default/files/styles/fullimage_extra_big/public/media/Zalando%20SE_brand%20partner_teaser%20image.jpg", { 'User-Agent' => 'ruby' })
-partner1 = Partner.new(name: "Gillian", birthday: Date.new(1980,01,01), phone_number: "1234567", email: "c@gmail.com", location: "Montreal")
+partner1 = Partner.new(name: "Gillian", birthday: Date.new(1980,01,01), phone_number: "1234567", email: "winniemaizhao@gmail.com", location: "Montreal")
 partner1.photo.attach(io: partner_file_a, filename: "partner1.jpg", content_type: "image/jpg")
 partner1.user = user1
 partner1.save!
