@@ -26,7 +26,7 @@
     <% if current_user.partner && current_user.partner.events.count == 0 %>
       <h4 class="mb-2">You have no upcoming events.</h4>
       <h6><%= link_to 'Automatically generate events', partner_keywords_path(current_user.partner) %></h6>
-    <% else %>
+    <% elsif current_user.partner %>
       <h4 class="mb-2">Upcoming events</h4>
     <% end %>
     <ul class="events-list" data-controller="edit-event">
@@ -45,7 +45,9 @@
           <% end %>
         </div>
       <% end %>
-      <p><%= link_to 'Create New Event', new_event_path %></p>
+      <% if current_user.partner %>
+        <p><%= link_to 'Create New Event', new_event_path %></p>
+      <% end %>
 
     </ul>
   </div>
