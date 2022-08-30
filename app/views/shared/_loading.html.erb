@@ -1,8 +1,8 @@
 <div class="inspo-card-container d-none" data-swipe-inspos-target="inspo" style="">
+<% url = "/assets/inspo_default_blur.jpg" %>
+  <div class="inspo-card" style="background-image: url(<%= url %>);">
 
-  <div class="inspo-card" style="">
-
-    <p class='btn btn-flat'><%= link_to 'Generate Our Events!', events_loading_path %></p>
+  <%= link_to 'Generate Our Events!', events_loading_path, class:"btn btn-flat"%>
   </div>
 
 </div>
