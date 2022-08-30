@@ -1,5 +1,3 @@
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-
 <div class="wrapper">
   <div class="landing">
     <div class="title">
@@ -7,12 +5,9 @@
       <h6>show your love, without lifting a finger</h6>
     </div>
     <lottie-player src="https://assets1.lottiefiles.com/private_files/lf30_e0vedzue.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
-    <%# I am perfectly happy with my inline styling, thank you very much. %>
     <%= link_to @message, @path, class: "btn-flat" %>
-    <%# change path back to new_user_registration_path for the final demo %>
-    <%# I don't understand the logic of having the below if the 'Get started' button already takes us to Sign in %>
-    <!-- <% unless current_user %>
+    <% unless current_user %>
       <p class="login">Already have an account? <%= link_to "Log in", user_session_path %></p>
-    <% end %> -->
+    <% end %>
   </div>
 </div>

@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resources :inspos, only: %i[index edit update] do
     member do
       post 'toggle_favorite', to: "inspos#toggle_favorite"
+      post 'toggle_blocked', to: "inspos#toggle_blocked"
     end
   end
   get '/preferences/create', to: 'preferences#create'
