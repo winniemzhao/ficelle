@@ -1,0 +1,19 @@
+<div class="event-card d-none" data-settings-target="editPayment">
+  <div class="event-card-content">
+    <p class="event-icon color-dark">
+      <i class="fa-solid fa-money-bill-wave"></i>
+    </p>
+    <div class="event-card-info">
+      <h6>
+        Payment
+      </h6>
+    </div>
+    <p><i class="fa-solid fa-xmark" data-action="click->settings#hidePayment"></i></p>
+  </div>
+    <div class="event-description">
+      <%= simple_form_for(current_user, url: update_path(current_user)) do |f| %>
+        <%= f.input :budget, label:"Budget per gift", input_html: { value: number_with_precision(current_user.budget, precision: 2) } %>
+        <%= f.submit "Confirm", class: "btn btn-flat" %>
+      <% end %>
+    </div>
+</div>

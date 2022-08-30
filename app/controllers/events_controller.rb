@@ -1,12 +1,19 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: %i[show edit update destroy]
+  before_action :set_event, only: %i[show edit update destroy edit_success update_success]
+  skip_before_action :verify_authenticity_token
 
   def new
     @event = Event.new
   end
 
   def uncompleted_events
-    @events = Event.where.not(status: :completed)
+    @completed_events = Event.where(partner_id: current_user.partner).select { |event| DateTime.now > event.date }
+    @completed_events = @completed_events.each do |event|
+      status_completed(event)
+    end
+
+    @events = Event.where(partner_id: current_user.partner).where.not(status: :completed)
+    @events = @events.sort_by(&:date)
   end
 
   def show
@@ -14,6 +21,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
+    @event.partner_id = current_user.partner.id
     if @event.save
       redirect_to dashboard_path
     else
@@ -42,13 +50,23 @@ class EventsController < ApplicationController
   end
 
   def update_success
+    @event.success = !@event.success
+    @event.save
+    p "the params are: #{params}"
+
+    respond_to do |format|
+      format.html
+      format.json { render json: @event }
+    end
   end
 
   def completed_events
-    @events = Event.where(status: :completed)
+   @events = Event.where(partner_id: current_user.partner).where(status: :completed)
+   @events = @events.sort_by(&:date).reverse
   end
 
   def loading
+    Event.load(current_user)
   end
 
   private
@@ -58,8 +76,12 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:date, :success, :status, :content)
+    params.require(:event).permit(:date, :success, :status, :content, :inspo_id)
   end
 
+  def status_completed(event)
+    event.status = 2
+    event.save!
+  end
 
 end

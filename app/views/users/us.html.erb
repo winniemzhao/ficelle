@@ -9,7 +9,7 @@
     <% else %>
       <div class="relationship-avatars">
         <div class="avatar-name">
-          <%= current_user.photo.attached? ? cl_image_tag(current_user.photo.key, class: "avatar form-avatar") : image_tag("https://res.cloudinary.com/dbw6oqu08/image/upload/v1661686948/user_default.png", class: "avatar form-avatar") %>
+          <%= current_user.photo.attached? ? cl_image_tag(current_user.photo.key, class: "avatar form-avatar") : image_tag("user_default.png", class: "avatar form-avatar") %>
           <%= current_user.name %>
           <%= link_to ('<i class="fa-solid fa-pen"></i>').html_safe, edit_user_registration_path %>
         </div>
@@ -29,12 +29,12 @@
 
         </div>
         <div class="stat-genre">
-          <i class="fa-solid fa-gift"></i>
+          <i class="fa-solid fa-comment-dots"></i>
           <p>TEXTS</p>
           <h4><%= current_user.partner.events.where(status: 2).select { |event| event.inspo.genre == "text"}.count %></h4>
         </div>
         <div class="stat-genre">
-          <i class="fa-solid fa-comment-dots"></i>
+          <i class="fa-solid fa-gift"></i>
           <p>GIFTS</p>
           <h4><%= current_user.partner.events.where(status: 2).select { |event| event.inspo.genre == "gift"}.count %></h4>
         </div>

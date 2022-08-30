@@ -9,9 +9,15 @@
         <i class="fa-solid fa-calendar-check"></i>
       </p>
     <% elsif event.completed? %>
-      <p class="event-icon color-blue">
-        <i class="fa-regular fa-thumbs-up"></i>
-      </p>
+      <% if event.success %>
+        <p class="event-icon color-blue">
+          <i class="fa-solid fa-thumbs-up"></i>
+        </p>
+      <% else %>
+        <p class="event-icon color-blue">
+          <i class="fa-regular fa-thumbs-up"></i>
+        </p>
+      <% end %>
     <% end %>
     <div class="event-card-info">
       <h6>
@@ -44,7 +50,8 @@
   </div>
   <div class="event-description">
     <p><strong>Event Type: </strong><br><%= event.inspo.genre.capitalize %></p>
-    <p><strong>Event Date: </strong><br><%= event.date.strftime("%A, %b %e at %l:%M %p") %></p>
+    <p><strong>Event Date: </strong><br><%= event.date
+    .in_time_zone('Eastern Time (US & Canada)').strftime("%A, %b %e at %l:%M %p") %></p>
     <% if event.inspo.genre == "text" %>
       <p><strong>Content: </strong><br><%= event.content %></p>
     <% elsif event.inspo.genre == "date" %>
@@ -53,10 +60,12 @@
     <% if event.inspo.cost %>
       <p><strong>Cost: </strong><br><%= number_to_currency(event.inspo.cost) %></p>
     <% end %>
-    <%= link_to "Delete Event",
-      dashboard_path,
-      data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this event?"},
-      class: "btn btn-flat"
-    %>
+    <% if event.confirmed? %>
+      <%= link_to "Delete Event",
+        event_path(event),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this event?"},
+        class: "btn btn-flat"
+      %>
+    <% end %>
   </div>
 </div>

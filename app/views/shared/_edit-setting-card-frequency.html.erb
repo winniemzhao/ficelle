@@ -1,0 +1,19 @@
+<div class="event-card d-none" data-settings-target="editFrequency">
+  <div class="event-card-content">
+    <p class="event-icon color-dark">
+      <i class="fa-solid fa-calendar-days"></i>
+    </p>
+    <div class="event-card-info">
+      <h6>
+        Event Frequency
+      </h6>
+    </div>
+    <p><i class="fa-solid fa-xmark" data-action="click->settings#hideEdit"></i></p>
+  </div>
+    <div class="event-description">
+      <%= simple_form_for(current_user, url: update_path(current_user)) do |f| %>
+        <%= f.input :event_frequency, label:"# of events per month" %>
+        <%= f.submit "Confirm", class: "btn btn-flat" %>
+      <% end %>
+    </div>
+</div>
