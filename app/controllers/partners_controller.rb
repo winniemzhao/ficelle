@@ -29,6 +29,7 @@ class PartnersController < ApplicationController
   end
 
   def destroy
+    Favorite.destroy_all
     @partner = Partner.find(params[:id])
     @partner.destroy
     redirect_to dashboard_path
