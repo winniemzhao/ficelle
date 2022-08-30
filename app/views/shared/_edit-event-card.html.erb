@@ -38,9 +38,13 @@
   </div>
   <div class="event-description">
     <% if event.inspo.genre == "date" %>
-      <p><strong>Location: </strong><br><%=  event.inspo.location %></p>
-      <p><strong>Cost: </strong><br><%= number_to_currency(event.inspo.cost) %></p>
-    <% elsif event.inspo.genre == "gift" %>
+      <% if event.inspo.location %>
+        <p><strong>Location: </strong><br><%=  event.inspo.location %></p>
+      <% end %>
+      <% if event.inspo.cost%>
+        <p><strong>Cost: </strong><br><%= number_to_currency(event.inspo.cost) %></p>
+      <% end %>
+    <% elsif event.inspo.genre == "gift" && event.inspo.cost %>
       <p><strong>Cost: </strong><br><%= number_to_currency(event.inspo.cost) %></p>
     <% end %>
     <%= simple_form_for [event] do |f| %>
