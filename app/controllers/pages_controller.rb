@@ -9,7 +9,7 @@ class PagesController < ApplicationController
       @path = new_partner_path
       @message = 'Create a partner'
     else
-      @path = user_session_path
+      @path = new_user_registration_path
       @message = 'Get started'
     end
   end
