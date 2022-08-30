@@ -1,5 +1,13 @@
 <div class="wrapper">
   <h4 class="mb-2">Past events</h4>
+  <div class="center-dashboard">
+    <div class="dashboard-info">
+      <% if %>
+        <h5>You don't have any <br> completed events yet.</h5>
+        <%= link_to 'Create new event', new_event_path, class:"btn btn-flat mt-3" %>
+      <% end %>
+    </div>
+  </div>
   <ul class="events-list" data-controller="edit-event">
     <% @events.each do |event| %>
       <h6 class="mb-2"><%= event.date.in_time_zone('Eastern Time (US & Canada)').strftime("%A, %b %e") %></h6>
