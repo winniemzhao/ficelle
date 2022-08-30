@@ -4,7 +4,8 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["span"]
   connect() {
-    // console.log(this.element)
+    console.log()
+    console.log(this.element)
   }
 
   toggle(event) {
