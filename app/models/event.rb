@@ -5,7 +5,8 @@ class Event < ApplicationRecord
   enum status: { pending: 0, confirmed: 1, completed: 2 }
 
   def self.load(user)
-    Favorite.for_favoritor(user).each do |favorite|
+    Favorite.for_favoritor(user).sample(user.event_frequency).each do |favorite|
+      event = Event.new
       inspo = Inspo.find(favorite.favoritable_id)
       if Event.where(inspo_id: inspo.id).empty?
         if inspo.genre = 'text'
