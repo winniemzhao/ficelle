@@ -210,44 +210,44 @@ keyword12.save!
 
 puts "Hardcoding InspoKeywords 'cause we're hacks"
 
-ik1 = InspoKeyword.new(); ik1.inspo = inspo1; ik1.keyword = keyword6; ik1.save!
-ik2 = InspoKeyword.new(); ik2.inspo = inspo2; ik2.keyword = keyword2; ik2.save!
-ik3 = InspoKeyword.new(); ik3.inspo = inspo3; ik3.keyword = keyword9; ik3.save!
-ik4 = InspoKeyword.new(); ik4.inspo = inspo3; ik4.keyword = keyword11; ik4.save!
-Keyword.all.each do |keyword|
-  ik5 = InspoKeyword.new(); ik5.inspo = inspo4; ik5.keyword = keyword; ik5.save!
-end
-ik17 = InspoKeyword.new(); ik17.inspo = inspo5; ik17.keyword = keyword5; ik17.save!
-ik18 = InspoKeyword.new(); ik18.inspo = inspo6; ik18.keyword = keyword11; ik18.save!
-ik19 = InspoKeyword.new(); ik19.inspo = inspo7; ik19.keyword = keyword6; ik19.save!
-ik20 = InspoKeyword.new(); ik20.inspo = inspo7; ik20.keyword = keyword8; ik20.save!
-Keyword.all.each do |keyword|
-  ik21 = InspoKeyword.new(); ik21.inspo = inspo8; ik21.keyword = keyword; ik21.save!
-end
-ik33 = InspoKeyword.new(); ik33.inspo = inspo9; ik33.keyword = keyword1; ik33.save!
-ik34 = InspoKeyword.new(); ik34.inspo = inspo9; ik34.keyword = keyword3; ik34.save!
+# ik1 = InspoKeyword.new(); ik1.inspo = inspo1; ik1.keyword = keyword6; ik1.save!
+# ik2 = InspoKeyword.new(); ik2.inspo = inspo2; ik2.keyword = keyword2; ik2.save!
+# ik3 = InspoKeyword.new(); ik3.inspo = inspo3; ik3.keyword = keyword9; ik3.save!
+# ik4 = InspoKeyword.new(); ik4.inspo = inspo3; ik4.keyword = keyword11; ik4.save!
+# Keyword.all.each do |keyword|
+#   ik5 = InspoKeyword.new(); ik5.inspo = inspo4; ik5.keyword = keyword; ik5.save!
+# end
+# ik17 = InspoKeyword.new(); ik17.inspo = inspo5; ik17.keyword = keyword5; ik17.save!
+# ik18 = InspoKeyword.new(); ik18.inspo = inspo6; ik18.keyword = keyword11; ik18.save!
+# ik19 = InspoKeyword.new(); ik19.inspo = inspo7; ik19.keyword = keyword6; ik19.save!
+# ik20 = InspoKeyword.new(); ik20.inspo = inspo7; ik20.keyword = keyword8; ik20.save!
+# Keyword.all.each do |keyword|
+#   ik21 = InspoKeyword.new(); ik21.inspo = inspo8; ik21.keyword = keyword; ik21.save!
+# end
+# ik33 = InspoKeyword.new(); ik33.inspo = inspo9; ik33.keyword = keyword1; ik33.save!
+# ik34 = InspoKeyword.new(); ik34.inspo = inspo9; ik34.keyword = keyword3; ik34.save!
 
-ik35 = InspoKeyword.new(); ik35.inspo = inspo16; ik35.keyword = keyword1; ik35.save!
-ik36 = InspoKeyword.new(); ik36.inspo = inspo17; ik36.keyword = keyword2; ik36.save!
-ik37 = InspoKeyword.new(); ik37.inspo = inspo18; ik37.keyword = keyword4; ik37.save!
-ik38 = InspoKeyword.new(); ik38.inspo = inspo19; ik38.keyword = keyword5; ik38.save!
-ik39 = InspoKeyword.new(); ik39.inspo = inspo20; ik39.keyword = keyword6; ik39.save!
-ik40 = InspoKeyword.new(); ik40.inspo = inspo21; ik40.keyword = keyword7; ik40.save!
-ik41 = InspoKeyword.new(); ik41.inspo = inspo22; ik41.keyword = keyword9; ik41.save!
-ik42 = InspoKeyword.new(); ik42.inspo = inspo23; ik42.keyword = keyword10; ik42.save!
-ik43 = InspoKeyword.new(); ik43.inspo = inspo24; ik43.keyword = keyword10; ik43.save!
+# ik35 = InspoKeyword.new(); ik35.inspo = inspo16; ik35.keyword = keyword1; ik35.save!
+# ik36 = InspoKeyword.new(); ik36.inspo = inspo17; ik36.keyword = keyword2; ik36.save!
+# ik37 = InspoKeyword.new(); ik37.inspo = inspo18; ik37.keyword = keyword4; ik37.save!
+# ik38 = InspoKeyword.new(); ik38.inspo = inspo19; ik38.keyword = keyword5; ik38.save!
+# ik39 = InspoKeyword.new(); ik39.inspo = inspo20; ik39.keyword = keyword6; ik39.save!
+# ik40 = InspoKeyword.new(); ik40.inspo = inspo21; ik40.keyword = keyword7; ik40.save!
+# ik41 = InspoKeyword.new(); ik41.inspo = inspo22; ik41.keyword = keyword9; ik41.save!
+# ik42 = InspoKeyword.new(); ik42.inspo = inspo23; ik42.keyword = keyword10; ik42.save!
+# ik43 = InspoKeyword.new(); ik43.inspo = inspo24; ik43.keyword = keyword10; ik43.save!
 
-ik44 = InspoKeyword.new(); ik44.inspo = inspo10; ik44.keyword = keyword3; ik44.save!
-ik45 = InspoKeyword.new(); ik45.inspo = inspo11; ik45.keyword = keyword4; ik45.save!
-ik46 = InspoKeyword.new(); ik46.inspo = inspo12; ik46.keyword = keyword7; ik46.save!
-ik47 = InspoKeyword.new(); ik47.inspo = inspo12; ik47.keyword = keyword8; ik47.save!
-ik48 = InspoKeyword.new(); ik48.inspo = inspo13; ik48.keyword = keyword3; ik48.save!
-ik49 = InspoKeyword.new(); ik49.inspo = inspo14; ik49.keyword = keyword12; ik49.save!
+# ik44 = InspoKeyword.new(); ik44.inspo = inspo10; ik44.keyword = keyword3; ik44.save!
+# ik45 = InspoKeyword.new(); ik45.inspo = inspo11; ik45.keyword = keyword4; ik45.save!
+# ik46 = InspoKeyword.new(); ik46.inspo = inspo12; ik46.keyword = keyword7; ik46.save!
+# ik47 = InspoKeyword.new(); ik47.inspo = inspo12; ik47.keyword = keyword8; ik47.save!
+# ik48 = InspoKeyword.new(); ik48.inspo = inspo13; ik48.keyword = keyword3; ik48.save!
+# ik49 = InspoKeyword.new(); ik49.inspo = inspo14; ik49.keyword = keyword12; ik49.save!
 
 ik50 = InspoKeyword.new(); ik50.inspo = inspo25; ik50.keyword = keyword12; ik50.save!
-Keyword.all.each do |keyword|
-  ik51 = InspoKeyword.new(); ik51.inspo = inspo15; ik51.keyword = keyword; ik51.save!
-end
+# Keyword.all.each do |keyword|
+#   ik51 = InspoKeyword.new(); ik51.inspo = inspo15; ik51.keyword = keyword; ik51.save!
+# end
 
 
 # event1 = Event.new(date: Time.new(2022, 8, 28, 19), content: "text")
