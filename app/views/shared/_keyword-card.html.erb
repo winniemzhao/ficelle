@@ -1,5 +1,5 @@
 <% url = keyword.photo.attached? ? (cl_image_path keyword.photo.key, height: 100, width: 100, crop: :fill) : "/assets/keyword_default.jpg" %>
-<div class="keyword-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url(<%= url %>)"  data-controller="keywords" data-action="click->keywords#toggle" data-keyword_id="<%= keyword.id %>">
+<div class="keyword-card <%= current_user.partner.keywords.include?(keyword) ? 'keyword-outline' : '' %>" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)), url(<%= url %>)"  data-controller="keywords" data-action="click->keywords#toggle" data-keyword_id="<%= keyword.id %>">
   <h6 data-keyword_id="<%= keyword.id %>"><%= keyword.name %></h6>
 
   <p>

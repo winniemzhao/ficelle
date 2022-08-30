@@ -4,12 +4,10 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["span"]
   connect() {
-    console.log()
-    console.log(this.element)
   }
 
   toggle(event) {
-    // console.log(event.target.getAttribute("data-keyword_id"))
+    console.log(this.element)
     if (this.element.classList.contains("keyword-outline")) {
       this.element.classList.remove("keyword-outline");
       this.spanTarget.classList.remove("fa-circle-check")
