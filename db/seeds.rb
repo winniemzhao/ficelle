@@ -95,45 +95,45 @@ file12 = URI.open("https://images.unsplash.com/photo-1593061231114-1798846fd643?
 inspo12.photo.attach(io: file12, filename: "inspo12.jpg", content_type: "image/jpg")
 inspo12.save!
 
-# inspo13 = Inspo.new(name: "DIY Sushi Night", genre: "date", content: "The best ingredients can be found at Miyamoto", cost: 100.00)
-# file13 = URI.open("https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=327&q=80")
-# inspo13.photo.attach(io: file13, filename: "inspo13.jpg", content_type: "image/jpg")
-# inspo13.save!
+inspo13 = Inspo.new(name: "DIY Sushi Night", genre: "date", content: "The best ingredients can be found at Miyamoto", cost: 100.00)
+file13 = URI.open("https://images.unsplash.com/photo-1579584425555-c3ce17fd4351?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=327&q=80")
+inspo13.photo.attach(io: file13, filename: "inspo13.jpg", content_type: "image/jpg")
+inspo13.save!
 
-# inspo14 = Inspo.new(name: "Meditation Retreat", genre: "gift", content: "Escape together", cost: 500.00)
-# file14 = URI.open("https://images.unsplash.com/photo-1520363147109-9ab9d1c8f8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1256&q=80")
-# inspo14.photo.attach(io: file14, filename: "inspo14.jpg", content_type: "image/jpg")
-# inspo14.save!
+inspo14 = Inspo.new(name: "Meditation Retreat", genre: "gift", content: "Escape together", cost: 500.00)
+file14 = URI.open("https://images.unsplash.com/photo-1520363147109-9ab9d1c8f8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1256&q=80")
+inspo14.photo.attach(io: file14, filename: "inspo14.jpg", content_type: "image/jpg")
+inspo14.save!
 
-# inspo15 = Inspo.new(name: "Send a Love Poem", genre: "text", content: "Every time\nI see your face\nit reminds\nme of you.")
-# file15 = URI.open("https://images.unsplash.com/photo-1517867065801-e20f409696b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80")
-# inspo15.photo.attach(io: file15, filename: "inspo15.jpg", content_type: "image/jpg")
-# inspo15.save!
+inspo15 = Inspo.new(name: "Send a Love Poem", genre: "text", content: "Every time\nI see your face\nit reminds\nme of you.")
+file15 = URI.open("https://images.unsplash.com/photo-1517867065801-e20f409696b0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80")
+inspo15.photo.attach(io: file15, filename: "inspo15.jpg", content_type: "image/jpg")
+inspo15.save!
 
-# inspo16 = Inspo.new(name: "Netflix and Chill", genre: "date", content: "🎬🍿😏", cost: 20.00)
-# file16 = URI.open("https://sm.askmen.com/t/askmen_in/article/n/netflix-an/netflix-and-chill_xjgm.1200.jpg")
-# inspo16.photo.attach(io: file16, filename: "inspo16.jpg", content_type: "image/jpg")
-# inspo16.save!
+inspo16 = Inspo.new(name: "Netflix and Chill", genre: "date", content: "🎬🍿😏", cost: 20.00)
+file16 = URI.open("https://sm.askmen.com/t/askmen_in/article/n/netflix-an/netflix-and-chill_xjgm.1200.jpg")
+inspo16.photo.attach(io: file16, filename: "inspo16.jpg", content_type: "image/jpg")
+inspo16.save!
 
-# inspo17 = Inspo.new(name: "Explore the Botanical Gardens", genre: "date", content: "An oasis in the middle of the city", cost: 45.00, location: "4101 Sherbrooke Street East, Montréal, Quebec")
-# file17 = URI.open("https://d1q0twczwkl2ie.cloudfront.net/wp-content/uploads/2015/03/new.jpg")
-# inspo17.photo.attach(io: file17, filename: "inspo17.jpg", content_type: "image/jpg")
-# inspo17.save!
+inspo17 = Inspo.new(name: "Explore the Botanical Gardens", genre: "date", content: "An oasis in the middle of the city", cost: 45.00, location: "4101 Sherbrooke Street East, Montréal, Quebec")
+file17 = URI.open("https://d1q0twczwkl2ie.cloudfront.net/wp-content/uploads/2015/03/new.jpg")
+inspo17.photo.attach(io: file17, filename: "inspo17.jpg", content_type: "image/jpg")
+inspo17.save!
 
-# inspo18 = Inspo.new(name: "Stroll along the Lachine Canal", genre: "date", content: "For a 2-hour walk, make Atwater Market your goal from McGill and de la Commune")
-# file18 = URI.open("https://media.timeout.com/images/105897435/1372/1029/image.jpg")
-# inspo18.photo.attach(io: file18, filename: "inspo18.jpg", content_type: "image/jpg")
-# inspo18.save!
+inspo18 = Inspo.new(name: "Stroll along the Lachine Canal", genre: "date", content: "For a 2-hour walk, make Atwater Market your goal from McGill and de la Commune")
+file18 = URI.open("https://media.timeout.com/images/105897435/1372/1029/image.jpg")
+inspo18.photo.attach(io: file18, filename: "inspo18.jpg", content_type: "image/jpg")
+inspo18.save!
 
-# inspo19 = Inspo.new(name: "Mixology Kit", genre: "gift", content: "Why pay $15 for a drink at the bar when your partner can make you one for free?", cost: 127.00)
-# file19 = URI.open("https://www.pamperedchef.ca/iceberg/com/product/100013-lg.jpg")
-# inspo19.photo.attach(io: file19, filename: "inspo19.jpg", content_type: "image/jpg")
-# inspo19.save!
+inspo19 = Inspo.new(name: "Mixology Kit", genre: "gift", content: "Why pay $15 for a drink at the bar when your partner can make you one for free?", cost: 127.00)
+file19 = URI.open("https://www.pamperedchef.ca/iceberg/com/product/100013-lg.jpg")
+inspo19.photo.attach(io: file19, filename: "inspo19.jpg", content_type: "image/jpg")
+inspo19.save!
 
-# inspo20 = Inspo.new(name: "Street Art Hunt", genre: "date", content: "Where's Waldo: Street Art Edition")
-# file20 = URI.open("https://www.mtl.org/sites/default/files/styles/hero/public/2022-04/44730_1.jpg?itok=qu90_lwC")
-# inspo20.photo.attach(io: file20, filename: "inspo20.jpg", content_type: "image/jpg")
-# inspo20.save!
+inspo20 = Inspo.new(name: "Street Art Hunt", genre: "date", content: "Where's Waldo: Street Art Edition")
+file20 = URI.open("https://www.mtl.org/sites/default/files/styles/hero/public/2022-04/44730_1.jpg?itok=qu90_lwC")
+inspo20.photo.attach(io: file20, filename: "inspo20.jpg", content_type: "image/jpg")
+inspo20.save!
 
 # inspo21 = Inspo.new(name: "Kobo Clara HD", genre: "gift", content: "The perfect reading companion for any book lover", cost: 150.00)
 # file21 = URI.open("https://p0.pikist.com/photos/451/474/kobo-reading-light-ebook-hammock-reading-reader-tablet-digital-holiday.jpg")
