@@ -53,9 +53,13 @@
     <p><strong>Event Date: </strong><br><%= event.date
     .in_time_zone('Eastern Time (US & Canada)').strftime("%A, %b %e at %l:%M %p") %></p>
     <% if event.inspo.genre == "text" %>
-      <p><strong>Content: </strong><br><%= event.content %></p>
+      <% if event.content%>
+        <p><strong>Content: </strong><br><%= event.content %></p>
+      <% end %>
     <% elsif event.inspo.genre == "date" %>
-      <p><strong>Location: </strong><br><%= event.inspo.location %></p>
+      <% if event.inspo.location %>
+        <p><strong>Location: </strong><br><%= event.inspo.location %></p>
+      <% end %>
     <% end %>
     <% if event.inspo.cost %>
       <p><strong>Cost: </strong><br><%= number_to_currency(event.inspo.cost) %></p>
