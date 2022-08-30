@@ -26,6 +26,7 @@ class Event < ApplicationRecord
   end
 
   def send_message(attribs={})
+    content = attribs[:content]
     require 'twilio-ruby'
     account_sid = ENV["TWILIO_ACCOUNT_SID"]
     auth_token = ENV["TWILIO_AUTH_TOKEN"]
@@ -35,6 +36,6 @@ class Event < ApplicationRecord
     from = twilio_number
     to = '+15144589946'
 
-    client.messages.create(from: from, to: to, body: "Hey friend!")
+    client.messages.create(from: from, to: to, body: content)
   end
 end
