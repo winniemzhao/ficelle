@@ -135,30 +135,30 @@ file20 = URI.open("https://www.mtl.org/sites/default/files/styles/hero/public/20
 inspo20.photo.attach(io: file20, filename: "inspo20.jpg", content_type: "image/jpg")
 inspo20.save!
 
-# inspo21 = Inspo.new(name: "Kobo Clara HD", genre: "gift", content: "The perfect reading companion for any book lover", cost: 150.00)
-# file21 = URI.open("https://p0.pikist.com/photos/451/474/kobo-reading-light-ebook-hammock-reading-reader-tablet-digital-holiday.jpg")
-# inspo21.photo.attach(io: file21, filename: "inspo21.jpg", content_type: "image/jpg")
-# inspo21.save!
+inspo21 = Inspo.new(name: "Kobo Clara HD", genre: "gift", content: "The perfect reading companion for any book lover", cost: 150.00)
+file21 = URI.open("https://p0.pikist.com/photos/451/474/kobo-reading-light-ebook-hammock-reading-reader-tablet-digital-holiday.jpg")
+inspo21.photo.attach(io: file21, filename: "inspo21.jpg", content_type: "image/jpg")
+inspo21.save!
 
-# inspo22 = Inspo.new(name: "Dispatch Coffee", genre: "gift", content: "Coffee that tastes good and does good", cost: 30.00)
-# file22 = URI.open("https://dispatch.imgix.net/5hEq85BJ4gJttltNgM6miA/4798683d11b88e490a26542c58e05e8a/Dispatch-aug004.jpg?auto=format,compress&w=1800")
-# inspo22.photo.attach(io: file22, filename: "inspo22.jpg", content_type: "image/jpg")
-# inspo22.save!
+inspo22 = Inspo.new(name: "Dispatch Coffee", genre: "gift", content: "Coffee that tastes good and does good", cost: 30.00)
+file22 = URI.open("https://dispatch.imgix.net/5hEq85BJ4gJttltNgM6miA/4798683d11b88e490a26542c58e05e8a/Dispatch-aug004.jpg?auto=format,compress&w=1800")
+inspo22.photo.attach(io: file22, filename: "inspo22.jpg", content_type: "image/jpg")
+inspo22.save!
 
-# inspo23 = Inspo.new(name: "AirPods 3rd Generation", genre: "gift", content: "You can even personalize an engraving!", cost: 239.00)
-# file23 = URI.open("https://www.headphonesty.com/wp-content/uploads/2019/10/Apple-AirPods-Pro-Featured-Image.jpg")
-# inspo23.photo.attach(io: file23, filename: "inspo23.jpg", content_type: "image/jpg")
-# inspo23.save!
+inspo23 = Inspo.new(name: "AirPods 3rd Generation", genre: "gift", content: "You can even personalize an engraving!", cost: 239.00)
+file23 = URI.open("https://www.headphonesty.com/wp-content/uploads/2019/10/Apple-AirPods-Pro-Featured-Image.jpg")
+inspo23.photo.attach(io: file23, filename: "inspo23.jpg", content_type: "image/jpg")
+inspo23.save!
 
-# inspo24 = Inspo.new(name: "Karaoke Night", genre: "date", content: "Have a date at Le Date", cost: 50.00, location: "1218 St Catherine St E, Montreal, Quebec")
-# file24 = URI.open("https://api.time.com/wp-content/uploads/2019/09/karaoke-mic.jpg?quality=85&w=1600")
-# inspo24.photo.attach(io: file24, filename: "inspo24.jpg", content_type: "image/jpg")
-# inspo24.save!
+inspo24 = Inspo.new(name: "Karaoke Night", genre: "date", content: "Have a date at Le Date", cost: 50.00, location: "1218 St Catherine St E, Montreal, Quebec")
+file24 = URI.open("https://api.time.com/wp-content/uploads/2019/09/karaoke-mic.jpg?quality=85&w=1600")
+inspo24.photo.attach(io: file24, filename: "inspo24.jpg", content_type: "image/jpg")
+inspo24.save!
 
-# inspo25 = Inspo.new(name: "Yoga with Surya", genre: "date", content: "The best class is on Wednesdays from 12:30-1:00pm at Le Wagon with Bernard", cost: 20.00, location: "5333 Av. Casgrain, Montréal, Quebec")
-# file25 = URI.open("https://blog.goodlifefitness.com/media/1456/12008.jpg")
-# inspo25.photo.attach(io: file25, filename: "inspo25.jpg", content_type: "image/jpg")
-# inspo25.save!
+inspo25 = Inspo.new(name: "Yoga with Surya", genre: "date", content: "The best class is on Wednesdays from 12:30-1:00pm at Le Wagon with Bernard", cost: 20.00, location: "5333 Av. Casgrain, Montréal, Quebec")
+file25 = URI.open("https://blog.goodlifefitness.com/media/1456/12008.jpg")
+inspo25.photo.attach(io: file25, filename: "inspo25.jpg", content_type: "image/jpg")
+inspo25.save!
 
 puts "Creating keywords"
 
