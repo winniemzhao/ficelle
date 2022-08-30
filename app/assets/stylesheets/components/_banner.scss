@@ -24,10 +24,15 @@
   margin-top: 148px;
 }
 
-.partnerless-dashboard {
+.center-dashboard {
   height: calc(100vh - 116px - 64px - 64px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.dashboard-info {
+  width: 100%;
+  text-align: center;
 }
