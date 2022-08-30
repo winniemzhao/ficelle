@@ -1,12 +1,33 @@
-<div class="wrapper">
-  <h4 class="mb-2">Past events</h4>
-  <ul class="events-list" data-controller="edit-event">
-    <% @events.each do |event| %>
-      <h6 class="mb-2"><%= event.date.in_time_zone('Eastern Time (US & Canada)').strftime("%A, %b %e") %></h6>
-      <div>
-        <%= render "shared/event-card-completed", event: event %>
-        <%= render "shared/show-event-card", event: event %>
-      </div>
-    <% end %>
-  </ul>
+<div class="banner">
+  <div>
+    <h4>Past events</h4>
+  </div>
+</div>
+
+<div class="banner-margin">
+  <div class="wrapper">
+    <div class="dashboard-info">
+      <% if current_user.partner == nil %>
+        <div class="center-dashboard">
+          <h2>You don't have <br> a partner yet.</h2>
+          <%= link_to "Create a partner profile", new_partner_path, class: "btn-flat mt-3" %>
+        </div>
+      <% elsif current_user.partner && current_user.partner.events.where(status: :completed).count == 0 %>
+        <div class="center-dashboard">
+          <h4 class="mb-3">You don't have any <br> completed events yet.</h4>
+          <%= link_to 'Generate events', events_loading_path, class:"btn btn-flat"%>
+          <%= link_to 'Create new event', new_event_path, class:"btn btn-flat mt-3" %>
+        </div>
+      <% end %>
+    </div>
+    <ul class="events-list" data-controller="edit-event">
+      <% @events.each do |event| %>
+        <h6 class="mb-2"><%= event.date.in_time_zone('Eastern Time (US & Canada)').strftime("%A, %b %e") %></h6>
+        <div>
+          <%= render "shared/event-card-completed", event: event %>
+          <%= render "shared/show-event-card", event: event %>
+        </div>
+      <% end %>
+    </ul>
+  </div>
 </div>
