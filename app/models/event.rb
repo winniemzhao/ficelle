@@ -24,14 +24,15 @@ class Event < ApplicationRecord
     end
   end
 
-  def send_message
+  def send_message(attribs={})
     require 'twilio-ruby'
-    account_sid = 'ACbf7f4e607a174f62aebf4c5a3a6fab20'
-    auth_token = 'yyyyyyyyyyyyyyyyyyyyyyyyy'
+    account_sid = ENV["TWILIO_ACCOUNT_SID"]
+    auth_token = ENV["TWILIO_AUTH_TOKEN"]
+    twilio_number = ENV["TWILIO_PHONE_NUMBER"]
     client = Twilio::REST::Client.new(account_sid, auth_token)
 
-    from = '+15551234567' # Your Twilio number
-    to = '+15555555555' # Your mobile phone number
+    from = twilio_number
+    to = '+15144589946'
 
     client.messages.create(from: from, to: to, body: "Hey friend!")
   end

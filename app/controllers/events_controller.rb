@@ -69,6 +69,10 @@ class EventsController < ApplicationController
     Event.load(current_user)
   end
 
+  def send_text
+    @event.send_message
+  end
+
   private
 
   def set_event
