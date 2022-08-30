@@ -14,7 +14,7 @@
             <%= link_to "Create a partner profile", new_partner_path, class: "btn-flat mt-3" %>
           </div>
         <% elsif current_user.partner && current_user.partner.events.where(status: :completed).count == 0 %>
-          <h5>You don't have any <br> completed events yet.</h5>
+          <h4 class="mb-3">You don't have any <br> completed events yet.</h4>
           <%= link_to 'Generate events', events_loading_path, class:"btn btn-flat"%>
           <%= link_to 'Create new event', new_event_path, class:"btn btn-flat mt-3" %>
         <% end %>
