@@ -7,7 +7,7 @@ class EventsController < ApplicationController
   end
 
   def uncompleted_events
-    @completed_events = Event.where(partner_id: current_user.partner).select { |event| DateTime.now > event.date }
+    @completed_events = Event.where(partner_id: current_user.partner).select { |event| DateTime.now.in_time_zone('Eastern Time (US & Canada)') > event.date }
     @completed_events = @completed_events.each do |event|
       status_completed(event)
     end
