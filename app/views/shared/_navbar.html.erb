@@ -21,9 +21,16 @@
       </li>
       <li class="nav-item">
         <%#= replace dashboard_path for path to inspo swipe %>
-        <%= link_to(inspos_path) do %>
-          <p class="nav-icon"><i class="fa-solid fa-hand-holding-heart <%= 'my-nav' if request.fullpath == inspos_path%>"></i></p>
-          <p class="nav-info">inspiration</p>
+        <% if current_user.partner == nil %>
+          <%= link_to(new_partner_path) do %>
+            <p class="nav-icon"><i class="fa-solid fa-hand-holding-heart <%= 'my-nav' if request.fullpath == inspos_path%>"></i></p>
+            <p class="nav-info">inspiration</p>
+          <% end %>
+        <% else %>
+          <%= link_to(inspos_path) do %>
+            <p class="nav-icon"><i class="fa-solid fa-hand-holding-heart <%= 'my-nav' if request.fullpath == inspos_path%>"></i></p>
+            <p class="nav-info">inspiration</p>
+          <% end %>
         <% end %>
       </li>
       <li class="nav-item">
