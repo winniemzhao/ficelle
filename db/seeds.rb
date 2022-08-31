@@ -8,6 +8,7 @@ Keyword.destroy_all
 Inspo.destroy_all
 Partner.destroy_all
 User.destroy_all
+Favorite.destroy_all
 
 p "Creating users"
 
