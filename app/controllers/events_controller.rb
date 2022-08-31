@@ -7,13 +7,11 @@ class EventsController < ApplicationController
   end
 
   def uncompleted_events
-    @completed_events = Event.where(partner_id: current_user.partner).select { |event| DateTime.now.in_time_zone('Eastern Time (US & Canada)') > event.date }
-    @completed_events = @completed_events.each do |event|
-      status_completed(event)
-    end
+    @completed_events = Event.where(partner_id: current_user.partner).select { |event| event.date && DateTime.now.in_time_zone('Eastern Time (US & Canada)') > event.date }
+    @completed_events.each { |event| event.completed! }
 
-    @events = Event.where(partner_id: current_user.partner).where.not(status: :completed)
-    @events = @events.sort_by(&:date)
+    @uncompleted_events = Event.where(partner_id: current_user.partner).where.not(status: :completed)
+    @uncompleted_events = @uncompleted_events.sort_by(&:date)
   end
 
   def show
@@ -81,11 +79,6 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:date, :success, :status, :content, :inspo_id)
-  end
-
-  def status_completed(event)
-    event.status = 2
-    event.save!
   end
 
 end

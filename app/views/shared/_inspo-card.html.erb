@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="inspo-card-buttons" data-action="click->swipe-inspos#revealNextCard">
-      <%=  link_to ('<i class="dislike"><i class="fa-solid fa-xmark"></i></i>').html_safe, toggle_blocked_inspo_path(inspo), data: {turbo_method: :post} %>
+      <%= link_to ('<i class="dislike"><i class="fa-solid fa-xmark"></i></i>').html_safe, toggle_blocked_inspo_path(inspo), data: {turbo_method: :post} %>
       <%= link_to ('<i class="like"><i class="fa-solid fa-heart"></i></i>').html_safe, toggle_favorite_inspo_path(inspo), data: {turbo_method: :post} %>
     </div>
   </div>

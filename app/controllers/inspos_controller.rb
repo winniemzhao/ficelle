@@ -3,7 +3,11 @@ class InsposController < ApplicationController
     if current_user.partner.nil?
       redirect_to new_partner_path
     else
-      @inspos = current_user.partner.inspos.uniq.reject { |inspo| inspo.favorited_by?(current_user) || current_user.blocked_by?(inspo) }.sample(5)
+      @inspos = current_user.partner.inspos.uniq.reject do |inspo|
+        inspo.favorited_by?(current_user)
+      end.reject do |inspo|
+        current_user.blocked_by?(inspo)
+      end.sample(5)
     end
   end
 
