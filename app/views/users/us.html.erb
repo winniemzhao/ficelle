@@ -18,7 +18,7 @@
             <%= current_user.name %>
             <%= link_to ('<i class="fa-solid fa-pen"></i>').html_safe, edit_user_registration_path %>
           </div>
-          <h3>&</h3>
+          <h3 class="pb-5">&</h3>
           <div class="avatar-name">
             <%= current_user.partner.photo.attached? ? cl_image_tag(current_user.partner.photo.key, class: "avatar form-avatar") : image_tag("https://res.cloudinary.com/dbw6oqu08/image/upload/v1661685019/partner_default.png", class: "avatar form-avatar") %>
             <%= current_user.partner.name %>
@@ -45,7 +45,6 @@
             <h4><%= current_user.partner.events.where(status: 2).select { |event| event.inspo.genre == "gift"}.count %></h4>
           </div>
         </div>
-      <% end %>
         <div class="quotes">
           <% quotes = [
             "“Love is a game that two can play and both win.”",
@@ -56,9 +55,10 @@
             "“Happily ever after is not a fairy tale. It is a choice.”"
           ].sample %>
           <h6 class="mt-4" style= "font-style: italic; font-size: 12px; text-align: center;">
-          <%= quotes %>
+          <%= quotes  %>
           </h6>
         </div>
+      <% end %>
     </div>
   </div>
 </div>
