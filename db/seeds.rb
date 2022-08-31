@@ -171,13 +171,13 @@ inspo22.photo.attach(io: file_v, filename: "inspo22.jpg", content_type: "image/j
 inspo22.save!
 file_v.close
 
-file_w = URI.open("https://www.howtogeek.com/wp-content/uploads/2020/06/person-removing-airpods-from-the-charging-case.jpg?width=1198&trim=1,1&bg-color=000&pad=1,1", { 'User-Agent' => 'ruby' })
+file_w = URI.open("https://cdn.vox-cdn.com/thumbor/uMVlXQ-Rv--UgsrN__AVZFr6Its=/0x0:2040x1360/920x613/filters:focal(857x517:1183x843):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/67688726/cwelch_191031_3763_0003.0.jpg", { 'User-Agent' => 'ruby' })
 inspo23 = Inspo.new(name: "AirPods 3rd Generation", genre: "gift", content: "You can even personalize an engraving!", cost: 239.00)
 inspo23.photo.attach(io: file_w, filename: "inspo23.jpg", content_type: "image/jpg")
 inspo23.save!
 file_w.close
 
-file_x = URI.open("https://www.carsmash.nl/filt/wp-content/uploads/2020/08/Karaoke.jpg", { 'User-Agent' => 'ruby' })
+file_x = URI.open("https://www.parties-to-go.com/wp-content/uploads/2020/12/video-4647668_640.jpg", { 'User-Agent' => 'ruby' })
 inspo24 = Inspo.new(name: "Karaoke Night", genre: "date", content: "Have a date at Le Date", cost: 50.00, location: "1218 St Catherine St E, Montreal, Quebec")
 inspo24.photo.attach(io: file_x, filename: "inspo24.jpg", content_type: "image/jpg")
 inspo24.save!
@@ -189,7 +189,7 @@ inspo25.photo.attach(io: file_y, filename: "inspo25.jpg", content_type: "image/j
 inspo25.save!
 file_y.close
 
-file_z = URI.open("https://m.media-amazon.com/images/I/71TpYx2UedL._AC_SL1500_.jpg", { 'User-Agent' => 'ruby' })
+file_z = URI.open("http://fo4mw16y1z42edr6j2m4n6vt.wpengine.netdna-cdn.com/wp-content/uploads/twi-header2.jpg", { 'User-Agent' => 'ruby' })
 inspo26 = Inspo.new(name: "The Twilight Saga Blu-Ray Collection", genre: "gift", content: "Are you Team Edward or Team Jacob?", cost: 40.00)
 inspo26.photo.attach(io: file_z, filename: "inspo26.jpg", content_type: "image/jpg")
 inspo26.save!
@@ -207,8 +207,8 @@ inspo28.photo.attach(io: file_ab, filename: "inspo28.jpg", content_type: "image/
 inspo28.save!
 file_ab.close
 
-file_ac = URI.open("https://fishingbooker.com/blog/media/rsz_1_cork.jpg", { 'User-Agent' => 'ruby' })
-inspo29 = Inspo.new(name: "Fishing Pole", genre: "gift", content: "Are you a fisherman? Because you're a real catch!", cost: 100.00)
+file_ac = URI.open("https://fishingbooker.com/blog/media/rsz_two_handed_handle.jpg", { 'User-Agent' => 'ruby' })
+inspo29 = Inspo.new(name: "Fishing Rod", genre: "gift", content: "Are you a fisherman? Because you're a real catch!", cost: 100.00)
 inspo29.photo.attach(io: file_ac, filename: "inspo29.jpg", content_type: "image/jpg")
 inspo29.save!
 file_ac.close
