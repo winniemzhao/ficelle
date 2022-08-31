@@ -5,14 +5,11 @@
 </div>
 <div class="banner-margin">
   <div class="wrapper">
-    <%# <h6 class="mt-2">Select potential events</h6> %>
     <div data-controller="swipe-inspos">
       <% @inspos.each_with_index do |inspo, index| %>
         <%= render "shared/inspo-card", inspo: inspo, index: index, total: @inspos.count %>
-        <div class="back-skip">
-      </div>
-        <% end %>
-        <%= render "shared/loading" %>
+      <% end %>
+      <%= render "shared/loading" %>
     </div>
     <% if current_user.all_favorites.count == 0 %>
       <div class="back-skip">
