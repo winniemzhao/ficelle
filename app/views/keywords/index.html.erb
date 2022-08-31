@@ -16,7 +16,7 @@
         <%= link_to "Next", inspos_path, class: "btn-flat " %>
       </div>
       <div class="back-skip">
-        <%= link_to ('<i class="fa-solid fa-circle-arrow-left"></i> Back').html_safe, edit_partner_path(current_user.partner), class: "dark-link" %>
+        <%= link_to ('<i class="fa-solid fa-circle-arrow-left"></i> Edit <%= current_user.partner.name %>'s profile').html_safe, edit_partner_path(current_user.partner), class: "dark-link" %>
         <%= link_to ('Skip <i class="fa-solid fa-circle-arrow-right"></i>').html_safe, inspos_path, class: "dark-link" %>
       </div>
     </div>
