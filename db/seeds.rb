@@ -69,7 +69,7 @@ inspo5.photo.attach(io: file_e, filename: "inspo5.jpg", content_type: "image/jpg
 inspo5.save!
 file_e.close
 
-file_f = URI.open("https://i.pinimg.com/originals/e2/1e/c3/e21ec38a960ed856a9cbc2950654818c.jpg", { 'User-Agent' => 'ruby' })
+file_f = URI.open("https://i.kym-cdn.com/photos/images/newsfeed/001/505/718/136.jpg", { 'User-Agent' => 'ruby' })
 inspo6 = Inspo.new(name: "Cat Memes", genre: "text", content: "SO CUUUUUTE")
 inspo6.photo.attach(io: file_f, filename: "inspo6.jpg", content_type: "image/jpg")
 inspo6.save!
@@ -81,7 +81,7 @@ inspo7.photo.attach(io: file_g, filename: "inspo2.jpg", content_type: "image/jpg
 inspo7.save!
 file_g.close
 
-file_h = URI.open("https://hips.hearstapps.com/hmg-prod/images/wh-sexting-1603812586.png?crop=0.49988000959923207xw:1xh;center,top&resize=1200:*", { 'User-Agent' => 'ruby' })
+file_h = URI.open("https://emojiguide.com/wp-content/uploads/2021/07/Different-sizes-of-Eggplants-1536x958.jpg", { 'User-Agent' => 'ruby' })
 inspo8 = Inspo.new(name: "Steamy Text", genre: "text", content: "🛏️🚇😮🍾😵")
 inspo8.photo.attach(io: file_h, filename: "inspo8.png", content_type: "image/png")
 inspo8.save!
@@ -99,7 +99,7 @@ inspo10.photo.attach(io: file_j, filename: "inspo10.jpg", content_type: "image/j
 inspo10.save!
 file_j.close
 
-file_k = URI.open("https://images.unsplash.com/photo-1602599151411-875a848f71b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", { 'User-Agent' => 'ruby' })
+file_k = URI.open("https://images.dailyhive.com/20160930150232/fall10.jpg", { 'User-Agent' => 'ruby' })
 inspo11 = Inspo.new(name: "Watch the Sunset on Mount Royal", genre: "date", location: "Montreal, QC H3H 1A1", content: "Get your hiking boots out!", cost: 1.00)
 inspo11.photo.attach(io: file_k, filename: "inspo11.jpg", content_type: "image/jpg")
 inspo11.save!
@@ -171,13 +171,13 @@ inspo22.photo.attach(io: file_v, filename: "inspo22.jpg", content_type: "image/j
 inspo22.save!
 file_v.close
 
-file_w = URI.open("https://www.headphonesty.com/wp-content/uploads/2019/10/Apple-AirPods-Pro-Featured-Image.jpg", { 'User-Agent' => 'ruby' })
+file_w = URI.open("https://cdn.vox-cdn.com/thumbor/uMVlXQ-Rv--UgsrN__AVZFr6Its=/0x0:2040x1360/920x613/filters:focal(857x517:1183x843):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/67688726/cwelch_191031_3763_0003.0.jpg", { 'User-Agent' => 'ruby' })
 inspo23 = Inspo.new(name: "AirPods 3rd Generation", genre: "gift", content: "You can even personalize an engraving!", cost: 239.00)
 inspo23.photo.attach(io: file_w, filename: "inspo23.jpg", content_type: "image/jpg")
 inspo23.save!
 file_w.close
 
-file_x = URI.open("https://www.carsmash.nl/filt/wp-content/uploads/2020/08/Karaoke.jpg", { 'User-Agent' => 'ruby' })
+file_x = URI.open("https://www.parties-to-go.com/wp-content/uploads/2020/12/video-4647668_640.jpg", { 'User-Agent' => 'ruby' })
 inspo24 = Inspo.new(name: "Karaoke Night", genre: "date", content: "Have a date at Le Date", cost: 50.00, location: "1218 St Catherine St E, Montreal, Quebec")
 inspo24.photo.attach(io: file_x, filename: "inspo24.jpg", content_type: "image/jpg")
 inspo24.save!
@@ -188,6 +188,84 @@ inspo25 = Inspo.new(name: "Yoga with Surya", genre: "date", content: "The best c
 inspo25.photo.attach(io: file_y, filename: "inspo25.jpg", content_type: "image/jpg")
 inspo25.save!
 file_y.close
+
+file_z = URI.open("http://fo4mw16y1z42edr6j2m4n6vt.wpengine.netdna-cdn.com/wp-content/uploads/twi-header2.jpg", { 'User-Agent' => 'ruby' })
+inspo26 = Inspo.new(name: "The Twilight Saga Blu-Ray Collection", genre: "gift", content: "Are you Team Edward or Team Jacob?", cost: 40.00)
+inspo26.photo.attach(io: file_z, filename: "inspo26.jpg", content_type: "image/jpg")
+inspo26.save!
+file_z.close
+
+file_aa = URI.open("https://www.adventurefaktory.com/wp-content/uploads/2020/06/AdventureFaktory-Quebec-MaisonLavande-3-1024x683.jpg", { 'User-Agent' => 'ruby' })
+inspo27 = Inspo.new(name: "Maison Lavande", genre: "date", location: "902 Chem. Fresnière, Saint-Eustache, Quebec", content: "Stroll between rows and rows of lavender")
+inspo27.photo.attach(io: file_aa, filename: "inspo27.jpg", content_type: "image/jpg")
+inspo27.save!
+file_aa.close
+
+file_ab = URI.open("https://resources.ediblearrangements.ca/resources/en-us/i/a/l_l_Confetti_Berry_and_Chocolate_Bouquet_410x410.jpg", { 'User-Agent' => 'ruby' })
+inspo28 = Inspo.new(name: "Edible Arrangement", genre: "gift", content: "Nothing says I love you like a bouquet of chocolate covered strawberries", cost: 80.00)
+inspo28.photo.attach(io: file_ab, filename: "inspo28.jpg", content_type: "image/jpg")
+inspo28.save!
+file_ab.close
+
+file_ac = URI.open("https://fishingbooker.com/blog/media/rsz_two_handed_handle.jpg", { 'User-Agent' => 'ruby' })
+inspo29 = Inspo.new(name: "Fishing Rod", genre: "gift", content: "Are you a fisherman? Because you're a real catch!", cost: 100.00)
+inspo29.photo.attach(io: file_ac, filename: "inspo29.jpg", content_type: "image/jpg")
+inspo29.save!
+file_ac.close
+
+file_ad = URI.open("https://www.tourniagarawineries.com/shared/media/tour/12/image.jpg", { 'User-Agent' => 'ruby' })
+inspo30 = Inspo.new(name: "Bike and Wine Tour", genre: "date", location: "1627 Niagara Stone Rd, Niagara-on-the-Lake, Ontario", content: "The Grape Escape", cost: 70.00)
+inspo30.photo.attach(io: file_ad, filename: "inspo30.jpg", content_type: "image/jpg")
+inspo30.save!
+file_ad.close
+
+file_ae = URI.open("https://i.cbc.ca/1.6096095.1625837822!/fileImage/httpImage/image.jpg_gen/derivatives/original_780/oasis-immersion.jpg", { 'User-Agent' => 'ruby' })
+inspo31 = Inspo.new(name: "Van Gogh Distorsion", genre: "date", location: "1001 Jean-Paul-Riopelle Place, Montréal, Quebec", content: "A bright and colorful journey through more than 225 of Van Gogh's works", cost: 60.00)
+inspo31.photo.attach(io: file_ae, filename: "inspo31.jpg", content_type: "image/jpg")
+inspo31.save!
+file_ae.close
+
+file_af = URI.open("https://cdn.estore.nu/57203-thickbox_default/90-degree-angled-glasses.jpg", { 'User-Agent' => 'ruby' })
+inspo32 = Inspo.new(name: "Prism Reading Glasses", genre: "gift", content: "Have you ever tried horizontal reading?", cost: 50.00)
+inspo32.photo.attach(io: file_af, filename: "inspo32.jpg", content_type: "image/jpg")
+inspo32.save!
+file_af.close
+
+file_ag = URI.open("https://www.tourismelaval.com/uploads-optim/medias/535/original.jpg", { 'User-Agent' => 'ruby' })
+inspo33 = Inspo.new(name: "Window Shopping", genre: "date", content: "Carrefour Laval is the #1 mall walking spot in Quebec")
+inspo33.photo.attach(io: file_ag, filename: "inspo33.jpg", content_type: "image/jpg")
+inspo33.save!
+file_ag.close
+
+file_ah = URI.open("https://dailycoffeenews.com/wp-content/uploads/2020/01/latte-art-2.jpg", { 'User-Agent' => 'ruby' })
+inspo34 = Inspo.new(name: "Latte Art Workshop", genre: "date", location: "111A rue de Louvain, Ouest, Montreal, Quebec", content: "I like you a latte", cost: 160.00)
+inspo34.photo.attach(io: file_ah, filename: "inspo34.jpg", content_type: "image/jpg")
+inspo34.save!
+file_ah.close
+
+file_ai = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/13/48/f9/e7/20180614-131815-largejpg.jpg", { 'User-Agent' => 'ruby' })
+inspo35 = Inspo.new(name: "Live Music", genre: "date", content: "Sip a drink while you listen to local artists", cost: 10.00)
+inspo35.photo.attach(io: file_ai, filename: "inspo35.jpg", content_type: "image/jpg")
+inspo35.save!
+file_ai.close
+
+file_aj = URI.open("https://images.squarespace-cdn.com/content/v1/5a9eb291af20965bb4edae4c/1630086794383-GF7OCM9B074MKG7WKJ6B/221666400_3025397694448853_277169243759899882_n.jpg", { 'User-Agent' => 'ruby' })
+inspo36 = Inspo.new(name: "Petting Zoo", genre: "date", location: "901 Av. du Parc, Laval, Quebec", content: "Haven't you always wanted to get spit on by a llama?")
+inspo36.photo.attach(io: file_aj, filename: "inspo36.jpg", content_type: "image/jpg")
+inspo36.save!
+file_aj.close
+
+file_ak = URI.open("https://www.spiritearthmag.org/wp-content/uploads/2019/02/2-1.jpg", { 'User-Agent' => 'ruby' })
+inspo37 = Inspo.new(name: "Crystals", genre: "gift", content: "Who needs modern medicine when you can heal yourself with crystals?", cost: 70.00)
+inspo37.photo.attach(io: file_ak, filename: "inspo37.jpg", content_type: "image/jpg")
+inspo37.save!
+file_ak.close
+
+file_al = URI.open("https://cdn.shopify.com/s/files/1/0375/8034/1385/files/Lola_Rosa_Milton_600x.jpg?v=1638372577", { 'User-Agent' => 'ruby' })
+inspo38 = Inspo.new(name: "Lola Rosa", genre: "date", location: "4581 Av du Parc, Montréal, Quebec", content: "Stéphane's ideal date", cost: 60.00)
+inspo38.photo.attach(io: file_al, filename: "inspo38.jpg", content_type: "image/jpg")
+inspo38.save!
+file_al.close
 
 p "Creating keywords"
 
@@ -303,6 +381,19 @@ ik50 = InspoKeyword.new(); ik50.inspo = inspo25; ik50.keyword = keyword12; ik50.
 Keyword.all.each do |keyword|
   ik51 = InspoKeyword.new(); ik51.inspo = inspo15; ik51.keyword = keyword; ik51.save!
 end
+ik53 = InspoKeyword.new(); ik53.inspo = inspo26; ik53.keyword = keyword1; ik53.save!
+ik54 = InspoKeyword.new(); ik54.inspo = inspo27; ik54.keyword = keyword2; ik54.save!
+ik55 = InspoKeyword.new(); ik55.inspo = inspo28; ik55.keyword = keyword3; ik55.save!
+ik56 = InspoKeyword.new(); ik56.inspo = inspo29; ik56.keyword = keyword4; ik56.save!
+ik57 = InspoKeyword.new(); ik57.inspo = inspo30; ik57.keyword = keyword5; ik57.save!
+ik58 = InspoKeyword.new(); ik58.inspo = inspo31; ik58.keyword = keyword6; ik58.save!
+ik59 = InspoKeyword.new(); ik59.inspo = inspo32; ik59.keyword = keyword7; ik59.save!
+ik60 = InspoKeyword.new(); ik60.inspo = inspo33; ik60.keyword = keyword8; ik60.save!
+ik61 = InspoKeyword.new(); ik61.inspo = inspo34; ik61.keyword = keyword9; ik61.save!
+ik62 = InspoKeyword.new(); ik62.inspo = inspo35; ik62.keyword = keyword10; ik62.save!
+ik63 = InspoKeyword.new(); ik63.inspo = inspo36; ik63.keyword = keyword11; ik63.save!
+ik64 = InspoKeyword.new(); ik64.inspo = inspo37; ik64.keyword = keyword12; ik64.save!
+ik65 = InspoKeyword.new(); ik65.inspo = inspo38; ik65.keyword = keyword3; ik65.save!
 
 # event1 = Event.new(date: Time.new(2022, 8, 28, 19), content: "text")
 # event1.partner = partner1
