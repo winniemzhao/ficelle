@@ -1,13 +1,12 @@
 <div class="event-card" data-edit-event-target="completed" id="event-<%= event.id %>">
   <div class="event-card-content">
-    <p class="event-icon color-blue"data-action="click->edit-event#eventSuccess">
+    <p class="event-icon color-blue" data-action="click->edit-event#eventSuccess">
       <% if event.success %>
         <i class="icon-thumb fa-solid fa-thumbs-up" id="<%= event.id %>" data-edit-event-target="success"></i>
       <% else %>
         <i class="icon-thumb fa-regular fa-thumbs-up" id="<%= event.id %>" data-edit-event-target="success"></i>
       <% end %>
     </p>
-
     <div class="event-card-info">
       <h6>
         <%= event.inspo.name %>
@@ -21,6 +20,6 @@
       </h6>
       <p>Completed</p>
     </div>
-    <p><i class="fa-solid fa-ellipsis" data-action="click->edit-event#revealShowCompleted" id="event-<%= event.id %>"></i></p>
+    <p><i class="fa-solid fa-chevron-down" data-action="click->edit-event#revealShowCompleted" id="event-<%= event.id %>"></i></p>
   </div>
 </div>

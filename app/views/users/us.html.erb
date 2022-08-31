@@ -1,45 +1,52 @@
-<div class="wrapper">
-  <div class="us">
-    <% if current_user.partner == nil %>
-      <div class="title">
-        <h2>You don't have <br> a partner yet.</h2>
-        <br>
-        <%= link_to "Create a partner profile", new_partner_path, class: "btn-flat mt-3" %>
-      </div>
-    <% else %>
-      <div class="relationship-avatars">
-        <div class="avatar-name">
-          <%= current_user.photo.attached? ? cl_image_tag(current_user.photo.key, class: "avatar form-avatar") : image_tag("user_default.png", class: "avatar form-avatar") %>
-          <%= current_user.name %>
-          <%= link_to ('<i class="fa-solid fa-pen"></i>').html_safe, edit_user_registration_path %>
+<div class="banner">
+  <div>
+    <h4>Your Relationship</h4>
+  </div>
+</div>
+<div class="banner-margin">
+  <div class="wrapper">
+    <div class="us">
+      <% if current_user.partner == nil %>
+        <div class="title">
+          <h2>You don't have <br> a partner yet.</h2>
+          <br>
+          <%= link_to "Create a partner profile", new_partner_path, class: "btn-flat mt-3" %>
         </div>
-        <h3>&</h3>
-        <div class="avatar-name">
-          <%= current_user.partner.photo.attached? ? cl_image_tag(current_user.partner.photo.key, class: "avatar form-avatar") : image_tag("https://res.cloudinary.com/dbw6oqu08/image/upload/v1661685019/partner_default.png", class: "avatar form-avatar") %>
-          <%= current_user.partner.name %>
-          <%= link_to ('<i class="fa-solid fa-pen"></i>').html_safe, edit_partner_path(current_user.partner) %>
+      <% else %>
+        <div class="relationship-avatars">
+          <div class="avatar-name">
+            <%= current_user.photo.attached? ? cl_image_tag(current_user.photo.key, class: "avatar form-avatar") : image_tag("user_default.png", class: "avatar form-avatar") %>
+            <%= current_user.name %>
+            <%= link_to ('<i class="fa-solid fa-pen"></i>').html_safe, edit_user_registration_path %>
+          </div>
+          <h3>&</h3>
+          <div class="avatar-name">
+            <%= current_user.partner.photo.attached? ? cl_image_tag(current_user.partner.photo.key, class: "avatar form-avatar") : image_tag("https://res.cloudinary.com/dbw6oqu08/image/upload/v1661685019/partner_default.png", class: "avatar form-avatar") %>
+            <%= current_user.partner.name %>
+            <%= link_to ('<i class="fa-solid fa-pen"></i>').html_safe, edit_partner_path(current_user.partner) %>
+          </div>
         </div>
-      </div>
 
-      <div class="relationship-stats">
-        <div class="stat-genre">
-          <i class="fa-solid fa-people-pulling"></i>
-          <p>DATES</p>
-          <h4><%= current_user.partner.events.where(status: 2).select { |event| event.inspo.genre == "date"}.count %></h4>
+        <h6>COMPLETED EVENTS</h6>
+        <div class="relationship-stats">
+          <div class="stat-genre">
+            <i class="fa-solid fa-people-pulling"></i>
+            <p>DATES</p>
+            <h4><%= current_user.partner.events.where(status: 2).select { |event| event.inspo.genre == "date"}.count %></h4>
 
+          </div>
+          <div class="stat-genre">
+            <i class="fa-solid fa-comment-dots"></i>
+            <p>TEXTS</p>
+            <h4><%= current_user.partner.events.where(status: 2).select { |event| event.inspo.genre == "text"}.count %></h4>
+          </div>
+          <div class="stat-genre">
+            <i class="fa-solid fa-gift"></i>
+            <p>GIFTS</p>
+            <h4><%= current_user.partner.events.where(status: 2).select { |event| event.inspo.genre == "gift"}.count %></h4>
+          </div>
         </div>
-        <div class="stat-genre">
-          <i class="fa-solid fa-comment-dots"></i>
-          <p>TEXTS</p>
-          <h4><%= current_user.partner.events.where(status: 2).select { |event| event.inspo.genre == "text"}.count %></h4>
-        </div>
-        <div class="stat-genre">
-          <i class="fa-solid fa-gift"></i>
-          <p>GIFTS</p>
-          <h4><%= current_user.partner.events.where(status: 2).select { |event| event.inspo.genre == "gift"}.count %></h4>
-        </div>
-      </div>
-      <h6>COMPLETED EVENTS</h6>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

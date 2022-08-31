@@ -26,6 +26,13 @@ class Event < ApplicationRecord
         event.save!
       end
     end
+    %w[text gift date].each do |genre|
+      if Event.select { |event| event.inspo.genre == 'text' }.count.zero?
+        event = Event.new
+        event.inspo = Inspo.where(genre: genre).sample
+
+      end
+    end
   end
 
   def send_message(content)
