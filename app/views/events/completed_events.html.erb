@@ -14,7 +14,7 @@
         </div>
       <% elsif current_user.partner && current_user.partner.events.where(status: :completed).count == 0 %>
         <div class="center-dashboard">
-          <h2 class="mb-3">You have no <br> past events yet.</h2>
+          <h2 class="mb-3">You have no <br> past events.</h2>
           <%= link_to 'Generate events', events_loading_path, class:"btn btn-flat"%>
           <%= link_to 'Create new event', new_event_path, class:"btn btn-flat mt-3" %>
         </div>
