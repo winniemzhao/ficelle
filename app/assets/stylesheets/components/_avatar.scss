@@ -27,3 +27,19 @@
 .edit-avatar {
   text-align: center;
 }
+
+.edit-avatar p {
+  color: $white;
+  background-color: $green;
+  font-size: 12px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid $white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  bottom: 28px;
+  left: 170px;
+}

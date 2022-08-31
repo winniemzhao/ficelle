@@ -9,8 +9,10 @@
       <div class="form-inputs">
         <div class="edit-avatar">
           <%= current_user.photo.attached? ? cl_image_tag(current_user.photo.key, class: "avatar form-avatar") : image_tag("user_default.png", class: "avatar form-avatar") %>
-
-          <%= f.input :photo, as: :file %>
+          <p><i class="fa-solid fa-camera"></i></p>
+          <div class="d-none">
+            <%= f.input :photo, as: :file %>
+          </div>
         </div>
 
         <%= f.input :name,
