@@ -1,20 +1,33 @@
 <div class="wrapper">
   <div class="form-wrapper">
 
-    <h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-    <%= current_user.photo.attached? ? cl_image_tag(current_user.photo.key, class: "avatar form-avatar") : image_tag("user_default.png", class: "avatar form-avatar") %>
+    <h5>Edit <%= current_user.name %>'s profile</h5>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, data: {turbo: false}) do |f| %>
       <%= f.error_notification %>
 
       <div class="form-inputs">
-        <%= f.input :email, required: true, autofocus: true %>
+        <div class="edit-avatar">
+          <%= current_user.photo.attached? ? cl_image_tag(current_user.photo.key, class: "avatar form-avatar") : image_tag("user_default.png", class: "avatar form-avatar") %>
 
+          <%= f.input :photo, as: :file %>
+        </div>
+
+        <%= f.input :name,
+                    required: false,
+                    input_html: { autocomplete: "new-name" } %>
+        <%= f.input :email,
+                    required: true,
+                    autofocus: true %>
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
           <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
         <% end %>
-
+        <%= f.input :phone_number,
+                    required: false,
+                    input_html: { autocomplete: "new-phone-number" } %>
+        <%= f.input :location,
+                    required: false,
+                    input_html: { autocomplete: "new-location" } %>
         <%= f.input :password,
                     hint: "Leave blank if you don't want to change it",
                     required: false,
@@ -26,16 +39,6 @@
                     hint: "Enter your current password to confirm your changes",
                     required: true,
                     input_html: { autocomplete: "current-password" } %>
-        <%= f.input :name,
-                    required: false,
-                    input_html: { autocomplete: "new-name" } %>
-        <%= f.input :phone_number,
-                    required: false,
-                    input_html: { autocomplete: "new-phone-number" } %>
-        <%= f.input :location,
-                    required: false,
-                    input_html: { autocomplete: "new-location" } %>
-        <%= f.input :photo, as: :file %>
       </div>
 
       <%= f.button :submit, "Update", class: "btn btn-flat" %>

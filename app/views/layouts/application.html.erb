@@ -23,23 +23,21 @@
   </head>
 
   <body>
-    <div class="alert" data-controller="alert">
+    <div class="alert">
       <% flash.each do |type, msg| %>
         <% if type == "alert" %>
-          <div class="alert flash flash-danger" role="alert" >
+          <div class="alert flash flash-danger" role="alert" data-controller="alert">
             <%= msg %>
             <a data-alert-target="popup" data-action="click->alert#connect" data-bs-dismiss="alert" aria-label="Close">
-
             </a>
           </div>
         <% elsif type == "notice" %>
-          <div class="alert alert-dismissible flash flash-success fade show" role="alert">
+          <div class="alert alert-dismissible flash flash-success fade show" role="alert" data-controller="alert">
             <%= msg %>
             <a data-alert-target="popup" data-action="click->alert#connect" data-bs-dismiss="alert" aria-label="Close">
-
             </a>
           </div>
-            <% end %>
+        <% end %>
       <% end %>
     </div>
     <%= yield %>

@@ -5,7 +5,7 @@ export default class extends Controller {
   static targets = ['popup']
 
   connect() {
-    console.log("hello from alert")
+    // console.log("hello from alert")
     setTimeout(() => {
       this.popupTarget.click()
     }, 3000)
