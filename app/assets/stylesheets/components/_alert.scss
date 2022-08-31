@@ -1,12 +1,26 @@
 .alert {
   position: fixed;
-  top: 16px;
-  right: 16px;
+  font-size: small;
+  top: 2px;
+  right: 2px;
   z-index: 1000;
-  background-color: #FEECE8;
   transition: 0.3s;
+  max-width: 350px;
 }
 
-.alert:hover {
-  background-color: #f9dad4;
+
+
+.flash {
+  padding: 16px 24px;
+  top: 2px;
+  right: 2px;
+  display: flex;
+  font-size: small;
+  justify-content: space-between;
+  align-items: center;
+  background: #bbf8ba;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  margin: 8px;
+  max-width: 350px;
 }
