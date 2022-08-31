@@ -13,9 +13,9 @@ class Event < ApplicationRecord
       unless user.blocked_by?(inspo)
         if Event.where(inspo_id: inspo.id).empty?
           event = Event.new
-          if inspo.genre = 'text'
+          if inspo.genre == 'text'
             date = Time.new(year, month, day, rand(8..20), [15, 30, 45, 0].sample) + (86400 * rand(1..5))
-          elsif inspo.genre = 'gift'
+          elsif inspo.genre == 'gift'
             date = Time.new(year, month, day, rand(8..20)) + (86400 * rand(1..7))
           else
             date = Time.new(year, month, day, rand(17..19)) + (86400 * rand(1..14))
