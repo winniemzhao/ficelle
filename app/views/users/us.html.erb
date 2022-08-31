@@ -7,9 +7,8 @@
   <div class="wrapper">
     <div class="us">
       <% if current_user.partner == nil %>
-        <div class="title">
+        <div class="center-dashboard">
           <h2>You don't have <br> a partner yet.</h2>
-          <br>
           <%= link_to "Create a partner profile", new_partner_path, class: "btn-flat mt-3" %>
         </div>
       <% else %>
@@ -27,7 +26,7 @@
           </div>
         </div>
 
-        <h6>COMPLETED EVENTS</h6>
+        <h6 class="mt-2">COMPLETED EVENTS</h6>
         <div class="relationship-stats">
           <div class="stat-genre">
             <i class="fa-solid fa-people-pulling"></i>
@@ -47,6 +46,19 @@
           </div>
         </div>
       <% end %>
+        <div class="quotes">
+          <% quotes = [
+            "“Love is a game that two can play and both win.”",
+            "“No road is long with good company.”",
+            "“The first duty of love is to listen.”",
+            "“Love is a two-way street constantly under construction.”",
+            "“A true relationship is two unperfect people refusing to give up on each other.”",
+            "“Happily ever after is not a fairy tale. It is a choice.”"
+          ].sample %>
+          <h6 class="mt-4" style= "font-style: italic; font-size: 12px; text-align: center;">
+          <%= quotes %>
+          </h6>
+        </div>
     </div>
   </div>
 </div>

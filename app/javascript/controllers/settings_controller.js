@@ -4,7 +4,7 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["frequency", "payment", "editFrequency", "editPayment", "show"]
   connect() {
-    console.log("hello")
+    // console.log("hello")
   }
 
   revealEdit() {

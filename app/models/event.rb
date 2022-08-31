@@ -4,29 +4,42 @@ class Event < ApplicationRecord
 
   enum status: { pending: 0, confirmed: 1, completed: 2 }
 
+  validates :date, presence: true
+
   def self.load(user)
+    year, month, day = Date.today.year, Date.today.month, Date.today.day
     Favorite.for_favoritor(user).sample(user.event_frequency).each do |favorite|
-      event = Event.new
       inspo = Inspo.find(favorite.favoritable_id)
-      if Event.where(inspo_id: inspo.id).empty?
-        if inspo.genre = 'text'
-          date = Time.new(Date.today.year, Date.today.month, Date.today.day, rand(8..20), [15, 30, 45, 0].sample) + (86400 * rand(1..5))
-        elsif inspo.genre = 'gift'
-          date = Time.new(Date.today.year, Date.today.month, Date.today.day, rand(8..20)) + (86400 * rand(1..7))
-        else
-          date = Time.new(Date.today.year, Date.today.month, Date.today.day, rand(17..19)) + (86400 * rand(1..14))
+      unless user.blocked_by?(inspo)
+        if Event.where(inspo_id: inspo.id).empty?
+          event = Event.new
+          if inspo.genre == 'text'
+            date = Time.new(year, month, day, rand(8..20), [15, 30, 45, 0].sample) + (86400 * rand(1..5))
+          elsif inspo.genre == 'gift'
+            date = Time.new(year, month, day, rand(8..20)) + (86400 * rand(1..7))
+          else
+            date = Time.new(year, month, day, rand(17..19)) + (86400 * rand(1..14))
+          end
+          content = inspo.genre == 'text' ? inspo.content : nil
+          event = Event.new(date: date, content: content)
+          event.partner = user.partner
+          event.inspo = inspo
+          event.save!
         end
-        content = inspo.content if inspo.genre == 'text'
-        event = Event.new(date: date)
+      end
+    end
+    %w[text gift date].each do |genre|
+      if Event.select { |event| event.inspo.genre == genre }.count.zero?
+        event = Event.new
         event.partner = user.partner
-        event.inspo = inspo
+        event.inspo = Inspo.where(genre: genre).sample
+        event.date = Time.new(year, month, day, 19, [0, 30].sample) + (86400 * rand(1..5))
         event.save!
       end
     end
   end
 
-  def send_message(attribs={})
-    content = attribs[:content]
+  def send_message(content)
     require 'twilio-ruby'
     account_sid = ENV["TWILIO_ACCOUNT_SID"]
     auth_token = ENV["TWILIO_AUTH_TOKEN"]
@@ -35,7 +48,7 @@ class Event < ApplicationRecord
 
     from = twilio_number
     to = '+15144589946'
-
+    sleep(3)
     client.messages.create(from: from, to: to, body: content)
   end
 end

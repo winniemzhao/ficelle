@@ -17,13 +17,13 @@
             <%= render "shared/inspo-card", inspo: inspo, index: index, total: @inspos.count %>
           <% end %>
           <%= render "shared/loading" %>
+          <% if current_user.all_favorites.count == 0 %>
+            <div class="back-skip">
+              <%= link_to ('<i class="fa-solid fa-circle-arrow-left"></i> Interests').html_safe, partner_keywords_path(@current_user.partner), class: "dark-link" %>
+              <%= link_to ('Skip <i class="fa-solid fa-circle-arrow-right"></i>').html_safe, events_loading_path, class: "dark-link" %>
+            </div>
+          <% end %>
         </div>
-        <% if current_user.all_favorites.count == 0 %>
-          <div class="back-skip">
-            <%= link_to ('<i class="fa-solid fa-circle-arrow-left"></i> Back').html_safe, partner_keywords_path(@current_user.partner), class: "dark-link" %>
-            <%= link_to ('Skip <i class="fa-solid fa-circle-arrow-right"></i>').html_safe, events_loading_path, class: "dark-link" %>
-          </div>
-        <% end %>
       <% end %>
     </div>
   </div>

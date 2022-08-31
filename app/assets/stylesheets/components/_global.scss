@@ -11,8 +11,6 @@ ul, li {
 
 body {
   position: relative;
-  // min-height: calc(100vh - 64px);
-  // padding-bottom: 64px;
 }
 
 h1 {
@@ -49,7 +47,9 @@ a {
 }
 
 .wrapper {
-  margin: 32px 32px 32px 32px;
+  padding: 32px 32px 32px 32px;
+  width: 375px;
+  margin: 0 auto;
 }
 
 .color-red {

@@ -56,7 +56,7 @@ export default class extends Controller {
   }
 
   hideShowConfirmed(event) {
-    console.log("click to hide show confirmed")
+    // console.log("click to hide show confirmed")
 
     const current = this.confirmedTargets.find( confirmed => event.target.id === confirmed.id)
     const showCurrent = this.showTargets.find( show => event.target.id === show.id)
@@ -66,7 +66,7 @@ export default class extends Controller {
   }
 
   hideShowCompleted(event) {
-    console.log("click to hide show completed")
+    // console.log("click to hide show completed")
 
     const current = this.completedTargets.find( completed => event.target.id === completed.id)
     const showCurrent = this.showTargets.find( show => event.target.id === show.id)
