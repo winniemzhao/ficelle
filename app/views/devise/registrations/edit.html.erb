@@ -1,20 +1,16 @@
 <div class="wrapper">
   <div class="form-wrapper">
-
     <h5>Edit <%= current_user.name %>'s profile</h5>
-
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }, data: {turbo: false}) do |f| %>
       <%= f.error_notification %>
-
       <div class="form-inputs">
-        <div class="edit-avatar">
+        <div class="edit-avatar" data-controller="change-avatar">
           <%= current_user.photo.attached? ? cl_image_tag(current_user.photo.key, class: "avatar form-avatar") : image_tag("user_default.png", class: "avatar form-avatar") %>
-          <p><i class="fa-solid fa-camera"></i></p>
-          <div class="d-none">
-            <%= f.input :photo, as: :file %>
+          <p><i class="fa-solid fa-camera" data-action="click->change-avatar#revealForm"></i></p>
+          <div class="d-none" data-change-avatar-target="form">
+            <%= f.input :photo, as: :file, label: false, hint: "Upload new photo" %>
           </div>
         </div>
-
         <%= f.input :name,
                     required: false,
                     input_html: { autocomplete: "new-name" } %>
@@ -42,7 +38,6 @@
                     required: true,
                     input_html: { autocomplete: "current-password" } %>
       </div>
-
       <%= f.button :submit, "Update", class: "btn btn-flat" %>
     <% end %>
 
