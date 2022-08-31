@@ -7,7 +7,6 @@ export default class extends Controller {
   }
 
   toggle(event) {
-    console.log(this.element)
     if (this.element.classList.contains("keyword-outline")) {
       this.element.classList.remove("keyword-outline");
       this.spanTarget.classList.remove("fa-circle-check")

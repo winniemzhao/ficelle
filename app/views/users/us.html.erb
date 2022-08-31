@@ -7,9 +7,8 @@
   <div class="wrapper">
     <div class="us">
       <% if current_user.partner == nil %>
-        <div class="title">
+        <div class="center-dashboard">
           <h2>You don't have <br> a partner yet.</h2>
-          <br>
           <%= link_to "Create a partner profile", new_partner_path, class: "btn-flat mt-3" %>
         </div>
       <% else %>
