@@ -19,7 +19,7 @@
             <%= current_user.name %>
             <%= link_to ('<i class="fa-solid fa-pen"></i>').html_safe, edit_user_registration_path %>
           </div>
-          <h3>&</h3>
+          <h3 class="pb-5">&</h3>
           <div class="avatar-name">
             <%= current_user.partner.photo.attached? ? cl_image_tag(current_user.partner.photo.key, class: "avatar form-avatar") : image_tag("https://res.cloudinary.com/dbw6oqu08/image/upload/v1661685019/partner_default.png", class: "avatar form-avatar") %>
             <%= current_user.partner.name %>
