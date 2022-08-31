@@ -11,8 +11,8 @@ export default class extends Controller {
   }
 
   revealNextCard() {
-    console.log(this.inspoTargets.length)
-    console.log(`index ${this.currentIndex}`)
+    // console.log(this.inspoTargets.length)
+    // console.log(`index ${this.currentIndex}`)
 
     if (this.currentIndex == this.inspoTargets.length - 1) {
       // dont want to trigger this anyway

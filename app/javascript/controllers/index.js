@@ -7,6 +7,9 @@ import { application } from "./application"
 import AlertController from "./alert_controller"
 application.register("alert", AlertController)
 
+import ChangeAvatarController from "./change_avatar_controller"
+application.register("change-avatar", ChangeAvatarController)
+
 import EditEventController from "./edit_event_controller"
 application.register("edit-event", EditEventController)
 
