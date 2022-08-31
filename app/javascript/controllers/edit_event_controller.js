@@ -92,22 +92,23 @@ export default class extends Controller {
     })
       .then(response => response.json())
       .then((data) => {
-        console.log(data.success)
-        const current = this.successTargets.find( success => event.target.id === success.id)
-        // console.log(current);
-        // console.log(current.classList);
-        // console.log(current.classList[1]);
+        const current = this.successTargets.filter( success => event.target.id === success.id)
 
         if (data.success) {
-          current.classList.remove("fa-regular")
-          current.classList.add("fa-solid")
+          current.forEach((item) => {
+            item.classList.remove("fa-regular")
+          })
+          current.forEach((item) => {
+            item.classList.add("fa-solid")
+          })
         } else {
-          current.classList.add("fa-regular")
-          current.classList.remove("fa-solid")
+          current.forEach((item) => {
+            item.classList.add("fa-regular")
+          })
+          current.forEach((item) => {
+            item.classList.remove("fa-solid")
+          })
         }
-
       })
-
-
   }
 }
