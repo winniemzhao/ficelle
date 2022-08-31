@@ -38,7 +38,7 @@ class EventsController < ApplicationController
       flash[:notice] = "A confirmation email has been sent to #{current_user.partner.name} ❤️❤️"
     elsif @event.inspo.genre == 'text'
       flash[:notice] = "#{@event.inspo.name.capitalize} will be sent to #{current_user.partner.name} ❤️❤️"
-      @event.send_message(content: @event.content, media_url: @event.media)
+      @event.send_message(content: @event.content)
     end
     redirect_to dashboard_path
   end
