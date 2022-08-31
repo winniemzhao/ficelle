@@ -7,30 +7,34 @@ class Event < ApplicationRecord
   validates :date, presence: true
 
   def self.load(user)
+    year, month, day = Date.today.year, Date.today.month, Date.today.day
     Favorite.for_favoritor(user).sample(user.event_frequency).each do |favorite|
       inspo = Inspo.find(favorite.favoritable_id)
-      if Event.where(inspo_id: inspo.id).empty?
-        event = Event.new
-        year, month, day = Date.today.year, Date.today.month, Date.today.day
-        if inspo.genre = 'text'
-          date = Time.new(year, month, day, rand(8..20), [15, 30, 45, 0].sample) + (86400 * rand(1..5))
-        elsif inspo.genre = 'gift'
-          date = Time.new(year, month, day, rand(8..20)) + (86400 * rand(1..7))
-        else
-          date = Time.new(year, month, day, rand(17..19)) + (86400 * rand(1..14))
+      unless user.blocked_by?(inspo)
+        if Event.where(inspo_id: inspo.id).empty?
+          event = Event.new
+          if inspo.genre = 'text'
+            date = Time.new(year, month, day, rand(8..20), [15, 30, 45, 0].sample) + (86400 * rand(1..5))
+          elsif inspo.genre = 'gift'
+            date = Time.new(year, month, day, rand(8..20)) + (86400 * rand(1..7))
+          else
+            date = Time.new(year, month, day, rand(17..19)) + (86400 * rand(1..14))
+          end
+          content = inspo.genre == 'text' ? inspo.content : nil
+          event = Event.new(date: date, content: content)
+          event.partner = user.partner
+          event.inspo = inspo
+          event.save!
         end
-        content = inspo.genre == 'text' ? inspo.content : nil
-        event = Event.new(date: date, content: content)
-        event.partner = user.partner
-        event.inspo = inspo
-        event.save!
       end
     end
     %w[text gift date].each do |genre|
-      if Event.select { |event| event.inspo.genre == 'text' }.count.zero?
+      if Event.select { |event| event.inspo.genre == genre }.count.zero?
         event = Event.new
+        event.partner = user.partner
         event.inspo = Inspo.where(genre: genre).sample
-
+        event.date = Time.new(year, month, day, 19, [0, 30].sample) + (86400 * rand(1..5))
+        event.save!
       end
     end
   end
