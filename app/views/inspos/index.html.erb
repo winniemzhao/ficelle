@@ -18,7 +18,7 @@
           <% end %>
           <%= render "shared/loading" %>
           <% if current_user.all_favorites.count == 0 %>
-            <div class="back-skip">
+            <div class="back-skip" style="margin-top: 25px">
               <%= link_to ('<i class="fa-solid fa-circle-arrow-left"></i> Back').html_safe, partner_keywords_path(@current_user.partner), class: "dark-link" %>
               <%= link_to ('Skip <i class="fa-solid fa-circle-arrow-right"></i>').html_safe, events_loading_path, class: "dark-link" %>
             </div>
