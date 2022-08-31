@@ -69,7 +69,7 @@ inspo5.photo.attach(io: file_e, filename: "inspo5.jpg", content_type: "image/jpg
 inspo5.save!
 file_e.close
 
-file_f = URI.open("https://i.pinimg.com/originals/e2/1e/c3/e21ec38a960ed856a9cbc2950654818c.jpg", { 'User-Agent' => 'ruby' })
+file_f = URI.open("https://i.kym-cdn.com/photos/images/newsfeed/001/505/718/136.jpg", { 'User-Agent' => 'ruby' })
 inspo6 = Inspo.new(name: "Cat Memes", genre: "text", content: "SO CUUUUUTE")
 inspo6.photo.attach(io: file_f, filename: "inspo6.jpg", content_type: "image/jpg")
 inspo6.save!
@@ -81,7 +81,7 @@ inspo7.photo.attach(io: file_g, filename: "inspo2.jpg", content_type: "image/jpg
 inspo7.save!
 file_g.close
 
-file_h = URI.open("https://hips.hearstapps.com/hmg-prod/images/wh-sexting-1603812586.png?crop=0.49988000959923207xw:1xh;center,top&resize=1200:*", { 'User-Agent' => 'ruby' })
+file_h = URI.open("https://emojiguide.com/wp-content/uploads/2021/07/Different-sizes-of-Eggplants-1536x958.jpg", { 'User-Agent' => 'ruby' })
 inspo8 = Inspo.new(name: "Steamy Text", genre: "text", content: "🛏️🚇😮🍾😵")
 inspo8.photo.attach(io: file_h, filename: "inspo8.png", content_type: "image/png")
 inspo8.save!
@@ -99,7 +99,7 @@ inspo10.photo.attach(io: file_j, filename: "inspo10.jpg", content_type: "image/j
 inspo10.save!
 file_j.close
 
-file_k = URI.open("https://images.unsplash.com/photo-1602599151411-875a848f71b6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", { 'User-Agent' => 'ruby' })
+file_k = URI.open("https://images.dailyhive.com/20160930150232/fall10.jpg", { 'User-Agent' => 'ruby' })
 inspo11 = Inspo.new(name: "Watch the Sunset on Mount Royal", genre: "date", location: "Montreal, QC H3H 1A1", content: "Get your hiking boots out!", cost: 1.00)
 inspo11.photo.attach(io: file_k, filename: "inspo11.jpg", content_type: "image/jpg")
 inspo11.save!
@@ -171,7 +171,7 @@ inspo22.photo.attach(io: file_v, filename: "inspo22.jpg", content_type: "image/j
 inspo22.save!
 file_v.close
 
-file_w = URI.open("https://www.headphonesty.com/wp-content/uploads/2019/10/Apple-AirPods-Pro-Featured-Image.jpg", { 'User-Agent' => 'ruby' })
+file_w = URI.open("https://www.howtogeek.com/wp-content/uploads/2020/06/person-removing-airpods-from-the-charging-case.jpg?width=1198&trim=1,1&bg-color=000&pad=1,1", { 'User-Agent' => 'ruby' })
 inspo23 = Inspo.new(name: "AirPods 3rd Generation", genre: "gift", content: "You can even personalize an engraving!", cost: 239.00)
 inspo23.photo.attach(io: file_w, filename: "inspo23.jpg", content_type: "image/jpg")
 inspo23.save!
@@ -196,75 +196,75 @@ inspo26.save!
 file_z.close
 
 file_aa = URI.open("https://www.adventurefaktory.com/wp-content/uploads/2020/06/AdventureFaktory-Quebec-MaisonLavande-3-1024x683.jpg", { 'User-Agent' => 'ruby' })
-inspo26 = Inspo.new(name: "Maison Lavande", genre: "date", location: "902 Chem. Fresnière, Saint-Eustache, Quebec", content: "Stroll between rows and rows of lavender")
-inspo26.photo.attach(io: file_aa, filename: "inspo27.jpg", content_type: "image/jpg")
-inspo26.save!
+inspo27 = Inspo.new(name: "Maison Lavande", genre: "date", location: "902 Chem. Fresnière, Saint-Eustache, Quebec", content: "Stroll between rows and rows of lavender")
+inspo27.photo.attach(io: file_aa, filename: "inspo27.jpg", content_type: "image/jpg")
+inspo27.save!
 file_aa.close
 
 file_ab = URI.open("https://resources.ediblearrangements.ca/resources/en-us/i/a/l_l_Confetti_Berry_and_Chocolate_Bouquet_410x410.jpg", { 'User-Agent' => 'ruby' })
-inspo26 = Inspo.new(name: "Edible Arrangement", genre: "gift", content: "Nothing says I love you like a bouquet of chocolate covered strawberries", cost: 80.00)
-inspo26.photo.attach(io: file_ab, filename: "inspo28.jpg", content_type: "image/jpg")
-inspo26.save!
+inspo28 = Inspo.new(name: "Edible Arrangement", genre: "gift", content: "Nothing says I love you like a bouquet of chocolate covered strawberries", cost: 80.00)
+inspo28.photo.attach(io: file_ab, filename: "inspo28.jpg", content_type: "image/jpg")
+inspo28.save!
 file_ab.close
 
 file_ac = URI.open("https://fishingbooker.com/blog/media/rsz_1_cork.jpg", { 'User-Agent' => 'ruby' })
-inspo26 = Inspo.new(name: "Fishing Pole", genre: "gift", content: "Are you a fisherman? Because you're a real catch!", cost: 100.00)
-inspo26.photo.attach(io: file_ac, filename: "inspo29.jpg", content_type: "image/jpg")
-inspo26.save!
+inspo29 = Inspo.new(name: "Fishing Pole", genre: "gift", content: "Are you a fisherman? Because you're a real catch!", cost: 100.00)
+inspo29.photo.attach(io: file_ac, filename: "inspo29.jpg", content_type: "image/jpg")
+inspo29.save!
 file_ac.close
 
 file_ad = URI.open("https://www.tourniagarawineries.com/shared/media/tour/12/image.jpg", { 'User-Agent' => 'ruby' })
-inspo26 = Inspo.new(name: "Bike and Wine Tour", genre: "date", location: "1627 Niagara Stone Rd, Niagara-on-the-Lake, Ontario", content: "The Grape Escape", cost: )
-inspo26.photo.attach(io: file_ad, filename: "inspo30.jpg", content_type: "image/jpg")
-inspo26.save!
+inspo30 = Inspo.new(name: "Bike and Wine Tour", genre: "date", location: "1627 Niagara Stone Rd, Niagara-on-the-Lake, Ontario", content: "The Grape Escape", cost: 70.00)
+inspo30.photo.attach(io: file_ad, filename: "inspo30.jpg", content_type: "image/jpg")
+inspo30.save!
 file_ad.close
 
 file_ae = URI.open("https://i.cbc.ca/1.6096095.1625837822!/fileImage/httpImage/image.jpg_gen/derivatives/original_780/oasis-immersion.jpg", { 'User-Agent' => 'ruby' })
-inspo26 = Inspo.new(name: "Van Gogh - Distorsion", genre: "date", location: "1001 Jean-Paul-Riopelle Place, Montréal, Quebec", content: "A bright and colorful journey through more than 225 of Van Gogh's works", cost: 60.00)
-inspo26.photo.attach(io: file_ae, filename: "inspo31.jpg", content_type: "image/jpg")
-inspo26.save!
+inspo31 = Inspo.new(name: "Van Gogh Distorsion", genre: "date", location: "1001 Jean-Paul-Riopelle Place, Montréal, Quebec", content: "A bright and colorful journey through more than 225 of Van Gogh's works", cost: 60.00)
+inspo31.photo.attach(io: file_ae, filename: "inspo31.jpg", content_type: "image/jpg")
+inspo31.save!
 file_ae.close
 
 file_af = URI.open("https://cdn.estore.nu/57203-thickbox_default/90-degree-angled-glasses.jpg", { 'User-Agent' => 'ruby' })
-inspo26 = Inspo.new(name: "Prism Reading Glasses", genre: "gift", content: "Have you ever tried horizontal reading?", cost: 50.00)
-inspo26.photo.attach(io: file_af, filename: "inspo32.jpg", content_type: "image/jpg")
-inspo26.save!
+inspo32 = Inspo.new(name: "Prism Reading Glasses", genre: "gift", content: "Have you ever tried horizontal reading?", cost: 50.00)
+inspo32.photo.attach(io: file_af, filename: "inspo32.jpg", content_type: "image/jpg")
+inspo32.save!
 file_af.close
 
 file_ag = URI.open("https://www.tourismelaval.com/uploads-optim/medias/535/original.jpg", { 'User-Agent' => 'ruby' })
-inspo26 = Inspo.new(name: "Window Shopping", genre: "date", content: "Carrefour Laval is the #1 mall walking spot in Quebec")
-inspo26.photo.attach(io: file_ag, filename: "inspo33.jpg", content_type: "image/jpg")
-inspo26.save!
+inspo33 = Inspo.new(name: "Window Shopping", genre: "date", content: "Carrefour Laval is the #1 mall walking spot in Quebec")
+inspo33.photo.attach(io: file_ag, filename: "inspo33.jpg", content_type: "image/jpg")
+inspo33.save!
 file_ag.close
 
 file_ah = URI.open("https://dailycoffeenews.com/wp-content/uploads/2020/01/latte-art-2.jpg", { 'User-Agent' => 'ruby' })
-inspo26 = Inspo.new(name: "Latte Art Workshop", genre: "date", location: "111A rue de Louvain, Ouest, Montreal, Quebec", content: "I like you a latte", cost: 160.00)
-inspo26.photo.attach(io: file_ah, filename: "inspo34.jpg", content_type: "image/jpg")
-inspo26.save!
+inspo34 = Inspo.new(name: "Latte Art Workshop", genre: "date", location: "111A rue de Louvain, Ouest, Montreal, Quebec", content: "I like you a latte", cost: 160.00)
+inspo34.photo.attach(io: file_ah, filename: "inspo34.jpg", content_type: "image/jpg")
+inspo34.save!
 file_ah.close
 
 file_ai = URI.open("https://media-cdn.tripadvisor.com/media/photo-s/13/48/f9/e7/20180614-131815-largejpg.jpg", { 'User-Agent' => 'ruby' })
-inspo26 = Inspo.new(name: "Live Music", genre: "date", content: "Sip a drink while you listen to local artists", cost: 10.00)
-inspo26.photo.attach(io: file_ai, filename: "inspo35.jpg", content_type: "image/jpg")
-inspo26.save!
+inspo35 = Inspo.new(name: "Live Music", genre: "date", content: "Sip a drink while you listen to local artists", cost: 10.00)
+inspo35.photo.attach(io: file_ai, filename: "inspo35.jpg", content_type: "image/jpg")
+inspo35.save!
 file_ai.close
 
 file_aj = URI.open("https://images.squarespace-cdn.com/content/v1/5a9eb291af20965bb4edae4c/1630086794383-GF7OCM9B074MKG7WKJ6B/221666400_3025397694448853_277169243759899882_n.jpg", { 'User-Agent' => 'ruby' })
-inspo26 = Inspo.new(name: "Petting Zoo", genre: "date", location: "901 Av. du Parc, Laval, Quebec", content: "Haven't you always wanted to get spit on by a llama?")
-inspo26.photo.attach(io: file_aj, filename: "inspo36.jpg", content_type: "image/jpg")
-inspo26.save!
+inspo36 = Inspo.new(name: "Petting Zoo", genre: "date", location: "901 Av. du Parc, Laval, Quebec", content: "Haven't you always wanted to get spit on by a llama?")
+inspo36.photo.attach(io: file_aj, filename: "inspo36.jpg", content_type: "image/jpg")
+inspo36.save!
 file_aj.close
 
 file_ak = URI.open("https://www.spiritearthmag.org/wp-content/uploads/2019/02/2-1.jpg", { 'User-Agent' => 'ruby' })
-inspo26 = Inspo.new(name: "Crystals", genre: "gift", content: "Who needs modern medicine when you can heal yourself with crystals?", cost: 70.00)
-inspo26.photo.attach(io: file_ak, filename: "inspo37.jpg", content_type: "image/jpg")
-inspo26.save!
+inspo37 = Inspo.new(name: "Crystals", genre: "gift", content: "Who needs modern medicine when you can heal yourself with crystals?", cost: 70.00)
+inspo37.photo.attach(io: file_ak, filename: "inspo37.jpg", content_type: "image/jpg")
+inspo37.save!
 file_ak.close
 
 file_al = URI.open("https://cdn.shopify.com/s/files/1/0375/8034/1385/files/Lola_Rosa_Milton_600x.jpg?v=1638372577", { 'User-Agent' => 'ruby' })
-inspo26 = Inspo.new(name: "Lola Rosa", genre: "date", location: "4581 Av du Parc, Montréal, Quebec", content: "Stephane's ideal date", cost: 60.00)
-inspo26.photo.attach(io: file_al, filename: "inspo38.jpg", content_type: "image/jpg")
-inspo26.save!
+inspo38 = Inspo.new(name: "Lola Rosa", genre: "date", location: "4581 Av du Parc, Montréal, Quebec", content: "Stephane's ideal date", cost: 60.00)
+inspo38.photo.attach(io: file_al, filename: "inspo38.jpg", content_type: "image/jpg")
+inspo38.save!
 file_al.close
 
 p "Creating keywords"
