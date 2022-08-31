@@ -262,7 +262,7 @@ inspo37.save!
 file_ak.close
 
 file_al = URI.open("https://cdn.shopify.com/s/files/1/0375/8034/1385/files/Lola_Rosa_Milton_600x.jpg?v=1638372577", { 'User-Agent' => 'ruby' })
-inspo38 = Inspo.new(name: "Lola Rosa", genre: "date", location: "4581 Av du Parc, Montréal, Quebec", content: "Stephane's ideal date", cost: 60.00)
+inspo38 = Inspo.new(name: "Lola Rosa", genre: "date", location: "4581 Av du Parc, Montréal, Quebec", content: "Stéphane's ideal date", cost: 60.00)
 inspo38.photo.attach(io: file_al, filename: "inspo38.jpg", content_type: "image/jpg")
 inspo38.save!
 file_al.close
