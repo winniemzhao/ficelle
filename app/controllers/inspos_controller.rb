@@ -1,7 +1,7 @@
 class InsposController < ApplicationController
   def index
     if current_user.partner.nil?
-      redirect_to us_path
+      redirect_to new_partner_path
     else
       @inspos = current_user.partner.inspos.uniq.reject { |inspo| inspo.favorited_by?(current_user) || current_user.blocked_by?(inspo) }.sample(5)
     end
