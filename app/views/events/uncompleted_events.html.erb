@@ -23,20 +23,19 @@
           <%= link_to "Create a partner profile", new_partner_path, class: "btn-flat mt-3" %>
         </div>
       <% end %>
-      <% if current_user.partner.events.where.not(status: :completed).count == 0 %>
+      <% if current_user.partner.events.where.not(status: :completed).count.zero? %>
         <div class="center-dashboard">
           <h2 class="mb-3">You have no <br> upcoming events.</h2>
-          <%= link_to 'Find new events', partner_keywords_path(current_user.partner), class:"btn btn-flat"%>
-          <%# Why would this create any more events? If there are already no events then you would need to do the inspo swipe to generate more. %>
           <%= link_to 'Create new event', new_event_path, class:"btn btn-flat mt-3" %>
+          <%= link_to 'Generate new events', partner_keywords_path(current_user.partner), class:"btn btn-flat mt-3"%>
         </div>
-      <% elsif current_user.partner %>
+      <% else %>
         <h4 class="mb-2" style="text-align: left">Upcoming events</h4>
       <% end %>
     </div>
     <ul class="events-list" data-controller="edit-event">
       <% @uncompleted_events.each do |event| %>
-        <h6 class="mb-2"><%= event.date.in_time_zone('Eastern Time (US & Canada)').strftime("%A, %b %e") %></h6>
+        <h6 class="mb-2"><%= event.date.in_time_zone('Eastern Time (US & Canada)').strftime("%A, %b %e: %l:%M %P") %></h6>
         <div>
           <% if event.pending? %>
             <%= render "shared/event-card-pending", event: event %>
@@ -51,8 +50,9 @@
         </div>
       <% end %>
       <div class="dashboard-info">
-        <% if current_user.partner && current_user.partner.events.where.not(status: :completed).count > 0 %>
+        <% if current_user.partner && current_user.partner.events.where.not(status: :completed).count.positive? %>
           <%= link_to 'Create new event', new_event_path, class:"btn btn-flat mt-3" %>
+          <%= link_to 'Generate new events', partner_keywords_path(current_user.partner), class:"btn btn-flat mt-3"%>
         <% end %>
       </div>
     </ul>

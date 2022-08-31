@@ -1,9 +1,9 @@
 <div class="wrapper">
   <div class="form-wrapper">
     <h2 class="mb-2">New Event</h2>
-    <%= simple_form_for [@event] do |f| %>
-      <%= f.association :inspo, label: "Choose a curated event:" %>
-      <%= f.input :date, html5: true, label: "Event Date:" %>
+    <%= simple_form_for @event do |f| %>
+      <%= f.association :inspo, label: "Choose a curated event:", collection: Inspo.order('genre ASC').order('name ASC') %>
+      <%= f.input :date, html5: true, label: "Event due date:" %>
       <%= f.submit "Create Event", class: "btn btn-flat" %>
     <% end %>
   </div>

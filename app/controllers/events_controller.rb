@@ -19,7 +19,7 @@ class EventsController < ApplicationController
 
   def create
     @event = Event.new(event_params)
-    @event.partner_id = current_user.partner.id
+    @event.partner = current_user.partner
     if @event.save
       redirect_to dashboard_path
     else

@@ -4,6 +4,8 @@ class Event < ApplicationRecord
 
   enum status: { pending: 0, confirmed: 1, completed: 2 }
 
+  validates :date, presence: true
+
   def self.load(user)
     Favorite.for_favoritor(user).sample(user.event_frequency).each do |favorite|
       inspo = Inspo.find(favorite.favoritable_id)
