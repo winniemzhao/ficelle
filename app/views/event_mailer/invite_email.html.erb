@@ -6,7 +6,7 @@
     <h3>Get ready for our next date, <%= @user.partner.name %></h3>
     <p>
       Name: <%= @event.inspo.name %><br>
-      Date: <%= @event.date.in_time_zone('Eastern Time (US & Canada)').strftime("%A, %b %e, %Y at%l:%M %p") %><br>
+      Date: <%= @event.date.in_time_zone('Eastern Time (US & Canada)').strftime("%A, %b %e, %Y at %l:%M %p") %><br>
       <% if @event.inspo.location %>
         Location: <%= @event.inspo.location %><br>
       <% end %>
