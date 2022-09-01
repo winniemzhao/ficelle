@@ -15,11 +15,12 @@
       </li>
       <li class="nav-item">
         <%= link_to(us_path) do %>
+          <% my_nav = false %>
+          <% my_nav = true if request.fullpath == us_path || request.fullpath == edit_user_registration_path %>
           <% if current_user.partner %>
-            <p class="nav-icon"><i class="fa-solid fa-user-group <%= 'my-nav' if request.fullpath == us_path || request.fullpath == edit_user_registration_path || request.fullpath == edit_partner_path(current_user.partner) %>"></i></p>
-          <% else %>
-            <p class="nav-icon"><i class="fa-solid fa-user-group <%= 'my-nav' if request.fullpath == us_path || request.fullpath == edit_user_registration_path || request.fullpath %>"></i></p>
+            <% my_nav = true if request.fullpath == edit_partner_path(current_user.partner) || request.fullpath == partner_keywords_path(current_user.partner) %>
           <% end %>
+          <p class="nav-icon"><i class="fa-solid fa-user-group <%= my_nav ? 'my-nav' : '' %>"></i></p>
           <p class="nav-info">relationship</p>
         <% end %>
       </li>

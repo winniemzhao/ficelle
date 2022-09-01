@@ -64,8 +64,10 @@ class EventsController < ApplicationController
       @completed_events = Event.where(partner_id: current_user.partner).select do |event|
         event.date && DateTime.now.in_time_zone('Eastern Time (US & Canada)') > event.date
       end
-      @completed_events.each(&:completed!)
-      @completed_events = @completed_events.sort_by(&:date).reverse
+      if @completed_events.present?
+        @completed_events.each(&:completed!)
+        @completed_events = @completed_events.sort_by(&:date).reverse
+      end
     end
   end
 

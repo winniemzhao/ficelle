@@ -20,12 +20,14 @@
       <% end %>
     </div>
     <div class="events-list" data-controller="edit-event">
-      <% @completed_events.each do |event| %>
-        <h6 class="mb-2"><%= event.date.in_time_zone('Eastern Time (US & Canada)').strftime("%A, %b %e") %></h6>
-        <div>
-          <%= render "shared/event-card-completed", event: event %>
-          <%= render "shared/show-event-card", event: event %>
-        </div>
+      <% if @completed_events.present? %>
+        <% @completed_events.each do |event| %>
+          <h6 class="mb-2"><%= event.date.in_time_zone('Eastern Time (US & Canada)').strftime("%A, %b %e") %></h6>
+          <div>
+            <%= render "shared/event-card-completed", event: event %>
+            <%= render "shared/show-event-card", event: event %>
+          </div>
+        <% end %>
       <% end %>
     </div>
   </div>
