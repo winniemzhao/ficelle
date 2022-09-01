@@ -49,7 +49,7 @@
     <% end %>
     <%= simple_form_for event do |f| %>
       <%= f.input :date, html5: true, label: "Event Date:" %>
-      <%= f.hidden_field :status, :value => Event.statuses.key(1) %>
+      <%= f.hidden_field :status, value: Event.statuses.key(1) %>
       <% if event.inspo.genre == "text" %>
         <%= f.input :content, label: "Message:", input_html: { value: event.inspo.content } %>
       <% end %>
