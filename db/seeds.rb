@@ -18,8 +18,6 @@ user1.photo.attach(io: user_file_a, filename: "user1.jpg", content_type: "image/
 user1.save!
 user_file_a.close
 
-user2 = User.create!(email: "winniemaizhao@gmail.com", password: "123456", name: "Winnie", phone_number: "1234567890", location: "Montreal")
-
 user_file_b = URI.open("https://scontent.fymy1-2.fna.fbcdn.net/v/t1.6435-9/57114833_10157059395706113_790219496508882944_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=vRHmXrFUxq4AX-8FnTX&_nc_ht=scontent.fymy1-2.fna&oh=00_AT_DMhrPoPXSQ_1vg4-FwThk8PHIVNnyk5aKjp67fNmnew&oe=63387877", { 'User-Agent' => 'ruby' })
 user3 = User.new(email: "winniemaizhao@gmail.com", password: "123456", name: "Winnie", phone_number: "1234567890", location: "Montreal")
 user3.photo.attach(io: user_file_b, filename: "user2.jpg", content_type: "image/jpg")
