@@ -130,7 +130,7 @@ inspo15.save!
 file_o.close
 
 file_p = URI.open("https://sm.askmen.com/t/askmen_in/article/n/netflix-an/netflix-and-chill_xjgm.1200.jpg", { 'User-Agent' => 'ruby' })
-inspo16 = Inspo.new(name: "Netflix and Chill", genre: "date", content: "🎬🍿😏", cost: 20.00)
+inspo16 = Inspo.new(name: "Netflix and Chill", genre: "date", content: "🎬🍿😏")
 inspo16.photo.attach(io: file_p, filename: "inspo16.jpg", content_type: "image/jpg")
 inspo16.save!
 file_p.close
