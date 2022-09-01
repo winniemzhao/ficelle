@@ -52,7 +52,7 @@ inspo2.save!
 file_b.close
 
 file_c = URI.open("https://cafechatlheureux.com/content/images/cats/Milady.JPG", { 'User-Agent' => 'ruby' })
-inspo3 = Inspo.new(name: "Cat Cafe", genre: "date", location: "Cafe Chat l'Heureux, 172 Duluth East", content: "At Café Chat L'Heureux!", cost: 500.00)
+inspo3 = Inspo.new(name: "Cat Cafe", genre: "date", location: "Cafe Chat l'Heureux, 172 Duluth East", content: "At Café Chat L'Heureux!", cost: 15.00)
 inspo3.photo.attach(io: file_c, filename: "inspo3.jpg", content_type: "image/jpg")
 inspo3.save!
 file_c.close
@@ -106,7 +106,7 @@ inspo11.save!
 file_k.close
 
 file_l = URI.open("https://images.unsplash.com/photo-1593061231114-1798846fd643?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80", { 'User-Agent' => 'ruby' })
-inspo12 = Inspo.new(name: "Get Lost in a Bookstore", genre: "date", content: "Be sure to surprise your date with new books", cost: 50.00)
+inspo12 = Inspo.new(name: "Get lost in a Bookstore", genre: "date", content: "Be sure to surprise your date with new books", cost: 50.00)
 inspo12.photo.attach(io: file_l, filename: "inspo12.jpg", content_type: "image/jpg")
 inspo12.save!
 file_l.close
@@ -118,7 +118,7 @@ inspo13.save!
 file_m.close
 
 file_n = URI.open("https://images.unsplash.com/photo-1520363147109-9ab9d1c8f8a6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1256&q=80", { 'User-Agent' => 'ruby' })
-inspo14 = Inspo.new(name: "Meditation Retreat", genre: "gift", content: "Escape together", cost: 500.00)
+inspo14 = Inspo.new(name: "Meditation Retreat", genre: "gift", content: "Escape together", cost: 125.00)
 inspo14.photo.attach(io: file_n, filename: "inspo14.jpg", content_type: "image/jpg")
 inspo14.save!
 file_n.close
