@@ -7,18 +7,19 @@ class Event < ApplicationRecord
   validates :date, presence: true
 
   def self.load(user)
+    Event.destroy_all
     event1 = Event.new
-    event1.inspo = Inspo.where(name: "Netflix and Chill")
+    event1.inspo = Inspo.where(name: "Netflix and Chill").first
     event1.partner = user.partner
     event1.date = Time.new(2022, 9, 10, 19, 0, 0)
     event1.save!
     event2 = Event.new
-    event2.inspo = Inspo.where(name: "Fishing Rod")
+    event2.inspo = Inspo.where(name: "Fishing Rod").first
     event2.partner = user.partner
     event2.date = Time.new(2002, 9, 7, 12, 0, 0)
     event2.save!
     event3 = Event.new
-    event3.inspo = Inspo.where(name: "Steamy Text")
+    event3.inspo = Inspo.where(name: "Steamy Text").first
     event3.partner = user.partner
     event3.date = Time.new(2002, 9, 2, 20, 30, 0)
     event3.content = event3.inspo.content
@@ -60,7 +61,7 @@ class Event < ApplicationRecord
         event = Event.new
         event.inspo = user.all_favorited.empty? ? Inspo.all.sample : user.all_favorited.sample
         event.partner = user.partner
-        event.date = Time.new(year, month, day, 19, [0, 30].sample) + (86400 * rand(1..5))
+        event.date = Time.new(Date.today.year, Date.today.month, Date.today.day, 19, [0, 30].sample) + (86400 * rand(1..5))
         event.save!
       end
     end
