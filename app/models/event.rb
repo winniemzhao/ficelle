@@ -90,7 +90,6 @@ class Event < ApplicationRecord
     content = attributes[:content]
     from = twilio_number
     to = '+15145899046' #hard-coded
-    sleep(3)
     client.messages.create(from: from, to: to, body: content)
   end
 end
