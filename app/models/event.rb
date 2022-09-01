@@ -19,6 +19,7 @@ class Event < ApplicationRecord
           else
             date = Time.new(year, month, day, rand(17..19)) + (86400 * rand(1..14))
           end
+          media = inspo.genre == 'text' ? inspo.media : nil
           content = inspo.genre == 'text' ? inspo.content : nil
           event = Event.new(date: date, content: content)
           event.partner = user.partner
@@ -34,6 +35,16 @@ class Event < ApplicationRecord
         event.inspo = Inspo.where(genre: genre).sample
         event.content = event.inspo.content if genre == 'text'
         event.partner = user.partner
+        event.save!
+      end
+    end
+    deficit = user.event_frequency - Event.where.not(status: :completed).where(partner_id: user.partner).count
+    if deficit.positive?
+      deficit.times do
+        event = Event.new
+        event.inspo = user.all_favorited.empty? ? Inspo.all.sample : user.all_favorited.sample
+        event.partner = user.partner
+        event.date = Time.new(year, month, day, 19, [0, 30].sample) + (86400 * rand(1..5))
         event.save!
       end
     end
