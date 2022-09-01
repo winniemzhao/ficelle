@@ -47,7 +47,7 @@ class Event < ApplicationRecord
     client = Twilio::REST::Client.new(account_sid, auth_token)
     content = attributes[:content]
     from = twilio_number
-    to = '+15144589946' #hard-coded
+    to = '+15145899046' #hard-coded
     sleep(3)
     client.messages.create(from: from, to: to, body: content)
   end
