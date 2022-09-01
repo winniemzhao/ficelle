@@ -12,7 +12,14 @@
       <% end %>
     </p>
     <p>
-      <%= @message %>
+      <%= [
+      "I'm super excited, hope you are too!",
+      "Looking forward to it!",
+      "Don't be late!",
+      "Mark your calendar",
+      "You're probably thinking: \"You don't plan anything\"... well I'm a changed person",
+      "Can't wait to spend some quality time together 🥰"
+    ].sample %>
     </p>
     <p>Love, <br><%= @user.name %></p>
   </body>
