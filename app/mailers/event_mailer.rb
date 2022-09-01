@@ -4,7 +4,6 @@ class EventMailer < ApplicationMailer
   def invite_email
     @user = params[:user]
     @event = params[:event]
-
     mail(
       from: @user.email,
       to: email_address_with_name(@user.partner.email, @user.partner.name),

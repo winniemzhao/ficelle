@@ -3,17 +3,24 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Get ready for our next date, <%= @user.partner.name %></h1>
+    <h3>Get ready for our next date, <%= @user.partner.name %></h3>
     <p>
       Name: <%= @event.inspo.name %><br>
-      Date: <%= @event.date.in_time_zone('Eastern Time (US & Canada)').strftime("%A, %b %e, %Y at%l:%M %p") %><br>
+      Date: <%= @event.date.in_time_zone('Eastern Time (US & Canada)').strftime("%A, %b %e, %Y at %l:%M %p") %><br>
       <% if @event.inspo.location %>
         Location: <%= @event.inspo.location %><br>
       <% end %>
     </p>
     <p>
-      I'm super excited, hope you are too!
+      <%= [
+      "I'm super excited, hope you are too!",
+      "Looking forward to it!",
+      "Don't be late!",
+      "Mark your calendar",
+      "You're probably thinking: \"You don't plan anything\"... well I'm a changed person",
+      "Can't wait to spend some quality time together 🥰"
+    ].sample %>
     </p>
-    <p>Love, <%= @user.name %></p>
+    <p>Love, <br><%= @user.name %></p>
   </body>
 </html>
