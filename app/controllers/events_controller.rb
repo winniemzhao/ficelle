@@ -38,7 +38,7 @@ class EventsController < ApplicationController
       flash[:notice] = "A confirmation email has been sent to #{current_user.partner.name} ❤️❤️"
     elsif @event.inspo.genre == 'text'
       flash[:notice] = "#{@event.inspo.name.capitalize} will be sent to #{current_user.partner.name} ❤️❤️"
-      @event.send_message(content: @event.content, media_url: @event.media)
+      @event.send_message(content: @event.content)
     end
     redirect_to dashboard_path
   end
@@ -54,7 +54,6 @@ class EventsController < ApplicationController
   def update_success
     @event.success = !@event.success
     @event.save
-    p "the params are: #{params}"
 
     respond_to do |format|
       format.html
@@ -63,8 +62,10 @@ class EventsController < ApplicationController
   end
 
   def completed_events
-   @events = Event.where(partner_id: current_user.partner).where(status: :completed)
-   @events = @events.sort_by(&:date).reverse
+    @completed_events = Event.where(partner_id: current_user.partner).select { |event| event.date && DateTime.now.in_time_zone('Eastern Time (US & Canada)') > event.date }
+    @completed_events.each(&:completed!)
+
+    @completed_events = @completed_events.sort_by(&:date).reverse
   end
 
   def loading
