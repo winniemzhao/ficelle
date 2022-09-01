@@ -11,17 +11,17 @@ class Event < ApplicationRecord
     event1 = Event.new
     event1.inspo = Inspo.where(name: "Netflix and Chill").first
     event1.partner = user.partner
-    event1.date = Time.new(2022, 9, 10, 19, 0, 0)
+    event1.date = Time.new(2022, 9, 5, 19, 0, 0)
     event1.save!
     event2 = Event.new
     event2.inspo = Inspo.where(name: "Fishing Rod").first
     event2.partner = user.partner
-    event2.date = Time.new(2022, 9, 7, 12, 0, 0)
+    event2.date = Time.new(2022, 9, 6, 12, 0, 0)
     event2.save!
     event3 = Event.new
     event3.inspo = Inspo.where(name: "Steamy Text").first
     event3.partner = user.partner
-    event3.date = Time.new(2022, 9, 2, 20, 30, 0)
+    event3.date = Time.new(2022, 9, 7, 19, 30, 0)
     event3.content = event3.inspo.content
     event3.save!
     event4 = Event.new
@@ -29,13 +29,13 @@ class Event < ApplicationRecord
     event4 = Event.new
     event4.inspo = inspos[0]
     event4.partner = user.partner
-    event4.date = Time.new(2022, 9, 3, 19, 0, 0)
+    event4.date = Time.new(2022, 9, 9, 19, 0, 0)
     event4.content = event4.inspo.content if event4.inspo.genre = 'text'
     event4.save!
     event5 = Event.new
     event5.inspo = inspos[1]
     event5.partner = user.partner
-    event5.date = Time.new(2022, 9, 4, 19, 0, 0)
+    event5.date = Time.new(2022, 9, 11, 19, 0, 0)
     event5.content = event5.inspo.content if event5.inspo.genre = 'text'
     event5.save!
     # year, month, day = Date.today.year, Date.today.month, Date.today.day
