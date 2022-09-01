@@ -52,7 +52,7 @@ class EventsController < ApplicationController
   def update_success
     @event.success = !@event.success
     @event.save
-
+    current_user.unfavorite(@event.inspo)
     respond_to do |format|
       format.html
       format.json { render json: @event }
