@@ -1,15 +1,13 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[show edit update destroy edit_success update_success]
   skip_before_action :verify_authenticity_token
+  before_action :completed_events
 
   def new
     @event = Event.new
   end
 
   def uncompleted_events
-    @completed_events = Event.where(partner_id: current_user.partner).select { |event| event.date && DateTime.now.in_time_zone('Eastern Time (US & Canada)') > event.date }
-    @completed_events.each { |event| event.completed! }
-
     @uncompleted_events = Event.where(partner_id: current_user.partner).where.not(status: :completed)
     @uncompleted_events = @uncompleted_events.sort_by(&:date)
   end
@@ -54,7 +52,7 @@ class EventsController < ApplicationController
   def update_success
     @event.success = !@event.success
     @event.save
-
+    current_user.unfavorite(@event.inspo)
     respond_to do |format|
       format.html
       format.json { render json: @event }
@@ -62,10 +60,13 @@ class EventsController < ApplicationController
   end
 
   def completed_events
-    @completed_events = Event.where(partner_id: current_user.partner).select { |event| event.date && DateTime.now.in_time_zone('Eastern Time (US & Canada)') > event.date }
-    @completed_events.each(&:completed!)
-
-    @completed_events = @completed_events.sort_by(&:date).reverse
+    if current_user.partner
+      @completed_events = Event.where(partner_id: current_user.partner).select do |event|
+        DateTime.now.in_time_zone('Eastern Time (US & Canada)') > event.date
+      end
+      @completed_events.each(&:completed!)
+      @completed_events = @completed_events.sort_by(&:date).reverse
+    end
   end
 
   def loading
