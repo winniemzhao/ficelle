@@ -16,14 +16,28 @@ class Event < ApplicationRecord
     event2 = Event.new
     event2.inspo = Inspo.where(name: "Fishing Rod").first
     event2.partner = user.partner
-    event2.date = Time.new(2002, 9, 7, 12, 0, 0)
+    event2.date = Time.new(2022, 9, 7, 12, 0, 0)
     event2.save!
     event3 = Event.new
     event3.inspo = Inspo.where(name: "Steamy Text").first
     event3.partner = user.partner
-    event3.date = Time.new(2002, 9, 2, 20, 30, 0)
+    event3.date = Time.new(2022, 9, 2, 20, 30, 0)
     event3.content = event3.inspo.content
     event3.save!
+    event4 = Event.new
+    inspos = Inspo.where.not(name: "Netflix and Chill").where.not(name: "Fishing Rod").where.not(name: "Steamy Text").sample(2)
+    event4 = Event.new
+    event4.inspo = inspos[0]
+    event4.partner = user.partner
+    event4.date = Time.new(2022, 9, 3, 19, 0, 0)
+    event4.content = event4.inspo.content if event4.inspo.genre = 'text'
+    event4.save!
+    event5 = Event.new
+    event5.inspo = inspos[1]
+    event5.partner = user.partner
+    event5.date = Time.new(2022, 9, 4, 19, 0, 0)
+    event5.content = event5.inspo.content if event5.inspo.genre = 'text'
+    event5.save!
     # year, month, day = Date.today.year, Date.today.month, Date.today.day
     # Favorite.for_favoritor(user).sample(user.event_frequency).each do |favorite|
     #   inspo = Inspo.find(favorite.favoritable_id)
@@ -55,16 +69,16 @@ class Event < ApplicationRecord
     #     event.save!
     #   end
     # end
-    deficit = user.event_frequency - Event.where.not(status: :completed).where(partner_id: user.partner).count
-    if deficit.positive?
-      deficit.times do
-        event = Event.new
-        event.inspo = user.all_favorited.empty? ? Inspo.all.sample : user.all_favorited.sample
-        event.partner = user.partner
-        event.date = Time.new(Date.today.year, Date.today.month, Date.today.day, 19, [0, 30].sample) + (86400 * rand(1..5))
-        event.save!
-      end
-    end
+    # deficit = user.event_frequency - Event.where.not(status: :completed).where(partner_id: user.partner).count
+    # if deficit.positive?
+    #   deficit.times do
+    #     event = Event.new
+    #     event.inspo = user.all_favorited.empty? ? Inspo.all.sample : user.all_favorited.sample
+    #     event.partner = user.partner
+    #     event.date = Time.new(Date.today.year, Date.today.month, Date.today.day, 19, [0, 30].sample) + (86400 * rand(1..5))
+    #     event.save!
+    #   end
+    # end
   end
 
   def send_message(attributes = {})
