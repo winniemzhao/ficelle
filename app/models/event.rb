@@ -12,7 +12,6 @@ class Event < ApplicationRecord
       inspo = Inspo.find(favorite.favoritable_id)
       unless user.blocked_by?(inspo)
         if Event.where(inspo_id: inspo.id).empty?
-          event = Event.new
           if inspo.genre == 'text'
             date = Time.new(year, month, day, rand(8..20), [15, 30, 45, 0].sample) + (86400 * rand(1..5))
           elsif inspo.genre == 'gift'
@@ -29,11 +28,12 @@ class Event < ApplicationRecord
       end
     end
     %w[text gift date].each do |genre|
-      if Event.select { |event| event.inspo.genre == genre }.count.zero?
+      if Event.where.not(status: :completed).select { |event| event.inspo.genre == genre }.count.zero?
         event = Event.new
-        event.partner = user.partner
-        event.inspo = Inspo.where(genre: genre).sample
         event.date = Time.new(year, month, day, 19, [0, 30].sample) + (86400 * rand(1..5))
+        event.inspo = Inspo.where(genre: genre).sample
+        event.content = event.inspo.content if genre == 'text'
+        event.partner = user.partner
         event.save!
       end
     end
