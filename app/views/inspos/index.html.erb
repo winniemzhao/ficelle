@@ -12,7 +12,6 @@
           <%= link_to "Create a partner profile", new_partner_path, class: "btn-flat mt-3" %>
         </div>
       <% else %>
-
         <div data-controller="swipe-inspos">
           <% @inspos.each_with_index do |inspo, index| %>
             <%= render "shared/inspo-card", inspo: inspo, index: index, total: @inspos.count %>
