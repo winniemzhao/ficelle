@@ -41,15 +41,14 @@ class Event < ApplicationRecord
 
   def send_message(attributes = {})
     require 'twilio-ruby'
-    require 'rubygems'
     account_sid = ENV["TWILIO_ACCOUNT_SID"]
     auth_token = ENV["TWILIO_AUTH_TOKEN"]
     twilio_number = ENV["TWILIO_PHONE_NUMBER"]
     client = Twilio::REST::Client.new(account_sid, auth_token)
-    content, media_url = attributes[:content], attributes[:media]
+    content = attributes[:content]
     from = twilio_number
     to = '+15144589946' #hard-coded
     sleep(3)
-    client.messages.create(from: from, to: to, body: content, media_url: [media_url])
+    client.messages.create(from: from, to: to, body: content)
   end
 end
