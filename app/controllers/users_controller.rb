@@ -1,5 +1,13 @@
 class UsersController < ApplicationController
   def us
+    @quote = [
+      "“Love is a game that two can play and both win.”",
+      "“No road is long with good company.”",
+      "“The first duty of love is to listen.”",
+      "“Love is a two-way street constantly under construction.”",
+      "“A true relationship is two unperfect people refusing to give up on each other.”",
+      "“Happily ever after is not a fairy tale. It is a choice.”"
+    ].sample
   end
 
   def setting
