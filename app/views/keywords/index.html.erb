@@ -17,7 +17,7 @@
 <% else %>
   <div class="banner">
     <div>
-      <h4>Select <%= current_user.partner.name %>'s interests</h4>
+      <h4>Select <%= current_user.partner.name %>'<%= current_user.partner.name[-1].match?(/S|s/) ? '' : 's' %> interests</h4>
     </div>
   </div>
   <div class="banner-margin">

@@ -26,7 +26,7 @@
         <div class="center-dashboard">
           <h2 class="mb-3">You have no <br> upcoming events.</h2>
           <%= link_to 'Create new event', new_event_path, class:"btn btn-flat mt-3" %>
-          <%= link_to 'Generate new events', partner_keywords_path(current_user.partner), class:"btn btn-flat mt-3"%>
+          <%#= link_to 'Generate new events', partner_keywords_path(current_user.partner), class:"btn btn-flat mt-3"%>
         </div>
       <% else %>
         <h4 class="mb-2" style="text-align: left">Upcoming events</h4>
@@ -51,7 +51,7 @@
       <div class="dashboard-info">
         <% if current_user.partner && current_user.partner.events.where.not(status: :completed).count.positive? %>
           <%= link_to 'Create new event', new_event_path, class:"btn btn-flat mt-3" %>
-          <%= link_to 'Generate new events', partner_keywords_path(current_user.partner), class:"btn btn-flat mt-3"%>
+          <%#= link_to 'Generate new events', partner_keywords_path(current_user.partner), class:"btn btn-flat mt-3"%>
         <% end %>
       </div>
     </div>
