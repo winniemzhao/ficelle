@@ -15,7 +15,7 @@
       </li>
       <li class="nav-item">
         <%= link_to(us_path) do %>
-          <p class="nav-icon"><i class="fa-solid fa-user-group <%= 'my-nav' if request.fullpath == us_path %>"></i></p>
+          <p class="nav-icon"><i class="fa-solid fa-user-group <%= 'my-nav' if request.fullpath == us_path || request.fullpath == edit_user_registration_path || request.fullpath == edit_partner_path(current_user.partner) %>"></i></p>
           <p class="nav-info">relationship</p>
         <% end %>
       </li>
