@@ -1,10 +1,13 @@
 <div class="wrapper">
   <div class="form-wrapper">
     <h2 class="mb-2">New Event</h2>
-    <%= simple_form_for @event do |f| %>
-      <%= f.association :inspo, label: "Choose a curated event:", collection: Inspo.order('genre ASC').order('name ASC') %>
-      <%= f.input :date, html5: true, label: "Event due date:" %>
-      <%= f.submit "Create Event", class: "btn btn-flat" %>
-    <% end %>
+    <div>
+      <%= simple_form_for @event do |f| %>
+        <%= f.association :inspo, label: "Choose a curated event:", input_html: { data: { controller: "tom-select" } } %>
+        <%= f.input :date, html5: true, label: "Event due date:" %>
+        <%= f.hidden_field :status, value: Event.statuses.key(1) %>
+        <%= f.submit "Create Event", class: "btn btn-flat" %>
+      <% end %>
+    </div>
   </div>
 </div>
