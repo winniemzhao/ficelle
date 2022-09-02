@@ -24,3 +24,6 @@ application.register("settings", SettingsController)
 
 import SwipeInsposController from "./swipe_inspos_controller"
 application.register("swipe-inspos", SwipeInsposController)
+
+import TomSelectController from "./tom_select_controller"
+application.register("tom-select", TomSelectController)
