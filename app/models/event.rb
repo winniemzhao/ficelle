@@ -8,77 +8,47 @@ class Event < ApplicationRecord
 
   def self.load(user)
     Event.destroy_all
-    event1 = Event.new
-    event1.inspo = Inspo.where(name: "Netflix and Chill").first
-    event1.partner = user.partner
-    event1.date = Time.new(2022, 9, 5, 19, 0, 0)
-    event1.save!
-    event2 = Event.new
-    event2.inspo = Inspo.where(name: "Fishing Rod").first
-    event2.partner = user.partner
-    event2.date = Time.new(2022, 9, 6, 12, 0, 0)
-    event2.save!
-    event3 = Event.new
-    event3.inspo = Inspo.where(name: "Send a Love Poem").first
-    event3.partner = user.partner
-    event3.date = Time.new(2022, 9, 7, 19, 30, 0)
-    event3.content = event3.inspo.content
-    event3.save!
-    # event4 = Event.new
-    # inspos = Inspo.where.not(name: "Netflix and Chill").where.not(name: "Fishing Rod").where.not(name: "Steamy Text").sample(2)
-    # event4 = Event.new
-    # event4.inspo = inspos[0]
-    # event4.partner = user.partner
-    # event4.date = Time.new(2022, 9, 9, 19, 0, 0)
-    # event4.content = event4.inspo.content if event4.inspo.genre = 'text'
-    # event4.save!
-    # event5 = Event.new
-    # event5.inspo = inspos[1]
-    # event5.partner = user.partner
-    # event5.date = Time.new(2022, 9, 11, 19, 0, 0)
-    # event5.content = event5.inspo.content if event5.inspo.genre = 'text'
-    # event5.save!
-    # year, month, day = Date.today.year, Date.today.month, Date.today.day
-    # Favorite.for_favoritor(user).sample(user.event_frequency).each do |favorite|
-    #   inspo = Inspo.find(favorite.favoritable_id)
-    #   unless user.blocked_by?(inspo)
-    #     if Event.where(inspo_id: inspo.id).empty?
-    #       if inspo.genre == 'text'
-    #         date = Time.new(year, month, day, rand(8..20), [15, 30, 45, 0].sample) + (86400 * rand(1..5))
-    #       elsif inspo.genre == 'gift'
-    #         date = Time.new(year, month, day, rand(8..20)) + (86400 * rand(1..7))
-    #       else
-    #         date = Time.new(year, month, day, rand(17..19)) + (86400 * rand(1..14))
-    #       end
-    #       media = inspo.genre == 'text' ? inspo.media : nil
-    #       content = inspo.genre == 'text' ? inspo.content : nil
-    #       event = Event.new(date: date, content: content)
-    #       event.partner = user.partner
-    #       event.inspo = inspo
-    #       event.save!
-    #     end
-    #   end
-    # end
-    # %w[text gift date].each do |genre|
-    #   if Event.where.not(status: :completed).select { |event| event.inspo.genre == genre }.count.zero?
-    #     event = Event.new
-    #     event.date = Time.new(year, month, day, 19, [0, 30].sample) + (86400 * rand(1..5))
-    #     event.inspo = Inspo.where(genre: genre).sample
-    #     event.content = event.inspo.content if genre == 'text'
-    #     event.partner = user.partner
-    #     event.save!
-    #   end
-    # end
-    # deficit = user.event_frequency - Event.where.not(status: :completed).where(partner_id: user.partner).count
-    # if deficit.positive?
-    #   deficit.times do
-    #     event = Event.new
-    #     event.inspo = user.all_favorited.empty? ? Inspo.all.sample : user.all_favorited.sample
-    #     event.partner = user.partner
-    #     event.date = Time.new(Date.today.year, Date.today.month, Date.today.day, 19, [0, 30].sample) + (86400 * rand(1..5))
-    #     event.save!
-    #   end
-    # end
+    year, month, day = Date.today.year, Date.today.month, Date.today.day
+    Favorite.for_favoritor(user).sample(user.event_frequency).each do |favorite|
+      inspo = Inspo.find(favorite.favoritable_id)
+      unless user.blocked_by?(inspo)
+        if Event.where(inspo_id: inspo.id).empty?
+          if inspo.genre == 'text'
+            date = Time.new(year, month, day, rand(8..20), [15, 30, 45, 0].sample) + (86400 * rand(1..5))
+          elsif inspo.genre == 'gift'
+            date = Time.new(year, month, day, rand(8..20)) + (86400 * rand(1..7))
+          else
+            date = Time.new(year, month, day, rand(17..19)) + (86400 * rand(1..14))
+          end
+          media = inspo.genre == 'text' ? inspo.media : nil
+          content = inspo.genre == 'text' ? inspo.content : nil
+          event = Event.new(date: date, content: content)
+          event.partner = user.partner
+          event.inspo = inspo
+          event.save!
+        end
+      end
+    end
+    %w[text gift date].each do |genre|
+      if Event.where.not(status: :completed).select { |event| event.inspo.genre == genre }.count.zero?
+        event = Event.new
+        event.date = Time.new(year, month, day, 19, [0, 30].sample) + (86400 * rand(1..5))
+        event.inspo = Inspo.where(genre: genre).sample
+        event.content = event.inspo.content if genre == 'text'
+        event.partner = user.partner
+        event.save!
+      end
+    end
+    deficit = user.event_frequency - Event.where.not(status: :completed).where(partner_id: user.partner).count
+    if deficit.positive?
+      deficit.times do
+        event = Event.new
+        event.inspo = user.all_favorited.empty? ? Inspo.all.sample : user.all_favorited.sample
+        event.partner = user.partner
+        event.date = Time.new(Date.today.year, Date.today.month, Date.today.day, 19, [0, 30].sample) + (86400 * rand(1..5))
+        event.save!
+      end
+    end
   end
 
   def send_message(attributes = {})
